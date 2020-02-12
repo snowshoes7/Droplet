@@ -2,7 +2,7 @@
 //  DropletUITests.swift
 //  DropletUITests
 //
-//  Created by AppDevelopment on 2/12/20.
+//  Created by Owen Thompson on 2/12/20.
 //  Copyright © 2020 DropTeam. All rights reserved.
 //
 
