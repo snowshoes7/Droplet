@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,6 +60,9 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="32"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <segue destination="Oa6-A3-ncx" kind="show" id="qr9-KE-qAr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -73,7 +76,7 @@
         <!--View Controller-->
         <scene sceneID="F4B-Xt-Km0">
             <objects>
-                <viewController id="Oa6-A3-ncx" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Oa6-A3-ncx" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BHd-sD-4Lb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,12 +201,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OvN-fG-MBP"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pll-0z-rT9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iUl-Sc-V4n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881.15942028985512" y="103.79464285714285"/>
+            <point key="canvasLocation" x="855" y="104"/>
         </scene>
-        <!--View Controller-->
+        <!--Conversation-->
         <scene sceneID="Z19-31-App">
             <objects>
                 <viewController id="azO-y9-59k" sceneMemberID="viewController">
@@ -287,11 +291,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wx-6q-jf4">
-                                <rect key="frame" x="26" y="19" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJJ-S5-fVj">
                                 <rect key="frame" x="18" y="791" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -305,14 +304,34 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="SAi-Nz-O7y"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Conversation" id="8nd-h5-P8H">
+                        <barButtonItem key="backBarButtonItem" title="Back" image="chevron.left" catalog="system" landscapeImage="chevron.left" id="dUR-74-PAU"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9wZ-DW-jC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576.8115942028987" y="103.79464285714285"/>
+            <point key="canvasLocation" x="2581" y="104"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qr4-p1-uCa">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qxw-rY-beC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="s8O-Jc-Vqw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="chevron.left" catalog="system" id="agN-Pz-Ll5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="azO-y9-59k" kind="relationship" relationship="rootViewController" id="M0E-A0-75y"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1704" y="104"/>
         </scene>
     </scenes>
     <resources>
         <image name="badge.plus.radiowaves.right" catalog="system" width="64" height="50"/>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="drop-bg" width="1500" height="1000"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="sent-img" width="266.5" height="360"/>
