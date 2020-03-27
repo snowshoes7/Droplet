@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08F7BEB3251C747473F4E522 /* Pods_Droplet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD1CE9571D12B45FEDBDBEA /* Pods_Droplet.framework */; };
 		4462FEF523F4AE9A009A9F66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462FEF423F4AE9A009A9F66 /* AppDelegate.swift */; };
 		4462FEF723F4AE9A009A9F66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462FEF623F4AE9A009A9F66 /* SceneDelegate.swift */; };
 		4462FEF923F4AE9A009A9F66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462FEF823F4AE9A009A9F66 /* ViewController.swift */; };
@@ -15,6 +16,12 @@
 		4462FF0123F4AE9B009A9F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4462FEFF23F4AE9B009A9F66 /* LaunchScreen.storyboard */; };
 		4462FF0C23F4AE9B009A9F66 /* DropletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462FF0B23F4AE9B009A9F66 /* DropletTests.swift */; };
 		4462FF1723F4AE9B009A9F66 /* DropletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462FF1623F4AE9B009A9F66 /* DropletUITests.swift */; };
+		9C4EB6D490266577C2846B01 /* Pods_DropletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68429453C818A0FC35F7FE88 /* Pods_DropletTests.framework */; };
+		B0680E28242E57E200355450 /* Droplet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0680E26242E57E200355450 /* Droplet.xcdatamodeld */; };
+		B0680E2A242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
+		B0680E2B242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
+		B0680E2C242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
+		F3CFD94CF27FC16EC4533748 /* Pods_Droplet_DropletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A485FAA5760E33708EAEB1C3 /* Pods_Droplet_DropletUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18CE7BB45925F162E98E312D /* Pods-DropletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropletTests.release.xcconfig"; path = "Target Support Files/Pods-DropletTests/Pods-DropletTests.release.xcconfig"; sourceTree = "<group>"; };
+		1FC1A31F439D184E6545CE7D /* Pods-DropletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropletTests.debug.xcconfig"; path = "Target Support Files/Pods-DropletTests/Pods-DropletTests.debug.xcconfig"; sourceTree = "<group>"; };
+		34BBB4DAD58A76B441B88127 /* Pods-Droplet-DropletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Droplet-DropletUITests.release.xcconfig"; path = "Target Support Files/Pods-Droplet-DropletUITests/Pods-Droplet-DropletUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4462FEF123F4AE9A009A9F66 /* Droplet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Droplet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4462FEF423F4AE9A009A9F66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4462FEF623F4AE9A009A9F66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +59,14 @@
 		4462FF1223F4AE9B009A9F66 /* DropletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4462FF1623F4AE9B009A9F66 /* DropletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropletUITests.swift; sourceTree = "<group>"; };
 		4462FF1823F4AE9B009A9F66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CD1CE9571D12B45FEDBDBEA /* Pods_Droplet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Droplet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68429453C818A0FC35F7FE88 /* Pods_DropletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DropletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89A0390B6FE4CD3C569FE7A3 /* Pods-Droplet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Droplet.release.xcconfig"; path = "Target Support Files/Pods-Droplet/Pods-Droplet.release.xcconfig"; sourceTree = "<group>"; };
+		A485FAA5760E33708EAEB1C3 /* Pods_Droplet_DropletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Droplet_DropletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0680E27242E57E200355450 /* Droplet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Droplet.xcdatamodel; sourceTree = "<group>"; };
+		B0680E29242E5A4F00355450 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D2C9854DCEA0E48F57A82623 /* Pods-Droplet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Droplet.debug.xcconfig"; path = "Target Support Files/Pods-Droplet/Pods-Droplet.debug.xcconfig"; sourceTree = "<group>"; };
+		D3F82BD55F8AE9A8DC7BD90E /* Pods-Droplet-DropletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Droplet-DropletUITests.debug.xcconfig"; path = "Target Support Files/Pods-Droplet-DropletUITests/Pods-Droplet-DropletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F7BEB3251C747473F4E522 /* Pods_Droplet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4EB6D490266577C2846B01 /* Pods_DropletTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3CFD94CF27FC16EC4533748 /* Pods_Droplet_DropletUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +104,8 @@
 				4462FF0A23F4AE9B009A9F66 /* DropletTests */,
 				4462FF1523F4AE9B009A9F66 /* DropletUITests */,
 				4462FEF223F4AE9A009A9F66 /* Products */,
+				A749C9B93852A489CB1E599E /* Pods */,
+				E1F31B1FC194E38BCCCC1376 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +129,8 @@
 				4462FEFD23F4AE9B009A9F66 /* Assets.xcassets */,
 				4462FEFF23F4AE9B009A9F66 /* LaunchScreen.storyboard */,
 				4462FF0223F4AE9B009A9F66 /* Info.plist */,
+				B0680E26242E57E200355450 /* Droplet.xcdatamodeld */,
+				B0680E29242E5A4F00355450 /* GoogleService-Info.plist */,
 			);
 			path = Droplet;
 			sourceTree = "<group>";
@@ -128,6 +153,30 @@
 			path = DropletUITests;
 			sourceTree = "<group>";
 		};
+		A749C9B93852A489CB1E599E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2C9854DCEA0E48F57A82623 /* Pods-Droplet.debug.xcconfig */,
+				89A0390B6FE4CD3C569FE7A3 /* Pods-Droplet.release.xcconfig */,
+				D3F82BD55F8AE9A8DC7BD90E /* Pods-Droplet-DropletUITests.debug.xcconfig */,
+				34BBB4DAD58A76B441B88127 /* Pods-Droplet-DropletUITests.release.xcconfig */,
+				1FC1A31F439D184E6545CE7D /* Pods-DropletTests.debug.xcconfig */,
+				18CE7BB45925F162E98E312D /* Pods-DropletTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E1F31B1FC194E38BCCCC1376 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CD1CE9571D12B45FEDBDBEA /* Pods_Droplet.framework */,
+				A485FAA5760E33708EAEB1C3 /* Pods_Droplet_DropletUITests.framework */,
+				68429453C818A0FC35F7FE88 /* Pods_DropletTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4462FF1B23F4AE9B009A9F66 /* Build configuration list for PBXNativeTarget "Droplet" */;
 			buildPhases = (
+				5670DD1EC5B7F95D8DF1BF78 /* [CP] Check Pods Manifest.lock */,
 				4462FEED23F4AE9A009A9F66 /* Sources */,
 				4462FEEE23F4AE9A009A9F66 /* Frameworks */,
 				4462FEEF23F4AE9A009A9F66 /* Resources */,
+				4E4658BAD1A8DBA9495CCD1B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4462FF1E23F4AE9B009A9F66 /* Build configuration list for PBXNativeTarget "DropletTests" */;
 			buildPhases = (
+				6A3F4FE1F1370929DE0D7E0A /* [CP] Check Pods Manifest.lock */,
 				4462FF0323F4AE9B009A9F66 /* Sources */,
 				4462FF0423F4AE9B009A9F66 /* Frameworks */,
 				4462FF0523F4AE9B009A9F66 /* Resources */,
@@ -170,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4462FF2123F4AE9B009A9F66 /* Build configuration list for PBXNativeTarget "DropletUITests" */;
 			buildPhases = (
+				7A692A24CD2248C2ABA3DCBC /* [CP] Check Pods Manifest.lock */,
 				4462FF0E23F4AE9B009A9F66 /* Sources */,
 				4462FF0F23F4AE9B009A9F66 /* Frameworks */,
 				4462FF1023F4AE9B009A9F66 /* Resources */,
+				7BE229EB10318CAE4894FE1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4462FF0123F4AE9B009A9F66 /* LaunchScreen.storyboard in Resources */,
+				B0680E2A242E5A4F00355450 /* GoogleService-Info.plist in Resources */,
 				4462FEFE23F4AE9B009A9F66 /* Assets.xcassets in Resources */,
 				4462FEFC23F4AE9A009A9F66 /* Main.storyboard in Resources */,
 			);
@@ -242,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0680E2B242E5A4F00355450 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +305,114 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0680E2C242E5A4F00355450 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E4658BAD1A8DBA9495CCD1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Droplet/Pods-Droplet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Droplet/Pods-Droplet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Droplet/Pods-Droplet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5670DD1EC5B7F95D8DF1BF78 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Droplet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A3F4FE1F1370929DE0D7E0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DropletTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A692A24CD2248C2ABA3DCBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Droplet-DropletUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BE229EB10318CAE4894FE1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Droplet-DropletUITests/Pods-Droplet-DropletUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Droplet-DropletUITests/Pods-Droplet-DropletUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Droplet-DropletUITests/Pods-Droplet-DropletUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4462FEED23F4AE9A009A9F66 /* Sources */ = {
@@ -261,6 +421,7 @@
 			files = (
 				4462FEF923F4AE9A009A9F66 /* ViewController.swift in Sources */,
 				4462FEF523F4AE9A009A9F66 /* AppDelegate.swift in Sources */,
+				B0680E28242E57E200355450 /* Droplet.xcdatamodeld in Sources */,
 				4462FEF723F4AE9A009A9F66 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +593,7 @@
 		};
 		4462FF1C23F4AE9B009A9F66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2C9854DCEA0E48F57A82623 /* Pods-Droplet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -440,7 +602,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.droplet.Droplet;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.snowshoes.Droplet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -449,6 +611,7 @@
 		};
 		4462FF1D23F4AE9B009A9F66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89A0390B6FE4CD3C569FE7A3 /* Pods-Droplet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,7 +620,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.droplet.Droplet;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.snowshoes.Droplet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -466,6 +629,7 @@
 		};
 		4462FF1F23F4AE9B009A9F66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FC1A31F439D184E6545CE7D /* Pods-DropletTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +651,7 @@
 		};
 		4462FF2023F4AE9B009A9F66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18CE7BB45925F162E98E312D /* Pods-DropletTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +673,7 @@
 		};
 		4462FF2223F4AE9B009A9F66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3F82BD55F8AE9A8DC7BD90E /* Pods-Droplet-DropletUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +693,7 @@
 		};
 		4462FF2323F4AE9B009A9F66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34BBB4DAD58A76B441B88127 /* Pods-Droplet-DropletUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -584,6 +751,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B0680E26242E57E200355450 /* Droplet.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B0680E27242E57E200355450 /* Droplet.xcdatamodel */,
+			);
+			currentVersion = B0680E27242E57E200355450 /* Droplet.xcdatamodel */;
+			path = Droplet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4462FEE923F4AE9A009A9F66 /* Project object */;
 }
