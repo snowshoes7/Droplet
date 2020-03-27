@@ -68,53 +68,68 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jRo-zE-83K">
                                 <rect key="frame" x="20" y="532" width="51" height="31"/>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abb-Ek-0uD">
-                                <rect key="frame" x="63" y="599" width="289" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abb-Ek-0uD">
+                                <rect key="frame" x="63" y="599" width="288" height="40"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="32"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="actionLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x98-0k-94G"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N8-Ic-kJI">
-                                <rect key="frame" x="63" y="685" width="289" height="27"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N8-Ic-kJI">
+                                <rect key="frame" x="63" y="685" width="288" height="27"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="kSK-yc-faw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                 <state key="normal" title="Teacher Login"/>
+                                <connections>
+                                    <action selector="actionTeacherLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wyv-W3-yJj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="dzh-tz-ecU" firstAttribute="bottom" secondItem="9N8-Ic-kJI" secondAttribute="bottom" constant="150" id="1Nh-ic-rCl"/>
                             <constraint firstItem="jRo-zE-83K" firstAttribute="top" secondItem="REE-zQ-PC0" secondAttribute="bottom" constant="29" id="75J-eW-GXa"/>
                             <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="REE-zQ-PC0" secondAttribute="centerX" id="7bM-eG-vHz"/>
                             <constraint firstItem="Xtd-Ee-ldW" firstAttribute="leading" secondItem="4HX-IJ-BOj" secondAttribute="leading" id="Bxg-Xc-xjS"/>
                             <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="abb-Ek-0uD" secondAttribute="centerX" id="Cri-uI-HOJ"/>
                             <constraint firstItem="VSE-I2-WNl" firstAttribute="leading" secondItem="jRo-zE-83K" secondAttribute="trailing" constant="6" id="IuH-wZ-GPy"/>
                             <constraint firstAttribute="bottom" secondItem="VSE-I2-WNl" secondAttribute="bottom" constant="336" id="Mh6-hh-szD"/>
+                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="leading" secondItem="abb-Ek-0uD" secondAttribute="leading" id="Moj-7r-Wgn"/>
                             <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="4HX-IJ-BOj" secondAttribute="leadingMargin" id="NRD-j5-obC"/>
-                            <constraint firstItem="dzh-tz-ecU" firstAttribute="bottom" secondItem="abb-Ek-0uD" secondAttribute="bottom" constant="196" id="OB7-0S-siO"/>
                             <constraint firstItem="Efl-dw-bIp" firstAttribute="top" secondItem="dzh-tz-ecU" secondAttribute="top" id="OzI-BV-wEn"/>
                             <constraint firstItem="WNb-EY-7x2" firstAttribute="leading" secondItem="dzh-tz-ecU" secondAttribute="leading" constant="63" id="RgC-a0-c8E"/>
-                            <constraint firstItem="Efl-dw-bIp" firstAttribute="centerX" secondItem="9N8-Ic-kJI" secondAttribute="centerX" id="XLp-db-5ks"/>
                             <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="9Ft-mV-65j" secondAttribute="leading" id="YEX-7f-qRx"/>
                             <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="REE-zQ-PC0" secondAttribute="leading" id="YTI-0f-PJs"/>
-                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="leading" secondItem="abb-Ek-0uD" secondAttribute="leading" id="b9W-cI-ETg"/>
+                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="leading" secondItem="WNb-EY-7x2" secondAttribute="leading" id="caz-hJ-dtn"/>
                             <constraint firstItem="abb-Ek-0uD" firstAttribute="top" secondItem="VSE-I2-WNl" secondAttribute="bottom" constant="39" id="ctl-k6-Lpo"/>
                             <constraint firstItem="dzh-tz-ecU" firstAttribute="bottom" secondItem="jRo-zE-83K" secondAttribute="bottom" constant="299" id="dgO-mJ-i0U"/>
                             <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="yL5-rT-mKC" secondAttribute="centerX" id="dxb-GE-3J0"/>
                             <constraint firstItem="yL5-rT-mKC" firstAttribute="top" secondItem="fdg-0r-9Az" secondAttribute="bottom" constant="8" symbolic="YES" id="dy8-cR-sRC"/>
-                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="leading" secondItem="WNb-EY-7x2" secondAttribute="leading" id="eEl-rX-q6b"/>
-                            <constraint firstItem="dzh-tz-ecU" firstAttribute="bottom" secondItem="9N8-Ic-kJI" secondAttribute="bottom" constant="150" id="ghj-av-HCB"/>
-                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="top" secondItem="abb-Ek-0uD" secondAttribute="bottom" constant="46" id="hS2-t4-mGs"/>
                             <constraint firstItem="9Ft-mV-65j" firstAttribute="top" secondItem="yL5-rT-mKC" secondAttribute="bottom" constant="34" id="iJi-Ou-j6G"/>
                             <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="Efl-dw-bIp" secondAttribute="centerX" id="kFe-Bb-dmX"/>
+                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="trailing" secondItem="abb-Ek-0uD" secondAttribute="trailing" id="lBU-jO-WHR"/>
                             <constraint firstItem="yL5-rT-mKC" firstAttribute="top" secondItem="WNb-EY-7x2" secondAttribute="bottom" constant="90" id="ljS-7D-e51"/>
                             <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="WNb-EY-7x2" secondAttribute="centerX" id="nbe-xB-pEK"/>
                             <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="jRo-zE-83K" secondAttribute="leading" id="pb1-AE-4QA"/>
                             <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="fdg-0r-9Az" secondAttribute="leading" id="qRJ-jK-gL6"/>
                             <constraint firstItem="Xtd-Ee-ldW" firstAttribute="top" secondItem="4HX-IJ-BOj" secondAttribute="top" id="uhh-YQ-Elt"/>
                             <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerY" secondItem="9Ft-mV-65j" secondAttribute="centerY" id="vbS-Qb-eGq"/>
+                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="top" secondItem="abb-Ek-0uD" secondAttribute="bottom" constant="46" id="yez-7l-frq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dzh-tz-ecU"/>
                     </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="abb-Ek-0uD" id="jsU-1I-SSq"/>
+                        <outlet property="btnTeacherLogin" destination="9N8-Ic-kJI" id="Fyq-04-p6d"/>
+                        <outlet property="swtRemember" destination="jRo-zE-83K" id="UGe-8a-RxH"/>
+                        <outlet property="txtID" destination="yL5-rT-mKC" id="y4I-ED-pwP"/>
+                        <outlet property="txtPassword" destination="REE-zQ-PC0" id="qQP-bz-dBt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
