@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		B0680E2A242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
 		B0680E2B242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
 		B0680E2C242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
+		B086A90E242E6D2C006017DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086A90D242E6D2C006017DC /* LoginViewController.swift */; };
 		F3CFD94CF27FC16EC4533748 /* Pods_Droplet_DropletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A485FAA5760E33708EAEB1C3 /* Pods_Droplet_DropletUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		A485FAA5760E33708EAEB1C3 /* Pods_Droplet_DropletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Droplet_DropletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0680E27242E57E200355450 /* Droplet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Droplet.xcdatamodel; sourceTree = "<group>"; };
 		B0680E29242E5A4F00355450 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B086A90D242E6D2C006017DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D2C9854DCEA0E48F57A82623 /* Pods-Droplet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Droplet.debug.xcconfig"; path = "Target Support Files/Pods-Droplet/Pods-Droplet.debug.xcconfig"; sourceTree = "<group>"; };
 		D3F82BD55F8AE9A8DC7BD90E /* Pods-Droplet-DropletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Droplet-DropletUITests.debug.xcconfig"; path = "Target Support Files/Pods-Droplet-DropletUITests/Pods-Droplet-DropletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 				4462FEF623F4AE9A009A9F66 /* SceneDelegate.swift */,
 				4462FEF823F4AE9A009A9F66 /* ViewController.swift */,
 				4462FEFA23F4AE9A009A9F66 /* Main.storyboard */,
+				B086A90D242E6D2C006017DC /* LoginViewController.swift */,
 				4462FEFD23F4AE9B009A9F66 /* Assets.xcassets */,
 				4462FEFF23F4AE9B009A9F66 /* LaunchScreen.storyboard */,
 				4462FF0223F4AE9B009A9F66 /* Info.plist */,
@@ -163,7 +166,6 @@
 				1FC1A31F439D184E6545CE7D /* Pods-DropletTests.debug.xcconfig */,
 				18CE7BB45925F162E98E312D /* Pods-DropletTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -422,6 +424,7 @@
 				4462FEF923F4AE9A009A9F66 /* ViewController.swift in Sources */,
 				4462FEF523F4AE9A009A9F66 /* AppDelegate.swift in Sources */,
 				B0680E28242E57E200355450 /* Droplet.xcdatamodeld in Sources */,
+				B086A90E242E6D2C006017DC /* LoginViewController.swift in Sources */,
 				4462FEF723F4AE9A009A9F66 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
