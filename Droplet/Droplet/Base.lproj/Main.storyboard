@@ -75,7 +75,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="actionLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x98-0k-94G"/>
-                                    <segue destination="vaG-Qu-DVW" kind="showDetail" id="9ai-vq-6o5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N8-Ic-kJI">
@@ -251,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUE-go-0Wx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="866"/>
+            <point key="canvasLocation" x="137.68115942028987" y="754.6875"/>
         </scene>
     </scenes>
     <resources>
