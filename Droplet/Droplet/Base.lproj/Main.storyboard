@@ -1,26 +1,264 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4HX-IJ-BOj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-bg" translatesAutoresizingMaskIntoConstraints="NO" id="Xtd-Ee-ldW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="896" id="JtK-bg-Eme"/>
+                                    <constraint firstAttribute="width" constant="414" id="cjM-bv-GhG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSE-I2-WNl">
+                                <rect key="frame" x="75" y="540" width="132.5" height="20"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-dw-bIp">
+                                <rect key="frame" x="82" y="44" width="250" height="176"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="176" id="YOg-cA-6TO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Droplet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNb-EY-7x2">
+                                <rect key="frame" x="63" y="229" width="289" height="48"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DropID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdg-0r-9Az">
+                                <rect key="frame" x="20" y="333" width="94" height="26"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ft-mV-65j">
+                                <rect key="frame" x="20" y="435" width="125" height="26"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yL5-rT-mKC">
+                                <rect key="frame" x="20" y="367" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REE-zQ-PC0">
+                                <rect key="frame" x="20" y="469" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jRo-zE-83K">
+                                <rect key="frame" x="20" y="532" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abb-Ek-0uD">
+                                <rect key="frame" x="63" y="599" width="288" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="32"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="actionLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x98-0k-94G"/>
+                                    <segue destination="vaG-Qu-DVW" kind="showDetail" id="9ai-vq-6o5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N8-Ic-kJI">
+                                <rect key="frame" x="63" y="685" width="288" height="27"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="kSK-yc-faw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                <state key="normal" title="Teacher Login"/>
+                                <connections>
+                                    <action selector="actionTeacherLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wyv-W3-yJj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="dzh-tz-ecU" firstAttribute="bottom" secondItem="9N8-Ic-kJI" secondAttribute="bottom" constant="150" id="1Nh-ic-rCl"/>
+                            <constraint firstItem="jRo-zE-83K" firstAttribute="top" secondItem="REE-zQ-PC0" secondAttribute="bottom" constant="29" id="75J-eW-GXa"/>
+                            <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="REE-zQ-PC0" secondAttribute="centerX" id="7bM-eG-vHz"/>
+                            <constraint firstItem="Xtd-Ee-ldW" firstAttribute="leading" secondItem="4HX-IJ-BOj" secondAttribute="leading" id="Bxg-Xc-xjS"/>
+                            <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="abb-Ek-0uD" secondAttribute="centerX" id="Cri-uI-HOJ"/>
+                            <constraint firstItem="VSE-I2-WNl" firstAttribute="leading" secondItem="jRo-zE-83K" secondAttribute="trailing" constant="6" id="IuH-wZ-GPy"/>
+                            <constraint firstAttribute="bottom" secondItem="VSE-I2-WNl" secondAttribute="bottom" constant="336" id="Mh6-hh-szD"/>
+                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="leading" secondItem="abb-Ek-0uD" secondAttribute="leading" id="Moj-7r-Wgn"/>
+                            <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="4HX-IJ-BOj" secondAttribute="leadingMargin" id="NRD-j5-obC"/>
+                            <constraint firstItem="Efl-dw-bIp" firstAttribute="top" secondItem="dzh-tz-ecU" secondAttribute="top" id="OzI-BV-wEn"/>
+                            <constraint firstItem="WNb-EY-7x2" firstAttribute="leading" secondItem="dzh-tz-ecU" secondAttribute="leading" constant="63" id="RgC-a0-c8E"/>
+                            <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="9Ft-mV-65j" secondAttribute="leading" id="YEX-7f-qRx"/>
+                            <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="REE-zQ-PC0" secondAttribute="leading" id="YTI-0f-PJs"/>
+                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="leading" secondItem="WNb-EY-7x2" secondAttribute="leading" id="caz-hJ-dtn"/>
+                            <constraint firstItem="abb-Ek-0uD" firstAttribute="top" secondItem="VSE-I2-WNl" secondAttribute="bottom" constant="39" id="ctl-k6-Lpo"/>
+                            <constraint firstItem="dzh-tz-ecU" firstAttribute="bottom" secondItem="jRo-zE-83K" secondAttribute="bottom" constant="299" id="dgO-mJ-i0U"/>
+                            <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="yL5-rT-mKC" secondAttribute="centerX" id="dxb-GE-3J0"/>
+                            <constraint firstItem="yL5-rT-mKC" firstAttribute="top" secondItem="fdg-0r-9Az" secondAttribute="bottom" constant="8" symbolic="YES" id="dy8-cR-sRC"/>
+                            <constraint firstItem="9Ft-mV-65j" firstAttribute="top" secondItem="yL5-rT-mKC" secondAttribute="bottom" constant="34" id="iJi-Ou-j6G"/>
+                            <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="Efl-dw-bIp" secondAttribute="centerX" id="kFe-Bb-dmX"/>
+                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="trailing" secondItem="abb-Ek-0uD" secondAttribute="trailing" id="lBU-jO-WHR"/>
+                            <constraint firstItem="yL5-rT-mKC" firstAttribute="top" secondItem="WNb-EY-7x2" secondAttribute="bottom" constant="90" id="ljS-7D-e51"/>
+                            <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="WNb-EY-7x2" secondAttribute="centerX" id="nbe-xB-pEK"/>
+                            <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="jRo-zE-83K" secondAttribute="leading" id="pb1-AE-4QA"/>
+                            <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="fdg-0r-9Az" secondAttribute="leading" id="qRJ-jK-gL6"/>
+                            <constraint firstItem="Xtd-Ee-ldW" firstAttribute="top" secondItem="4HX-IJ-BOj" secondAttribute="top" id="uhh-YQ-Elt"/>
+                            <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerY" secondItem="9Ft-mV-65j" secondAttribute="centerY" id="vbS-Qb-eGq"/>
+                            <constraint firstItem="9N8-Ic-kJI" firstAttribute="top" secondItem="abb-Ek-0uD" secondAttribute="bottom" constant="46" id="yez-7l-frq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dzh-tz-ecU"/>
                     </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="abb-Ek-0uD" id="jsU-1I-SSq"/>
+                        <outlet property="btnTeacherLogin" destination="9N8-Ic-kJI" id="Fyq-04-p6d"/>
+                        <outlet property="swtRemember" destination="jRo-zE-83K" id="UGe-8a-RxH"/>
+                        <outlet property="txtID" destination="yL5-rT-mKC" id="y4I-ED-pwP"/>
+                        <outlet property="txtPassword" destination="REE-zQ-PC0" id="qQP-bz-dBt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="104"/>
+            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
+        </scene>
+        <!--Drops View Controller-->
+        <scene sceneID="kwt-Q9-kRA">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="vaG-Qu-DVW" customClass="DropsViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c1s-m2-IW2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zSW-sS-kjr">
+                                <rect key="frame" x="0.0" y="85" width="414" height="777"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DropCell" rowHeight="80" id="HL8-cd-WNR">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HL8-cd-WNR" id="Jfc-23-chU">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0e-qH-NdC">
+                                                    <rect key="frame" x="20" y="13" width="61" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzR-Zg-suC">
+                                                    <rect key="frame" x="277" y="12" width="98" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last File Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvd-jA-K2D">
+                                                    <rect key="frame" x="20" y="35" width="355" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="DropCellCheckIn" rowHeight="80" id="7lg-3J-qie">
+                                        <rect key="frame" x="0.0" y="135.5" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lg-3J-qie" id="c2x-Bc-JEH">
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSq-7y-ZUM">
+                                                    <rect key="frame" x="20" y="13" width="61" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxy-Q6-9ob">
+                                                    <rect key="frame" x="272" y="12" width="98" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CheckIn Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoL-fN-0SJ">
+                                                    <rect key="frame" x="20" y="35" width="355" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CZ-rM-8k0">
+                                <rect key="frame" x="375" y="34" width="34" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Button" image="gear" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHC-og-DDy">
+                                <rect key="frame" x="20" y="39" width="30" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="badge.plus.radiowaves.right" catalog="system"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Drops" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zi-Wg-SRI">
+                                <rect key="frame" x="163" y="46" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjR-yt-VdX">
+                                <rect key="frame" x="50" y="39" width="30" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="square.and.arrow.up.on.square" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zSW-sS-kjr" firstAttribute="leading" secondItem="qcz-cG-xdx" secondAttribute="leading" id="IeG-1S-ZQY"/>
+                            <constraint firstItem="zSW-sS-kjr" firstAttribute="top" secondItem="qcz-cG-xdx" secondAttribute="top" constant="41" id="JVJ-aL-EXX"/>
+                            <constraint firstItem="qcz-cG-xdx" firstAttribute="trailing" secondItem="zSW-sS-kjr" secondAttribute="trailing" id="Rw6-3k-2b2"/>
+                            <constraint firstItem="qcz-cG-xdx" firstAttribute="bottom" secondItem="zSW-sS-kjr" secondAttribute="bottom" id="Z7p-de-gSV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qcz-cG-xdx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5iI-T3-V7N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUE-go-0Wx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="866"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="250" height="250"/>
+        <image name="badge.plus.radiowaves.right" catalog="system" width="128" height="101"/>
+        <image name="drop-bg" width="1500" height="1000"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
+    </resources>
 </document>
