@@ -21,4 +21,6 @@ struct Dropper {
         self.modifiable = modifiable
         self.title = title
     }
+    
+    //TODO add functions for setup and interaction in the structure file
 }
