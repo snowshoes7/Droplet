@@ -21,6 +21,9 @@
 		B0680E2A242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
 		B0680E2B242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
 		B0680E2C242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
+		B07BC1FE2433FB7800C47198 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BC1FD2433FB7800C47198 /* User.swift */; };
+		B07BC2002433FB8B00C47198 /* Dropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BC1FF2433FB8B00C47198 /* Dropper.swift */; };
+		B07BC2022433FBA500C47198 /* AcademicClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BC2012433FBA500C47198 /* AcademicClass.swift */; };
 		B086A90E242E6D2C006017DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086A90D242E6D2C006017DC /* LoginViewController.swift */; };
 		B086A910242E7152006017DC /* DropsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086A90F242E7152006017DC /* DropsViewController.swift */; };
 		B0D944F32432A808000A4BED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D944F22432A807000A4BED /* SettingsViewController.swift */; };
@@ -68,6 +71,9 @@
 		A485FAA5760E33708EAEB1C3 /* Pods_Droplet_DropletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Droplet_DropletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0680E27242E57E200355450 /* Droplet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Droplet.xcdatamodel; sourceTree = "<group>"; };
 		B0680E29242E5A4F00355450 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B07BC1FD2433FB7800C47198 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B07BC1FF2433FB8B00C47198 /* Dropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropper.swift; sourceTree = "<group>"; };
+		B07BC2012433FBA500C47198 /* AcademicClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicClass.swift; sourceTree = "<group>"; };
 		B086A90D242E6D2C006017DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B086A90F242E7152006017DC /* DropsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropsViewController.swift; sourceTree = "<group>"; };
 		B0D944F22432A807000A4BED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +140,9 @@
 				4462FEF623F4AE9A009A9F66 /* SceneDelegate.swift */,
 				4462FEF823F4AE9A009A9F66 /* ViewController.swift */,
 				4462FEFA23F4AE9A009A9F66 /* Main.storyboard */,
+				B07BC1FD2433FB7800C47198 /* User.swift */,
+				B07BC1FF2433FB8B00C47198 /* Dropper.swift */,
+				B07BC2012433FBA500C47198 /* AcademicClass.swift */,
 				B0D944F22432A807000A4BED /* SettingsViewController.swift */,
 				B086A90F242E7152006017DC /* DropsViewController.swift */,
 				B086A90D242E6D2C006017DC /* LoginViewController.swift */,
@@ -429,10 +438,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07BC2002433FB8B00C47198 /* Dropper.swift in Sources */,
+				B07BC2022433FBA500C47198 /* AcademicClass.swift in Sources */,
 				4462FEF923F4AE9A009A9F66 /* ViewController.swift in Sources */,
 				4462FEF523F4AE9A009A9F66 /* AppDelegate.swift in Sources */,
 				B0D944F32432A808000A4BED /* SettingsViewController.swift in Sources */,
 				B0680E28242E57E200355450 /* Droplet.xcdatamodeld in Sources */,
+				B07BC1FE2433FB7800C47198 /* User.swift in Sources */,
 				B086A910242E7152006017DC /* DropsViewController.swift in Sources */,
 				B086A90E242E6D2C006017DC /* LoginViewController.swift in Sources */,
 				4462FEF723F4AE9A009A9F66 /* SceneDelegate.swift in Sources */,
