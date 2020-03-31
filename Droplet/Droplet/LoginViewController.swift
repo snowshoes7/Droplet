@@ -23,7 +23,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func actionLogin(_ sender: Any) {
-        //Check credentials with Firebase Users etc.
+        // Validate credentials with firebase - TODO
+        // Segue to Table View
+        performSegue(withIdentifier: "Login", sender: sender)
     }
     
     @IBAction func actionTeacherLogin(_ sender: Any) {

@@ -71,6 +71,7 @@
 		B086A90D242E6D2C006017DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B086A90F242E7152006017DC /* DropsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropsViewController.swift; sourceTree = "<group>"; };
 		B0D944F22432A807000A4BED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B3AB5D522433B6D400D6A07E /* Droplet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Droplet.entitlements; sourceTree = "<group>"; };
 		D2C9854DCEA0E48F57A82623 /* Pods-Droplet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Droplet.debug.xcconfig"; path = "Target Support Files/Pods-Droplet/Pods-Droplet.debug.xcconfig"; sourceTree = "<group>"; };
 		D3F82BD55F8AE9A8DC7BD90E /* Pods-Droplet-DropletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Droplet-DropletUITests.debug.xcconfig"; path = "Target Support Files/Pods-Droplet-DropletUITests/Pods-Droplet-DropletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +129,7 @@
 		4462FEF323F4AE9A009A9F66 /* Droplet */ = {
 			isa = PBXGroup;
 			children = (
+				B3AB5D522433B6D400D6A07E /* Droplet.entitlements */,
 				4462FEF423F4AE9A009A9F66 /* AppDelegate.swift */,
 				4462FEF623F4AE9A009A9F66 /* SceneDelegate.swift */,
 				4462FEF823F4AE9A009A9F66 /* ViewController.swift */,
@@ -607,6 +609,7 @@
 			baseConfigurationReference = D2C9854DCEA0E48F57A82623 /* Pods-Droplet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Droplet/Droplet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Droplet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -625,6 +628,7 @@
 			baseConfigurationReference = 89A0390B6FE4CD3C569FE7A3 /* Pods-Droplet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Droplet/Droplet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Droplet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

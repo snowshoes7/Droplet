@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreNFC
 
 class DropsViewController: UIViewController {
 
@@ -17,5 +18,9 @@ class DropsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func actionSettings(_ sender: Any) {
+    }
+    
+    @IBAction func actionScan(_ sender: Any) {
+        // https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app
     }
 }
