@@ -63,6 +63,13 @@ class LoginViewController: UIViewController {
                             break
                         }
                     } else {
+                        let alertController = UIAlertController(
+                            title: "Username or Password Incorrect",
+                            message: "This login information is incorrect and no such user exists in our database. Maybe you made a typo?",
+                            preferredStyle: .alert
+                        )
+                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alertController, animated: true, completion: nil)
                         continue
                     }
                 }
