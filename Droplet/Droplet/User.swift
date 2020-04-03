@@ -24,4 +24,12 @@ struct User {
     mutating func addClass(classToAdd: AcademicClass) {
         myClasses.append(classToAdd)
     }
+    
+    mutating func removeClass(classToRemove: AcademicClass) {
+        for x in myClasses {
+            if (x.name == classToRemove.name) && (x.assignmentURL == classToRemove.assignmentURL) {
+                //TODO for loop and removeAt
+            }
+        }
+    }
 }
