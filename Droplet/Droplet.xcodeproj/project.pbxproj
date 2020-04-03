@@ -26,6 +26,7 @@
 		B07BC2022433FBA500C47198 /* AcademicClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07BC2012433FBA500C47198 /* AcademicClass.swift */; };
 		B086A90E242E6D2C006017DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086A90D242E6D2C006017DC /* LoginViewController.swift */; };
 		B086A910242E7152006017DC /* DropsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086A90F242E7152006017DC /* DropsViewController.swift */; };
+		B08861DF2436FCFC00711633 /* DropsTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08861DE2436FCFB00711633 /* DropsTeacherViewController.swift */; };
 		B0D944F32432A808000A4BED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D944F22432A807000A4BED /* SettingsViewController.swift */; };
 		F3CFD94CF27FC16EC4533748 /* Pods_Droplet_DropletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A485FAA5760E33708EAEB1C3 /* Pods_Droplet_DropletUITests.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		B07BC2012433FBA500C47198 /* AcademicClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicClass.swift; sourceTree = "<group>"; };
 		B086A90D242E6D2C006017DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B086A90F242E7152006017DC /* DropsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropsViewController.swift; sourceTree = "<group>"; };
+		B08861DE2436FCFB00711633 /* DropsTeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropsTeacherViewController.swift; sourceTree = "<group>"; };
 		B0D944F22432A807000A4BED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B3AB5D522433B6D400D6A07E /* Droplet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Droplet.entitlements; sourceTree = "<group>"; };
 		D2C9854DCEA0E48F57A82623 /* Pods-Droplet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Droplet.debug.xcconfig"; path = "Target Support Files/Pods-Droplet/Pods-Droplet.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				B07BC2012433FBA500C47198 /* AcademicClass.swift */,
 				B0D944F22432A807000A4BED /* SettingsViewController.swift */,
 				B086A90F242E7152006017DC /* DropsViewController.swift */,
+				B08861DE2436FCFB00711633 /* DropsTeacherViewController.swift */,
 				B086A90D242E6D2C006017DC /* LoginViewController.swift */,
 				4462FEFD23F4AE9B009A9F66 /* Assets.xcassets */,
 				4462FEFF23F4AE9B009A9F66 /* LaunchScreen.storyboard */,
@@ -441,6 +444,7 @@
 				B07BC2002433FB8B00C47198 /* Dropper.swift in Sources */,
 				B07BC2022433FBA500C47198 /* AcademicClass.swift in Sources */,
 				4462FEF923F4AE9A009A9F66 /* ViewController.swift in Sources */,
+				B08861DF2436FCFC00711633 /* DropsTeacherViewController.swift in Sources */,
 				4462FEF523F4AE9A009A9F66 /* AppDelegate.swift in Sources */,
 				B0D944F32432A808000A4BED /* SettingsViewController.swift in Sources */,
 				B0680E28242E57E200355450 /* Droplet.xcdatamodeld in Sources */,
@@ -624,6 +628,7 @@
 				CODE_SIGN_ENTITLEMENTS = Droplet/Droplet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Droplet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,6 +648,7 @@
 				CODE_SIGN_ENTITLEMENTS = Droplet/Droplet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Droplet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

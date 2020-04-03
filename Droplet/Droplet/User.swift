@@ -20,4 +20,8 @@ struct User {
         self.username = username
         self.password = password
     }
+    
+    mutating func addClass(classToAdd: AcademicClass) {
+        myClasses.append(classToAdd)
+    }
 }

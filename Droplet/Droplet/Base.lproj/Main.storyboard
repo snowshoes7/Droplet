@@ -140,7 +140,7 @@
         <!--Drops Teacher View Controller-->
         <scene sceneID="kwt-Q9-kRA">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="vaG-Qu-DVW" customClass="DropsTeacherViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="vaG-Qu-DVW" customClass="DropsTeacherViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c1s-m2-IW2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -524,6 +524,7 @@
                     <navigationItem key="navigationItem" id="zcG-mk-LXc"/>
                     <connections>
                         <outlet property="btnSettings" destination="gfG-Ia-lQu" id="btc-sn-qdc"/>
+                        <outlet property="tableView" destination="4VE-9n-Z1d" id="5NZ-lp-HRb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Kt-oA-eA3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
