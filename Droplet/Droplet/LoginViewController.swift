@@ -31,6 +31,9 @@ class LoginViewController: UIViewController {
         var password : String = ""
         var isTeacher : Bool = false
         var myClasses : [String] = []
+        
+        var badCount : Int = 0
+        
         db.collection("users").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("CRITICAL FIREBASE RETRIEVAL ERROR: \(err)")
@@ -63,13 +66,16 @@ class LoginViewController: UIViewController {
                             break
                         }
                     } else {
-                        let alertController = UIAlertController(
-                            title: "Username or Password Incorrect",
-                            message: "This login information is incorrect and no such user exists in our database. Maybe you made a typo?",
-                            preferredStyle: .alert
-                        )
-                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        self.present(alertController, animated: true, completion: nil)
+                        badCount += 1
+                        if (badCount) == querySnapshot!.documents.count {
+                            let alertController = UIAlertController(
+                                title: "Username or Password Incorrect",
+                                message: "This login information is incorrect and no such user exists in our database. Maybe you made a typo?",
+                                preferredStyle: .alert
+                            )
+                            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                            self.present(alertController, animated: true, completion: nil)
+                        }
                         continue
                     }
                 }
