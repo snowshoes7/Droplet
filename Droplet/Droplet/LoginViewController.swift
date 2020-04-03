@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func actionLogin(_ sender: Any) {
-        // Validate credentials with firebase - TODO
+        // Validate credentials with firebase
         var name : String = ""
         var password : String = ""
         var isTeacher : Bool = false
