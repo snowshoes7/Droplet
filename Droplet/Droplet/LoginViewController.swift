@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import Firebase
 
 class LoginViewController: UIViewController {
@@ -19,10 +20,62 @@ class LoginViewController: UIViewController {
     
     let db = Firestore.firestore()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        checkForRemembered()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    func checkForRemembered() {
+        // Check Core
+        print("Checking Core")
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName:"StoredUser")
+        request.returnsObjectsAsFaults = false
+        
+        var username: String
+        var password: String
+        
+        do {
+            let result = try context.fetch(request)
+            if result.count == 0 {
+                print("No logins found.")
+            }
+            for data in result as! [NSManagedObject] {
+                print("Found a Login!")
+                // Grabs Username
+                username = data.value(forKey: "username") as! String
+                // Grabs Password
+                password = data.value(forKey: "password") as! String
+                // Sets TextBoxes Appropriately
+                txtID.text = username
+                txtPassword.text = password
+                // Sets Switch
+                swtRemember.setOn(true, animated: true)
+            }
+        } catch {
+            print("Encountered an error")
+        }
+    }
+    
+    func clearRemembered() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let context = delegate.persistentContainer.viewContext
+        
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredUser")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+            print("Successfully removed stored user")
+        } catch {
+            print ("There was an error clearing remembered user")
+        }
     }
     
     @IBAction func actionLogin(_ sender: Any) {
@@ -52,6 +105,30 @@ class LoginViewController: UIViewController {
                             }
                             GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password)
                             print(GlobalVariables.loggedInUser!)
+                            // Set Remember Me
+                            if self.swtRemember.isOn {
+                                // Clear in case we already have a stored record
+                                self.clearRemembered()
+                                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+                                
+                                
+                                let entity = NSEntityDescription.entity(forEntityName: "StoredUser", in: context)
+                                
+                                let newEntity = NSManagedObject(entity: entity!, insertInto: context)
+                                
+                                newEntity.setValue(self.txtID.text, forKey: "username")
+                                newEntity.setValue(self.txtPassword.text, forKey: "password")
+                                
+                                
+                                do {
+                                    try context.save()
+                                    print("Stored the user", self.txtID.text!, ":", self.txtPassword.text!)
+                                } catch {
+                                    print("Encountered an error storing the user")
+                                }
+                            } else if !self.swtRemember.isOn {
+                                self.clearRemembered()
+                            }
                             // Segue to Table View
                             self.performSegue(withIdentifier: "Login", sender: sender)
                             break

@@ -31,11 +31,7 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         // https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app
         // Modified from sample project:
         guard NFCNDEFReaderSession.readingAvailable else {
-            let alertController = UIAlertController(
-                title: "Scanning Not Supported",
-                message: "This device doesn't support tag scanning. You are either on a simulator or have an older device.",
-                preferredStyle: .alert
-            )
+            let alertController = UIAlertController(title: "Scanning Not Supported", message: "This device doesn't support tag scanning. You are either on a simulator or have an older device.", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
             return
@@ -72,6 +68,18 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
             // Process detected NFCNDEFMessage objects all at once. This is not complete, and ideally this function will include multi-tag detection code but that might be a little bit overkill.
             self.detectedMessages.append(contentsOf: messages)
             self.tableView.reloadData()
+            
+            // Remove any/all messages from detectedMessages that do not include i
+            var i = 0
+            for message in self.detectedMessages {
+                // Convert msg to string
+                let msg: String = "" // = message in decoded form
+                // Check for header and isolate body
+                if !msg.hasPrefix("445230504c3337") {
+                    self.detectedMessages.remove(at: i)
+                }
+                i += 1
+            }
         }
     }
 }
