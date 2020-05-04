@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
         var name : String = ""
         var password : String = ""
         var isTeacher : Bool = false
-        var myClasses : [Any] = []
+        var myClasses : String = ""
         
         var badCount : Int = 0
         
@@ -76,15 +76,15 @@ class LoginViewController: UIViewController {
                     name = document.get("username") as! String
                     password = document.get("password") as! String
                     isTeacher = document.get("isTeacher") as! Bool
-                    myClasses = document.data()["classes"]! as! [Any]
+                    myClasses = document.get("classes") as! String
                     if (self.txtID.text == name && self.txtPassword.text == password) {
                         if (isTeacher == false) {
                             //Login successful, break and segue
                             var newClasses : [AcademicClass] = []
-                            for x in myClasses {
-                                print(x as! String)
-                                print("That is a class name of the logged in user")
-                            }
+//                            for x in myClasses {
+//                                print(x as! String)
+//                                print("That is a class name of the logged in user")
+//                            }
                             GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password)
                             //print(GlobalVariables.loggedInUser!)
                             // Segue to Table View

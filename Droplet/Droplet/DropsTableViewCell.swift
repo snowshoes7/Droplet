@@ -23,7 +23,7 @@ class DropsTableViewCell: UITableViewCell {
     
     func setDropper(dropper: Dropper) {
         lblTitle.text = dropper.title
-        lblTeacher.text = dropper.associatedClass?.teacher
-        lblFileDetails.text = "Empty"
+        lblTeacher.text = "Diaz" //dropper.associatedClass?.teacher
+        lblFileDetails.text = "Honors App Development" //dropper.associatedClass?.name
     }
 }

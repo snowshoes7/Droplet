@@ -16,14 +16,14 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     var session: NFCNDEFReaderSession?
     
     @IBOutlet weak var btnSettings: UIButton!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var outletTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        outletTableView.dataSource = self
+        outletTableView.delegate = self
     }
     
     @IBAction func actionSettings(_ sender: Any) {
@@ -74,17 +74,19 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         DispatchQueue.main.async {
             // Process detected NFCNDEFMessage objects all at once. This is not complete, and ideally this function will include multi-tag detection code but that might be a little bit overkill.
             self.detectedMessages.append(contentsOf: messages)
-            self.tableView.reloadData()
+            self.outletTableView.reloadData()
         }
     }
 }
 
 extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (GlobalVariables.loggedInUser?.myClasses.count)!
+        //return (GlobalVariables.loggedInUser?.myClasses.count)!
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        /*
         var allMyDropperIDs : [String] = []
         
         print("\((GlobalVariables.loggedInUser?.myClasses[0].name)!) is the class")
@@ -96,11 +98,15 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
         print(allMyDropperIDs)
         
         let dropperCurrentlyAssociatedWithUser : Dropper = Dropper(pullFromFBID: allMyDropperIDs[indexPath.row])
+        */
+        let cell : DropsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DropCell") as! DropsTableViewCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DropCell") as! DropsTableViewCell
-        
-        cell.setDropper(dropper: dropperCurrentlyAssociatedWithUser)
+        cell.setDropper(dropper: Dropper(associatedClass: AcademicClass(url: "https://www.example.com", droppers: [], name: "App Dev", teacher: "Diaz"), id: "appdev-1", modifiable: true, title: "App Dev"))
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
     }
 }
