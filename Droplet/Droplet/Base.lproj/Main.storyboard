@@ -419,7 +419,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DropCell" rowHeight="80" id="WkH-yf-yDx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DropCell" rowHeight="80" id="WkH-yf-yDx" customClass="DropsTableViewCell" customModule="Droplet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WkH-yf-yDx" id="mBa-ec-Xtq">
@@ -449,8 +449,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblFileDetails" destination="33k-c8-7Xx" id="ZcP-N8-r66"/>
+                                            <outlet property="lblTeacher" destination="fZL-gl-vCW" id="uME-ta-qvT"/>
+                                            <outlet property="lblTitle" destination="wUB-Rq-9ll" id="3KR-hn-HUP"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="DropCellCheckIn" rowHeight="80" id="F45-F8-hKx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="DropCellCheckIn" rowHeight="80" id="F45-F8-hKx" customClass="DropsTableViewCell" customModule="Droplet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="135.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F45-F8-hKx" id="dJu-4U-0mm">

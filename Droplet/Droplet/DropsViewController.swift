@@ -21,6 +21,9 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     @IBAction func actionSettings(_ sender: Any) {
@@ -73,5 +76,31 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
             self.detectedMessages.append(contentsOf: messages)
             self.tableView.reloadData()
         }
+    }
+}
+
+extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (GlobalVariables.loggedInUser?.myClasses.count)!
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var allMyDropperIDs : [String] = []
+        
+        print("\((GlobalVariables.loggedInUser?.myClasses[0].name)!) is the class")
+        
+        for x in 0...((GlobalVariables.loggedInUser?.myClasses.count)! - 1) {
+            allMyDropperIDs.append(contentsOf: (GlobalVariables.loggedInUser?.myClasses[x].droppers)!)
+        }
+        
+        print(allMyDropperIDs)
+        
+        let dropperCurrentlyAssociatedWithUser : Dropper = Dropper(pullFromFBID: allMyDropperIDs[indexPath.row])
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DropCell") as! DropsTableViewCell
+        
+        cell.setDropper(dropper: dropperCurrentlyAssociatedWithUser)
+        
+        return cell
     }
 }

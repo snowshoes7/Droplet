@@ -10,4 +10,10 @@ import Foundation
 
 struct GlobalVariables {
     static var loggedInUser : User? = nil
+    
+    static var localAcademicClasses : [AcademicClass] = []
+    
+    static var localDroppers : [Dropper] = []
+    
+    static var localUsers : [User] = []
 }

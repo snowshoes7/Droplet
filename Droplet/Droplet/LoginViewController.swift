@@ -19,18 +19,52 @@ class LoginViewController: UIViewController {
     
     let db = Firestore.firestore()
     
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+//    func reconfigureClass(thisClass: AcademicClass, thisClassName: String) -> AcademicClass {
+//        var remoteurl : String = ""
+//        var remotedroppers : [Any] = []
+//        var remotename : String = ""
+//        var remoteteacher : String = ""
+//        var returnable: AcademicClass = thisClass
+//
+//        db.collection("classes").getDocuments() { (querySnapshot, errr) in
+//            if let errr = errr {
+//                print("CRITICAL FIREBASE RETRIEVAL ERROR: \(errr)")
+//            } else {
+//                for document in querySnapshot!.documents {
+//                    remotename = document.get("name") as! String
+//                    remoteurl = document.get("assignmentURL") as! String
+//                    remoteteacher = document.get("teacher") as! String
+//                    remotedroppers = document.data()["droppers"]! as! [Any]
+//                    if (remotename == thisClassName) {
+//                        returnable.assignmentURL = remoteurl
+//                        returnable.name = remotename
+//                        returnable.teacher = remoteteacher
+//                        print(remotedroppers)
+//                        print("These are the droppers of the academicclass \(thisClass.name)")
+//                        returnable.droppers = []
+//                        break
+//                    }
+//                }
+//            }
+//        }
+//        return returnable
+//    }
+    
     @IBAction func actionLogin(_ sender: Any) {
         // Validate credentials with firebase
         var name : String = ""
         var password : String = ""
         var isTeacher : Bool = false
-        var myClasses : [String] = []
+        var myClasses : [Any] = []
         
         var badCount : Int = 0
         
@@ -42,16 +76,17 @@ class LoginViewController: UIViewController {
                     name = document.get("username") as! String
                     password = document.get("password") as! String
                     isTeacher = document.get("isTeacher") as! Bool
-                    myClasses = document.get("classes") as! [String]
+                    myClasses = document.data()["classes"]! as! [Any]
                     if (self.txtID.text == name && self.txtPassword.text == password) {
                         if (isTeacher == false) {
                             //Login successful, break and segue
                             var newClasses : [AcademicClass] = []
                             for x in myClasses {
-                                newClasses.append(AcademicClass(pullFromFBName: x))
+                                print(x as! String)
+                                print("That is a class name of the logged in user")
                             }
                             GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password)
-                            print(GlobalVariables.loggedInUser!)
+                            //print(GlobalVariables.loggedInUser!)
                             // Segue to Table View
                             self.performSegue(withIdentifier: "Login", sender: sender)
                             break
