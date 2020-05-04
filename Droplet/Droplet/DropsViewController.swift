@@ -70,7 +70,7 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         DispatchQueue.main.async {
             // Process detected NFCNDEFMessage objects all at once. This is not complete, and ideally this function will include multi-tag detection code but that might be a little bit overkill.
             self.detectedMessages.append(contentsOf: messages)
-            self.tableView.reloadData()
+            self.outletTableView.reloadData()
             
             // Remove any/all messages from detectedMessages that do not include i
             var i = 0
