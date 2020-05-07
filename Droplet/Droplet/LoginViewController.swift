@@ -107,6 +107,7 @@ class LoginViewController: UIViewController {
         var password : String = ""
         var isTeacher : Bool = false
         var myClasses : String = ""
+        var email : String = ""
         
         var badCount : Int = 0
         
@@ -119,6 +120,7 @@ class LoginViewController: UIViewController {
                     password = document.get("password") as! String
                     isTeacher = document.get("isTeacher") as! Bool
                     myClasses = document.get("classes") as! String
+                    email = document.get("email") as! String
                     if (self.txtID.text == name && self.txtPassword.text == password) {
                         if (isTeacher == false) {
                             //Login successful, break and segue
@@ -128,7 +130,7 @@ class LoginViewController: UIViewController {
 //                                print(x as! String)
 //                                print("That is a class name of the logged in user")
 //                            }
-                            GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password)
+                            GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password, email: email)
                             //print(GlobalVariables.loggedInUser!)
                             // Set Remember Me
                             if self.swtRemember.isOn {

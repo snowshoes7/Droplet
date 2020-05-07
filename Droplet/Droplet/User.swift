@@ -13,12 +13,14 @@ struct User {
     var isTeacher: Bool = false
     var password: String = ""
     var username: String = ""
+    var email: String = ""
     
-    init(myClasses: [AcademicClass], isTeacher: Bool, username: String, password: String) {
+    init(myClasses: [AcademicClass], isTeacher: Bool, username: String, password: String, email: String) {
         self.myClasses = myClasses
         self.isTeacher = isTeacher
         self.username = username
         self.password = password
+        self.email = email
     }
     
     mutating func addClass(classToAdd: AcademicClass) {
@@ -26,10 +28,12 @@ struct User {
     }
     
     mutating func removeClass(classToRemove: AcademicClass) {
+        var i = 0
         for x in myClasses {
             if (x.name == classToRemove.name) && (x.assignmentURL == classToRemove.assignmentURL) {
-                //TODO for loop and removeAt
+                myClasses.remove(at: i)
             }
+            i += 1
         }
     }
 }
