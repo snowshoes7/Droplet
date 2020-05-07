@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 class SettingsViewController: UIViewController {
 
@@ -39,26 +40,82 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func actionSaveProfile(_ sender: Any) {
-        db.collection("users")
-            .whereField("name", isEqualTo: (GlobalVariables.loggedInUser?.username)!)
-        .getDocuments() { (querySnapshot, err) in
-            if err != nil {
-                // Some error occured
+        var setpassword : String = ""
+        var execute : Bool = true
+        
+        if (txtpass1.text != "" || txtpass2.text != "") {
+            if (txtpass1.text == txtpass2.text) {
+                setpassword = txtpass2.text!
             } else {
-                let document = querySnapshot!.documents.first
-                document!.reference.updateData([
-                    "username": self.txtUsername.text!,
-                    "email": self.txtEmail.text!
-                ])
+                let alertController = UIAlertController(
+                    title: "Passwords Do Not Match",
+                    message: "Make sure your passwords match and try again.",
+                    preferredStyle: .alert
+                )
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                execute = false
+            }
+        }
+        
+        if (execute) {
+            if (txtUsername.text == "" || txtEmail.text == "" || ((txtUsername.text?.contains(" ")) != nil) || ((txtEmail.text?.contains(" ")) != nil) || ((txtpass1.text?.contains(" ")) != nil) || ((txtpass2.text?.contains(" ")) != nil)) {
+                let alertController2 = UIAlertController(
+                    title: "Entry Error",
+                    message: "Make sure you didn't erase your DropID or email. You can't use any spaces in your DropID, email, or password.",
+                    preferredStyle: .alert
+                )
+                alertController2.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alertController2, animated: true, completion: nil)
+                execute = false
+            }
+        }
+        
+        if (execute) {
+            db.collection("users")
+                .whereField("username", isEqualTo: (GlobalVariables.loggedInUser?.username)!)
+            .getDocuments() { (querySnapshot, err) in
+                if err != nil {
+                    print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                } else {
+                    let document = querySnapshot!.documents.first
+                    document!.reference.updateData([
+                        "username": self.txtUsername.text!,
+                        "email": self.txtEmail.text!,
+                        "password": setpassword
+                    ])
+                    self.clearRemembered()
+                    self.logOut()
+                }
             }
         }
     }
     
     @IBAction func actionLogOut(_ sender: Any) {
+        logOut()
+    }
+    
+    func logOut() {
         //TODO clear all user-related Global Variables here, such as:
         GlobalVariables.loggedInUser = nil
         
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.present(loginView, animated: true, completion: nil)
+    }
+    
+    func clearRemembered() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let context = delegate.persistentContainer.viewContext
+        
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredUser")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+            print("Successfully removed stored user")
+        } catch {
+            print ("There was an error clearing remembered user")
+        }
     }
 }

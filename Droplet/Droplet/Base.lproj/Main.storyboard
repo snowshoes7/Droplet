@@ -267,6 +267,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zNO-0V-zRa">
+                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="S4t-2h-Kzh" kind="relationship" relationship="rootViewController" id="g9L-gr-Cu1"/>
                     </connections>
@@ -278,7 +282,7 @@
         <!--Settings-->
         <scene sceneID="Kj5-LS-UGg">
             <objects>
-                <viewController title="Settings" modalPresentationStyle="fullScreen" id="S4t-2h-Kzh" customClass="SettingsViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="S4t-2h-Kzh" customClass="SettingsViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vhb-Ih-prc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -385,7 +389,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="24"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save &amp; Log Out"/>
                                 <connections>
                                     <action selector="actionSaveProfile:" destination="S4t-2h-Kzh" eventType="touchUpInside" id="Exm-gf-Dnk"/>
                                 </connections>
