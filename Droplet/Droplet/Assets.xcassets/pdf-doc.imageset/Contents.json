@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "eye-light.jpg",
+      "filename" : "PDF-ICON-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "eye-light-1.jpg",
+      "filename" : "PDF-ICON-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "eye-light-2.jpg",
+      "filename" : "PDF-ICON-3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

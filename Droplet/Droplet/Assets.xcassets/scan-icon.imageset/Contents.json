@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "eye-light.jpg",
+      "filename" : "tag-scan-nfc-logo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "eye-light-1.jpg",
+      "filename" : "tag-scan-nfc-logo-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "eye-light-2.jpg",
+      "filename" : "tag-scan-nfc-logo-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

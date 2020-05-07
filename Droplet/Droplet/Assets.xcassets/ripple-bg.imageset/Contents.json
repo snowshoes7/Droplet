@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ripple.jpg",
+      "filename" : "bar-light.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ripple-1.jpg",
+      "filename" : "bar-light-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ripple-2.jpg",
+      "filename" : "bar-light-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

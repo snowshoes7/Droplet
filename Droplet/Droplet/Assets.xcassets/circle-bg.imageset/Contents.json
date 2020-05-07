@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "eye-light.jpg",
+      "filename" : "circle-light.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "eye-light-1.jpg",
+      "filename" : "circle-light-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "eye-light-2.jpg",
+      "filename" : "circle-light-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
