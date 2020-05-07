@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var txtpass2: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var swtTeacher: UISwitch!
+    
+    let db = Firestore.firestore()
     
     override func viewWillAppear(_ animated: Bool) {
         lblUsername.text = GlobalVariables.loggedInUser?.username
@@ -36,7 +39,19 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func actionSaveProfile(_ sender: Any) {
-        
+        db.collection("users")
+            .whereField("name", isEqualTo: (GlobalVariables.loggedInUser?.username)!)
+        .getDocuments() { (querySnapshot, err) in
+            if err != nil {
+                // Some error occured
+            } else {
+                let document = querySnapshot!.documents.first
+                document!.reference.updateData([
+                    "username": self.txtUsername.text!,
+                    "email": self.txtEmail.text!
+                ])
+            }
+        }
     }
     
     @IBAction func actionLogOut(_ sender: Any) {
