@@ -23,11 +23,34 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         checkForRemembered()
+        preLoadAllClassesAndDroppers()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    func preLoadAllClassesAndDroppers() {
+        print("FB retrieval initiated.")
+        
+        var remoteurl : String = ""
+        var remotedroppers : String = ""
+        var remotename : String = ""
+        var remoteteacher : String = ""
+        
+        db.collection("classes").getDocuments() { (querySnapshot, errr) in
+            if let errr = errr {
+                print("CRITICAL FIREBASE RETRIEVAL ERROR: \(errr)")
+            } else {
+                for document in querySnapshot!.documents {
+                    remotename = document.get("name") as! String
+                    remoteurl = document.get("assignmentURL") as! String
+                    remoteteacher = document.get("teacher") as! String
+                    remotedroppers = document.get("droppers") as! String
+                }
+            }
+        }
     }
     
     func checkForRemembered() {
@@ -78,37 +101,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-//    func reconfigureClass(thisClass: AcademicClass, thisClassName: String) -> AcademicClass {
-//        var remoteurl : String = ""
-//        var remotedroppers : [Any] = []
-//        var remotename : String = ""
-//        var remoteteacher : String = ""
-//        var returnable: AcademicClass = thisClass
-//
-//        db.collection("classes").getDocuments() { (querySnapshot, errr) in
-//            if let errr = errr {
-//                print("CRITICAL FIREBASE RETRIEVAL ERROR: \(errr)")
-//            } else {
-//                for document in querySnapshot!.documents {
-//                    remotename = document.get("name") as! String
-//                    remoteurl = document.get("assignmentURL") as! String
-//                    remoteteacher = document.get("teacher") as! String
-//                    remotedroppers = document.data()["droppers"]! as! [Any]
-//                    if (remotename == thisClassName) {
-//                        returnable.assignmentURL = remoteurl
-//                        returnable.name = remotename
-//                        returnable.teacher = remoteteacher
-//                        print(remotedroppers)
-//                        print("These are the droppers of the academicclass \(thisClass.name)")
-//                        returnable.droppers = []
-//                        break
-//                    }
-//                }
-//            }
-//        }
-//        return returnable
-//    }
-    
     @IBAction func actionLogin(_ sender: Any) {
         // Validate credentials with firebase
         var name : String = ""
@@ -131,12 +123,13 @@ class LoginViewController: UIViewController {
                         if (isTeacher == false) {
                             //Login successful, break and segue
                             var newClasses : [AcademicClass] = []
-//                            for x in myClasses {
+                            let myClassesSplit : [Substring] = myClasses.split(separator: ";")
+//                            for x in myClassesSplit {
 //                                print(x as! String)
 //                                print("That is a class name of the logged in user")
 //                            }
                             GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password)
-                            print(GlobalVariables.loggedInUser!)
+                            //print(GlobalVariables.loggedInUser!)
                             // Set Remember Me
                             if self.swtRemember.isOn {
                                 // Clear in case we already have a stored record
@@ -193,6 +186,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func actionTeacherLogin(_ sender: Any) {
-        //Same as above but segue to teacher views instead -- extra validation required?
+        //Same as above but segue to teacher views instead -- ensure they are actually a teacher before segue
     }
 }

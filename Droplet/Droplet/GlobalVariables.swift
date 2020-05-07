@@ -15,5 +15,5 @@ struct GlobalVariables {
     
     static var localDroppers : [Dropper] = []
     
-    static var localUsers : [User] = []
+    //static var localUsers : [User] = [] - was supposed to do a similar function to the above but it's not strictly necessary right now
 }
