@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-bg" translatesAutoresizingMaskIntoConstraints="NO" id="8dW-pM-lLU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-bg" translatesAutoresizingMaskIntoConstraints="NO" id="8dW-pM-lLU">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="896" id="34b-3e-MXT"/>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch-bg" width="621" height="1344"/>
+        <image name="drop-bg" width="789.5" height="783"/>
     </resources>
 </document>
