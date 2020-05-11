@@ -9,8 +9,15 @@ import UIKit
 
 class AssignmentsTableViewController: UITableViewController {
 
+    @IBOutlet weak var titleBar: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        titleBar.title = GlobalVariables.clickedOnDropper?.associatedClass?.name
     }
 
     @IBAction func actionOpenClassPage(_ sender: Any) {

@@ -296,7 +296,7 @@
         <!--Assignments View Controller-->
         <scene sceneID="v3U-Dw-NL3">
             <objects>
-                <tableViewController storyboardIdentifier="AssignmentsTableViewController" title="Assignments View Controller" id="jb4-CY-cco" customClass="AssignmentsTableViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="AssignmentsTableViewController" storyboardIdentifier="AssignmentsTableViewController" title="Assignments View Controller" id="jb4-CY-cco" customClass="AssignmentsTableViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2cY-MY-isD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -357,7 +357,12 @@
                             <outlet property="delegate" destination="jb4-CY-cco" id="VKi-yh-Pli"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Assignments View Controller" id="mnL-qM-dgQ"/>
+                    <navigationItem key="navigationItem" title="Assignments View Controller" id="mnL-qM-dgQ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="5L3-I4-lOz"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="titleBar" destination="mnL-qM-dgQ" id="gXc-84-ZRL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdB-af-LtB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,7 +371,7 @@
         <!--Navigation Controller-->
         <scene sceneID="BA1-ZR-FiQ">
             <objects>
-                <navigationController id="fxh-WW-7yH" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="AssignmentsTableViewControllerLead" storyboardIdentifier="AssignmentsTableViewControllerLead" id="fxh-WW-7yH" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ugp-P5-jYU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

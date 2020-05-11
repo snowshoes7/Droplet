@@ -130,7 +130,7 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
         //Segue to assignments view for a specific dropper.
         if (tallyDroppers()[indexPath.row].modifiable) {
             GlobalVariables.clickedOnDropper = tallyDroppers()[indexPath.row]
-            let assignView = self.storyboard?.instantiateViewController(withIdentifier: "AssignmentsTableViewController") as! AssignmentsTableViewController
+            let assignView = self.storyboard?.instantiateViewController(withIdentifier: "AssignmentsTableViewControllerLead") as! UINavigationController
             assignView.modalPresentationStyle = .fullScreen
             self.present(assignView, animated: true, completion: nil)
         } else {
