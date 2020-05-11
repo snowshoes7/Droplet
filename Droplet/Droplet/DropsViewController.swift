@@ -88,11 +88,8 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
 }
 
 extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (GlobalVariables.loggedInUser?.myClasses.count)!
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tallyDroppers() -> [Dropper] {
         var allOfMyDroppers : [Dropper] = []
         
         for x in GlobalVariables.loggedInUser!.myClasses {
@@ -105,6 +102,15 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         
+        return allOfMyDroppers
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tallyDroppers().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let allOfMyDroppers = tallyDroppers()
         var ident : String = "DropCell"
         
         if (allOfMyDroppers[indexPath.row].modifiable) {

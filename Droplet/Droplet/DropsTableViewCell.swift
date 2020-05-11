@@ -28,11 +28,11 @@ class DropsTableViewCell: UITableViewCell {
         if (isModifiable) {
             lblTitle.text = dropper.title
             lblTeacher.text = dropper.associatedClass?.teacher.capitalized
-            lblFileDetails.text = dropper.associatedClass?.name
+            lblFileDetails.text = "This \(dropper.associatedClass!.name) dropper has had \(dropper.interactions) Check-Ins."
         } else {
             lblTitleCheckIn.text = dropper.title
             lblTeacherCheckIn.text = dropper.associatedClass?.teacher.capitalized
-            lblFileDetailsCheckIn.text = "\(dropper.associatedClass!.name) has had \(dropper.interactions) Check-Ins."
+            lblFileDetailsCheckIn.text = "This \(dropper.associatedClass!.name) dropper has had \(dropper.interactions) Check-Ins."
         }
     }
 }
