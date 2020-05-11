@@ -359,6 +359,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Assignments View Controller" id="mnL-qM-dgQ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="5L3-I4-lOz"/>
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="FRE-M7-huP">
+                            <connections>
+                                <action selector="actionBack:" destination="jb4-CY-cco" id="geZ-Dk-c0K"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="titleBar" destination="mnL-qM-dgQ" id="gXc-84-ZRL"/>
@@ -372,6 +377,9 @@
         <scene sceneID="BA1-ZR-FiQ">
             <objects>
                 <navigationController restorationIdentifier="AssignmentsTableViewControllerLead" storyboardIdentifier="AssignmentsTableViewControllerLead" id="fxh-WW-7yH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ww8-UQ-liU">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="HQ7-zO-4f7"/>
+                    </navigationItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ugp-P5-jYU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -542,7 +550,7 @@
         <!--Drops View Controller-->
         <scene sceneID="cND-Iv-0Ua">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="iRs-dF-HSL" customClass="DropsViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="DropsViewController" storyboardIdentifier="DropsViewController" modalPresentationStyle="fullScreen" id="iRs-dF-HSL" customClass="DropsViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bds-CZ-bzQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

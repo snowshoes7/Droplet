@@ -19,7 +19,13 @@ class AssignmentsTableViewController: UITableViewController {
         super.viewWillAppear(true)
         titleBar.title = "\((GlobalVariables.clickedOnDropper?.associatedClass!.name)!) Assignments"
     }
-
+    
+    @IBAction func actionBack(_ sender: Any) {
+        let backView = self.storyboard?.instantiateViewController(withIdentifier: "DropsViewController") as! DropsViewController
+        backView.modalPresentationStyle = .fullScreen
+        self.present(backView, animated: true)
+    }
+    
     @IBAction func actionOpenClassPage(_ sender: Any) {
         let toGoURL = URL(string: GlobalVariables.clickedOnDropper?.associatedClass?.assignmentURL ?? "https://www.example.com")!
         UIApplication.shared.open(toGoURL, options: [:], completionHandler: nil)
