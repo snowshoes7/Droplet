@@ -17,7 +17,7 @@ class AssignmentsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        titleBar.title = GlobalVariables.clickedOnDropper?.associatedClass?.name
+        titleBar.title = "\((GlobalVariables.clickedOnDropper?.associatedClass!.name)!) Assignments"
     }
 
     @IBAction func actionOpenClassPage(_ sender: Any) {
