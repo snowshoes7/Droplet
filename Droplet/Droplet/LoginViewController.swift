@@ -181,14 +181,15 @@ class LoginViewController: UIViewController {
                             //Login successful, break and segue
                             var newClasses : [AcademicClass] = []
                             let myClassesSplit : [Substring] = myClasses.split(separator: ";")
-//                            for x in myClassesSplit {
-//                                print(x as! String)
-//                                print("That is a class name of the logged in user")
-//                            }
-                            //print(GlobalVariables.localDroppers)
-                            //print(GlobalVariables.localAcademicClasses)
+                            for x in myClassesSplit {
+                                for y in GlobalVariables.localAcademicClasses {
+                                    if (x == y.name) {
+                                        newClasses.append(y)
+                                    }
+                                }
+                            }
                             GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password, email: email)
-                            //print(GlobalVariables.loggedInUser!)
+                            print(GlobalVariables.loggedInUser!)
                             // Set Remember Me
                             if self.swtRemember.isOn {
                                 // Clear in case we already have a stored record

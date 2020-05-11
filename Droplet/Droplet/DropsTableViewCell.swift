@@ -13,6 +13,9 @@ class DropsTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblTeacher: UILabel!
     @IBOutlet weak var lblFileDetails: UILabel!
+    @IBOutlet weak var lblTitleCheckIn: UILabel!
+    @IBOutlet weak var lblTeacherCheckIn: UILabel!
+    @IBOutlet weak var lblFileDetailsCheckIn: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -21,9 +24,15 @@ class DropsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setDropper(dropper: Dropper) {
-        lblTitle.text = dropper.title
-        lblTeacher.text = "Diaz" //dropper.associatedClass?.teacher
-        lblFileDetails.text = "Honors App Development" //dropper.associatedClass?.name
+    func setDropper(dropper: Dropper, isModifiable: Bool) {
+        if (isModifiable) {
+            lblTitle.text = dropper.title
+            lblTeacher.text = dropper.associatedClass?.teacher.capitalized
+            lblFileDetails.text = dropper.associatedClass?.name
+        } else {
+            lblTitleCheckIn.text = dropper.title
+            lblTeacherCheckIn.text = dropper.associatedClass?.teacher.capitalized
+            lblFileDetailsCheckIn.text = "\(dropper.associatedClass!.name) has had \(dropper.interactions) Check-Ins."
+        }
     }
 }

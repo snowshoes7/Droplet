@@ -89,27 +89,33 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
 
 extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return (GlobalVariables.loggedInUser?.myClasses.count)!
-        return 1
+        return (GlobalVariables.loggedInUser?.myClasses.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*
-        var allMyDropperIDs : [String] = []
+        var allOfMyDroppers : [Dropper] = []
         
-        print("\((GlobalVariables.loggedInUser?.myClasses[0].name)!) is the class")
-        
-        for x in 0...((GlobalVariables.loggedInUser?.myClasses.count)! - 1) {
-            allMyDropperIDs.append(contentsOf: (GlobalVariables.loggedInUser?.myClasses[x].droppers)!)
+        for x in GlobalVariables.loggedInUser!.myClasses {
+            for y in x.droppers {
+                for z in GlobalVariables.localDroppers {
+                    if (y == z.id) {
+                        allOfMyDroppers.append(z)
+                    }
+                }
+            }
         }
         
-        print(allMyDropperIDs)
+        var ident : String = "DropCell"
         
-        let dropperCurrentlyAssociatedWithUser : Dropper = Dropper(pullFromFBID: allMyDropperIDs[indexPath.row])
-        */
-        let cell : DropsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DropCell") as! DropsTableViewCell
+        if (allOfMyDroppers[indexPath.row].modifiable) {
+            ident = "DropCell"
+        } else {
+            ident = "DropCellCheckIn"
+        }
         
-        cell.setDropper(dropper: Dropper(associatedClass: AcademicClass(url: "https://www.example.com", droppers: [], name: "App Dev", teacher: "Diaz", assignmentStr: ""), id: "appdev-1", modifiable: true, title: "App Dev", interactions: 0))
+        let cell : DropsTableViewCell = tableView.dequeueReusableCell(withIdentifier: ident) as! DropsTableViewCell
+        
+        cell.setDropper(dropper: allOfMyDroppers[indexPath.row], isModifiable: allOfMyDroppers[indexPath.row].modifiable)
         
         return cell
     }
