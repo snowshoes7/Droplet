@@ -132,6 +132,7 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
             GlobalVariables.clickedOnDropper = tallyDroppers()[indexPath.row]
             let assignView = self.storyboard?.instantiateViewController(withIdentifier: "AssignmentsTableViewControllerLead") as! UINavigationController
             assignView.modalPresentationStyle = .fullScreen
+            assignView.modalTransitionStyle = .flipHorizontal
             self.present(assignView, animated: true, completion: nil)
         } else {
             //Do nothing

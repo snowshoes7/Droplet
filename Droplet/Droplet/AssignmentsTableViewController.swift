@@ -23,6 +23,7 @@ class AssignmentsTableViewController: UITableViewController {
     @IBAction func actionBack(_ sender: Any) {
         let backView = self.storyboard?.instantiateViewController(withIdentifier: "DropsViewController") as! DropsViewController
         backView.modalPresentationStyle = .fullScreen
+        backView.modalTransitionStyle = .flipHorizontal
         self.present(backView, animated: true)
     }
     
