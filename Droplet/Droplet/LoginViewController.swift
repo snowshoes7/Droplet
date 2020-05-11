@@ -18,12 +18,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnTeacherLogin: UIButton!
     
+    //var didGetClassesOnLoad : Bool = false
+    
     let db = Firestore.firestore()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         checkForRemembered()
-        preLoadAllClassesAndDroppers()
+        preLoadAllClasses()
+        sleep(2) //THIS SLEEP CALL IS NECESSARY. This is because FB retrievals happen asynchronously and since constructing Droppers relies on having all AcademicClasses retrieved, then we need to wait for FB to load on startup of the program and complete that before we can do anything else. Consequently this means the LaunchScreen will almost always be at least ~3 seconds long.
+        preLoadAllDroppers()
     }
     
     override func viewDidLoad() {
@@ -31,13 +35,53 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func preLoadAllClassesAndDroppers() {
-        print("FB retrieval initiated.")
+    func preLoadAllDroppers() {
+        print("FB dropper retrieval initiated...")
         
+        //Get droppers from Firebase
+        var remoteid : String = ""
+        var remoteassociatedClassName : String = ""
+        var remotetitle : String = ""
+        var remotemodifiable : Bool = false
+        var remoteinteractions : Int = 0
+
+        db.collection("droppers").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("CRITICAL FIREBASE RETRIEVAL ERROR: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    remotetitle = document.get("title") as! String
+                    remoteid = document.get("id") as! String
+                    remotemodifiable = document.get("modifiable") as! Bool
+                    remoteassociatedClassName = document.get("class") as! String
+                    remoteinteractions = document.get("interactions") as! Int
+                    
+                    print("\(remoteassociatedClassName) is the class name we are looking for...")
+                    
+                    var toAddAcademicClass : AcademicClass? = nil
+                    
+                    for x in GlobalVariables.localAcademicClasses {
+                        if (x.name == remoteassociatedClassName) {
+                            toAddAcademicClass = x
+                            break
+                        }
+                    }
+                    
+                    GlobalVariables.localDroppers.append(Dropper(associatedClass: toAddAcademicClass!, id: remoteid, modifiable: remotemodifiable, title: remotetitle, interactions: remoteinteractions))
+                }
+            }
+        }
+    }
+    
+    func preLoadAllClasses() {
+        print("FB class retrieval initiated...")
+        
+        //Get classes from Firebase
         var remoteurl : String = ""
         var remotedroppers : String = ""
         var remotename : String = ""
         var remoteteacher : String = ""
+        var remoteassignstr : String = ""
         
         db.collection("classes").getDocuments() { (querySnapshot, errr) in
             if let errr = errr {
@@ -48,6 +92,17 @@ class LoginViewController: UIViewController {
                     remoteurl = document.get("assignmentURL") as! String
                     remoteteacher = document.get("teacher") as! String
                     remotedroppers = document.get("droppers") as! String
+                    remoteassignstr = document.get("assignmentStr") as! String
+                    
+                    var toAddDroppers : [String] = []
+                    
+                    for x in remotedroppers.split(separator: ";") {
+                        toAddDroppers.append(String(x))
+                    }
+                    
+                    print("\(remotename) is the name detected")
+                    
+                    GlobalVariables.localAcademicClasses.append(AcademicClass(url: remoteurl, droppers: toAddDroppers, name: remotename, teacher: remoteteacher, assignmentStr: remoteassignstr))
                 }
             }
         }
@@ -81,7 +136,7 @@ class LoginViewController: UIViewController {
                 swtRemember.setOn(true, animated: true)
             }
         } catch {
-            print("Encountered an error")
+            print("Encountered a Core Data error. Please attempt app reinstallation if changes were made to the .xcdatamodeld file.")
         }
     }
     
@@ -130,6 +185,8 @@ class LoginViewController: UIViewController {
 //                                print(x as! String)
 //                                print("That is a class name of the logged in user")
 //                            }
+                            //print(GlobalVariables.localDroppers)
+                            //print(GlobalVariables.localAcademicClasses)
                             GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password, email: email)
                             //print(GlobalVariables.loggedInUser!)
                             // Set Remember Me

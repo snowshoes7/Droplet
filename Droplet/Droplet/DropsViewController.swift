@@ -27,7 +27,7 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     }
     
     @IBAction func actionSettings(_ sender: Any) {
-        //any additional work to be done before segue to settings screen
+        //any additional work to be done before segue to settings screen - not really. This function exists as a buffer before segue
     }
     
     @IBAction func actionScan(_ sender: Any) {
@@ -41,7 +41,7 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         }
 
         session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
-        session?.alertMessage = "Hold your iPhone near the Dropper to see more."
+        session?.alertMessage = "Hold your iPhone near the Dropper to interact with it."
         session?.begin()
     }
     
@@ -109,7 +109,7 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
         */
         let cell : DropsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DropCell") as! DropsTableViewCell
         
-        cell.setDropper(dropper: Dropper(associatedClass: AcademicClass(url: "https://www.example.com", droppers: [], name: "App Dev", teacher: "Diaz"), id: "appdev-1", modifiable: true, title: "App Dev"))
+        cell.setDropper(dropper: Dropper(associatedClass: AcademicClass(url: "https://www.example.com", droppers: [], name: "App Dev", teacher: "Diaz", assignmentStr: ""), id: "appdev-1", modifiable: true, title: "App Dev", interactions: 0))
         
         return cell
     }
