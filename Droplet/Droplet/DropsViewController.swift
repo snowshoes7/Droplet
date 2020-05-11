@@ -126,6 +126,18 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Segue to assignments view for a specific dropper.
+        if (tallyDroppers()[indexPath.row].modifiable) {
+            GlobalVariables.clickedOnDropper = tallyDroppers()[indexPath.row]
+            let assignView = self.storyboard?.instantiateViewController(withIdentifier: "AssignmentsTableViewController") as! AssignmentsTableViewController
+            assignView.modalPresentationStyle = .fullScreen
+            self.present(assignView, animated: true, completion: nil)
+        } else {
+            //Do nothing
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
     }

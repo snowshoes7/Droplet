@@ -25,9 +25,14 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         checkForRemembered()
-        preLoadAllClasses()
-        sleep(2) //THIS SLEEP CALL IS NECESSARY. This is because FB retrievals happen asynchronously and since constructing Droppers relies on having all AcademicClasses retrieved, then we need to wait for FB to load on startup of the program and complete that before we can do anything else. Consequently this means the LaunchScreen will almost always be at least ~3 seconds long.
-        preLoadAllDroppers()
+        if !(GlobalVariables.retrievedYet) {
+            preLoadAllClasses()
+            sleep(2) //THIS SLEEP CALL IS NECESSARY. This is because FB retrievals happen asynchronously and since constructing Droppers relies on having all AcademicClasses retrieved, then we need to wait for FB to load on startup of the program and complete that before we can do anything else. Consequently this means the LaunchScreen will almost always be at least ~3 seconds long.
+            preLoadAllDroppers()
+            GlobalVariables.retrievedYet = true
+        } else {
+            print("we already have all that stuff")
+        }
     }
     
     override func viewDidLoad() {

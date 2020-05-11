@@ -17,6 +17,8 @@
 		4462FF0C23F4AE9B009A9F66 /* DropletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462FF0B23F4AE9B009A9F66 /* DropletTests.swift */; };
 		4462FF1723F4AE9B009A9F66 /* DropletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462FF1623F4AE9B009A9F66 /* DropletUITests.swift */; };
 		9C4EB6D490266577C2846B01 /* Pods_DropletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68429453C818A0FC35F7FE88 /* Pods_DropletTests.framework */; };
+		B02EF7FF2469B43E0013326F /* AssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02EF7FE2469B43E0013326F /* AssignmentTableViewCell.swift */; };
+		B02EF8032469ECA30013326F /* AssignmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02EF8022469ECA30013326F /* AssignmentsTableViewController.swift */; };
 		B0680E28242E57E200355450 /* Droplet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0680E26242E57E200355450 /* Droplet.xcdatamodeld */; };
 		B0680E2A242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
 		B0680E2B242E5A4F00355450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0680E29242E5A4F00355450 /* GoogleService-Info.plist */; };
@@ -72,6 +74,8 @@
 		68429453C818A0FC35F7FE88 /* Pods_DropletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DropletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A0390B6FE4CD3C569FE7A3 /* Pods-Droplet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Droplet.release.xcconfig"; path = "Target Support Files/Pods-Droplet/Pods-Droplet.release.xcconfig"; sourceTree = "<group>"; };
 		A485FAA5760E33708EAEB1C3 /* Pods_Droplet_DropletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Droplet_DropletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B02EF7FE2469B43E0013326F /* AssignmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewCell.swift; sourceTree = "<group>"; };
+		B02EF8022469ECA30013326F /* AssignmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsTableViewController.swift; sourceTree = "<group>"; };
 		B0680E27242E57E200355450 /* Droplet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Droplet.xcdatamodel; sourceTree = "<group>"; };
 		B0680E29242E5A4F00355450 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B07BC1FD2433FB7800C47198 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				4462FEF823F4AE9A009A9F66 /* ViewController.swift */,
 				B08861E0243709CC00711633 /* GlobalVariables.swift */,
 				4462FEFA23F4AE9A009A9F66 /* Main.storyboard */,
+				B02EF8022469ECA30013326F /* AssignmentsTableViewController.swift */,
+				B02EF7FE2469B43E0013326F /* AssignmentTableViewCell.swift */,
 				B0FE55602441657000D004A1 /* DropsTableViewCell.swift */,
 				B07BC1FD2433FB7800C47198 /* User.swift */,
 				B07BC1FF2433FB8B00C47198 /* Dropper.swift */,
@@ -457,8 +463,10 @@
 				B08861E1243709CC00711633 /* GlobalVariables.swift in Sources */,
 				B0680E28242E57E200355450 /* Droplet.xcdatamodeld in Sources */,
 				B07BC1FE2433FB7800C47198 /* User.swift in Sources */,
+				B02EF7FF2469B43E0013326F /* AssignmentTableViewCell.swift in Sources */,
 				B086A910242E7152006017DC /* DropsViewController.swift in Sources */,
 				B086A90E242E6D2C006017DC /* LoginViewController.swift in Sources */,
+				B02EF8032469ECA30013326F /* AssignmentsTableViewController.swift in Sources */,
 				4462FEF723F4AE9A009A9F66 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
