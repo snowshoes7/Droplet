@@ -162,6 +162,104 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func actionLogin(_ sender: Any) {
+        userLogin()
+    }
+    
+    @IBAction func actionTeacherLogin(_ sender: Any) {
+        //Same as above but segue to teacher views instead -- ensure they are actually a teacher before segue
+        teacherLogin()
+    }
+    
+    func teacherLogin() {
+        // Validate credentials with firebase
+        var name : String = ""
+        var password : String = ""
+        var isTeacher : Bool = false
+        var myClasses : String = ""
+        var email : String = ""
+        
+        var badCount : Int = 0
+        
+        db.collection("users").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("CRITICAL FIREBASE RETRIEVAL ERROR: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    name = document.get("username") as! String
+                    password = document.get("password") as! String
+                    isTeacher = document.get("isTeacher") as! Bool
+                    myClasses = document.get("classes") as! String
+                    email = document.get("email") as! String
+                    if (self.txtID.text == name && self.txtPassword.text == password) {
+                        if (isTeacher == true) {
+                            //Login successful, break and segue
+                            var newClasses : [AcademicClass] = []
+                            let myClassesSplit : [Substring] = myClasses.split(separator: ";")
+                            for x in myClassesSplit {
+                                for y in GlobalVariables.localAcademicClasses {
+                                    if (x == y.name) {
+                                        newClasses.append(y)
+                                    }
+                                }
+                            }
+                            GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password, email: email)
+                            print(GlobalVariables.loggedInUser!)
+                            // Set Remember Me
+                            if self.swtRemember.isOn {
+                                // Clear in case we already have a stored record
+                                self.clearRemembered()
+                                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+                                
+                                
+                                let entity = NSEntityDescription.entity(forEntityName: "StoredUser", in: context)
+                                
+                                let newEntity = NSManagedObject(entity: entity!, insertInto: context)
+                                
+                                newEntity.setValue(self.txtID.text, forKey: "username")
+                                newEntity.setValue(self.txtPassword.text, forKey: "password")
+                                
+                                
+                                do {
+                                    try context.save()
+                                    print("Stored the user", self.txtID.text!, ":", self.txtPassword.text!)
+                                } catch {
+                                    print("Encountered an error storing the user")
+                                }
+                            } else if !self.swtRemember.isOn {
+                                self.clearRemembered()
+                            }
+                            // Segue to Table View
+                            self.performSegue(withIdentifier: "Login", sender: nil)
+                            break
+                        } else {
+                             let alertController = UIAlertController(
+                                           title: "Student Account Detected",
+                                           message: "Use the normal login button instead for this account!",
+                                           preferredStyle: .alert
+                                       )
+                                       alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                       self.present(alertController, animated: true, completion: nil)
+                            break
+                        }
+                    } else {
+                        badCount += 1
+                        if (badCount) == querySnapshot!.documents.count {
+                            let alertController = UIAlertController(
+                                title: "Username or Password Incorrect",
+                                message: "This login information is incorrect and no such user exists in our database. Maybe you made a typo?",
+                                preferredStyle: .alert
+                            )
+                            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                        continue
+                    }
+                }
+            }
+        }
+    }
+    
+    func userLogin() {
         // Validate credentials with firebase
         var name : String = ""
         var password : String = ""
@@ -220,7 +318,7 @@ class LoginViewController: UIViewController {
                                 self.clearRemembered()
                             }
                             // Segue to Table View
-                            self.performSegue(withIdentifier: "Login", sender: sender)
+                            self.performSegue(withIdentifier: "TeacherLogin", sender: nil)
                             break
                         } else {
                              let alertController = UIAlertController(
@@ -248,9 +346,5 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    @IBAction func actionTeacherLogin(_ sender: Any) {
-        //Same as above but segue to teacher views instead -- ensure they are actually a teacher before segue
     }
 }
