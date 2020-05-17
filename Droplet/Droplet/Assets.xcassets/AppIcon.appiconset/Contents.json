@@ -1,109 +1,109 @@
 {
   "images" : [
     {
-      "filename" : "Icon-40.png",
+      "filename" : "Droplet-Icon-V2-iPhoneNotif@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "Icon-60.png",
+      "filename" : "Droplet-Icon-V2-iPhoneNotif@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "Icon-58.png",
+      "filename" : "Droplet-Icon-V2-iPhoneSettings@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Icon-87.png",
+      "filename" : "Droplet-Icon-V2-iPhoneSettings@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "Icon-80.png",
+      "filename" : "Droplet-Icon-V2-iPhoneSpotlight@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "Icon-120.png",
+      "filename" : "Droplet-Icon-V2-iPhoneSpotlight@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "Icon-121.png",
+      "filename" : "Droplet-Icon-V2-iPhoneApp@2x copy.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "Icon-180.png",
+      "filename" : "Droplet-Icon-V2-iPhoneApp@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "Icon-20.png",
+      "filename" : "Droplet-Icon-V2-iPadNotif@1x.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
-      "filename" : "Icon-41.png",
+      "filename" : "Droplet-Icon-V2-iPadNotif@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "Icon-29.png",
+      "filename" : "Droplet-Icon-V2-iPadSettings@1x.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "Icon-59.png",
+      "filename" : "Droplet-Icon-V2-iPadSettings@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Icon-42.png",
+      "filename" : "Droplet-Icon-V2-iPadSpotlight@1x.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "Icon-81.png",
+      "filename" : "Droplet-Icon-V2-iPadSpotlight@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "Icon-76.png",
+      "filename" : "Droplet-Icon-V2-iPadApp@1x.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "Icon-152.png",
+      "filename" : "Droplet-Icon-V2-iPadApp@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "Icon-167.png",
+      "filename" : "Droplet-Icon-V2-iPadPro@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "Icon-1024.png",
+      "filename" : "Droplet-Icon-V2-AppStore@1x.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

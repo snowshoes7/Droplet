@@ -25,11 +25,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-dw-bIp">
-                                <rect key="frame" x="82" y="82" width="250" height="176"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Droplet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNb-EY-7x2">
-                                <rect key="frame" x="63" y="267" width="289" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Droplet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNb-EY-7x2">
+                                <rect key="frame" x="63" y="206" width="288" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="mhJ-Ge-n5u"/>
                                 </constraints>
@@ -104,7 +101,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9N8-Ic-kJI" firstAttribute="top" secondItem="abb-Ek-0uD" secondAttribute="bottom" constant="46" id="1Aj-Ys-Ee4"/>
-                            <constraint firstItem="Xtd-Ee-ldW" firstAttribute="centerX" secondItem="Efl-dw-bIp" secondAttribute="centerX" id="4WQ-Rh-cfm"/>
                             <constraint firstItem="VSE-I2-WNl" firstAttribute="top" secondItem="REE-zQ-PC0" secondAttribute="bottom" constant="37" id="4XA-MM-dcw"/>
                             <constraint firstItem="WNb-EY-7x2" firstAttribute="leading" secondItem="abb-Ek-0uD" secondAttribute="leading" id="7EI-4U-8wx"/>
                             <constraint firstItem="VSE-I2-WNl" firstAttribute="leading" secondItem="jRo-zE-83K" secondAttribute="trailing" constant="6" id="7X2-lo-Bpp"/>
@@ -114,18 +110,16 @@
                             <constraint firstItem="abb-Ek-0uD" firstAttribute="leading" secondItem="9N8-Ic-kJI" secondAttribute="leading" id="Gd3-5s-xEe"/>
                             <constraint firstItem="REE-zQ-PC0" firstAttribute="centerX" secondItem="abb-Ek-0uD" secondAttribute="centerX" id="InS-CA-vQY"/>
                             <constraint firstAttribute="bottom" secondItem="Xtd-Ee-ldW" secondAttribute="bottom" id="Jme-sS-wZI"/>
-                            <constraint firstItem="WNb-EY-7x2" firstAttribute="top" secondItem="Efl-dw-bIp" secondAttribute="bottom" constant="9" id="ONb-wB-0Vl"/>
                             <constraint firstItem="yL5-rT-mKC" firstAttribute="leading" secondItem="9Ft-mV-65j" secondAttribute="leading" id="RVp-HB-kLR"/>
                             <constraint firstItem="dzh-tz-ecU" firstAttribute="bottom" secondItem="9N8-Ic-kJI" secondAttribute="bottom" constant="109" id="SuK-5G-Z68"/>
                             <constraint firstItem="WNb-EY-7x2" firstAttribute="centerX" secondItem="yL5-rT-mKC" secondAttribute="centerX" id="W8L-oJ-4ao"/>
                             <constraint firstItem="fdg-0r-9Az" firstAttribute="leading" secondItem="4HX-IJ-BOj" secondAttribute="leadingMargin" id="Z3y-SS-qOK"/>
-                            <constraint firstItem="fdg-0r-9Az" firstAttribute="top" secondItem="WNb-EY-7x2" secondAttribute="bottom" constant="59" id="ZxO-Rm-6i4"/>
+                            <constraint firstItem="fdg-0r-9Az" firstAttribute="top" secondItem="WNb-EY-7x2" secondAttribute="bottom" constant="120" id="ZxO-Rm-6i4"/>
                             <constraint firstItem="fdg-0r-9Az" firstAttribute="leading" secondItem="yL5-rT-mKC" secondAttribute="leading" id="ecA-6f-nRl"/>
                             <constraint firstItem="9Ft-mV-65j" firstAttribute="top" secondItem="yL5-rT-mKC" secondAttribute="bottom" constant="34" id="fZt-pD-4IM"/>
                             <constraint firstItem="yL5-rT-mKC" firstAttribute="top" secondItem="fdg-0r-9Az" secondAttribute="bottom" constant="8" symbolic="YES" id="hGr-nj-yho"/>
-                            <constraint firstItem="Efl-dw-bIp" firstAttribute="centerX" secondItem="WNb-EY-7x2" secondAttribute="centerX" id="jSO-TU-gCe"/>
-                            <constraint firstItem="Efl-dw-bIp" firstAttribute="top" secondItem="dzh-tz-ecU" secondAttribute="top" constant="38" id="m6V-4d-D4T"/>
                             <constraint firstItem="REE-zQ-PC0" firstAttribute="top" secondItem="9Ft-mV-65j" secondAttribute="bottom" constant="8" symbolic="YES" id="mf5-Vh-DGL"/>
+                            <constraint firstItem="WNb-EY-7x2" firstAttribute="centerX" secondItem="4HX-IJ-BOj" secondAttribute="centerX" id="mnQ-UU-g5m"/>
                             <constraint firstItem="9Ft-mV-65j" firstAttribute="leading" secondItem="REE-zQ-PC0" secondAttribute="leading" id="qIU-EU-6L5"/>
                             <constraint firstItem="abb-Ek-0uD" firstAttribute="top" secondItem="jRo-zE-83K" secondAttribute="bottom" constant="36" id="rUs-HS-prP"/>
                             <constraint firstItem="Xtd-Ee-ldW" firstAttribute="top" secondItem="4HX-IJ-BOj" secondAttribute="top" id="tga-hM-6IV"/>
@@ -794,9 +788,8 @@ Cg
         <segue reference="PO7-oX-UEP"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Logo" width="250" height="250"/>
         <image name="badge.plus.radiowaves.right" catalog="system" width="128" height="101"/>
-        <image name="drop-bg" width="789.5" height="783"/>
+        <image name="drop-bg" width="250" height="400"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="ripple-bg" width="1211.5" height="346.5"/>
         <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
