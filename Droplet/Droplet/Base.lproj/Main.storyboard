@@ -252,7 +252,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="badge.plus.radiowaves.right" catalog="system"/>
                                 <connections>
-                                    <action selector="actionScan:" destination="vaG-Qu-DVW" eventType="touchUpInside" id="LCA-qF-7ob"/>
+                                    <action selector="actionAdd:" destination="vaG-Qu-DVW" eventType="touchUpInside" id="m4M-mD-ffj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Drops" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zi-Wg-SRI">

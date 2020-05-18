@@ -98,11 +98,26 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
             } else {
                 let document = querySnapshot!.documents.first
                 document!.reference.updateData([
-                    "class": GlobalVariables.localDroppers[id].associatedClass?.name,
+                    "class": (GlobalVariables.localDroppers[id].associatedClass?.name)!,
                     "id": GlobalVariables.localDroppers[id].id,
                     "interactions": GlobalVariables.localDroppers[id].interactions,
                     "modifiable": GlobalVariables.localDroppers[id].modifiable,
                     "title": GlobalVariables.localDroppers[id].title
+                ])
+            }
+        }
+    }
+    
+    func saveUser(newClassStr: String) {
+        db.collection("users")
+            .whereField("username", isEqualTo: (GlobalVariables.loggedInUser?.username)!)
+        .getDocuments() { (querySnapshot, err) in
+            if err != nil {
+                print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+            } else {
+                let document = querySnapshot!.documents.first
+                document!.reference.updateData([
+                    "classes": newClassStr
                 ])
             }
         }
@@ -180,6 +195,46 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Leave Class"
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let alertController = UIAlertController(
+            title: "Are you sure?",
+            message: "Do you really want to leave the class \((tallyDroppers()[indexPath.row].associatedClass?.name)!)?",
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
+            var x : Int = 0
+            while x < (GlobalVariables.loggedInUser?.myClasses.count)! {
+                if (GlobalVariables.localAcademicClasses[x].name == GlobalVariables.loggedInUser?.myClasses[x].name) {
+                    GlobalVariables.loggedInUser?.myClasses.remove(at: x)
+                    break
+                } else {
+                    x += 1
+                }
+            }
+
+            var newStringOfClasses : String = ""
+            var y : Int = 0
+            while y < (GlobalVariables.loggedInUser?.myClasses.count)! {
+                newStringOfClasses.append("\((GlobalVariables.loggedInUser?.myClasses[y].name)!);")
+                y += 1
+            }
+
+            self.saveUser(newClassStr: newStringOfClasses)
+            tableView.reloadData()
+        }))
+        alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
