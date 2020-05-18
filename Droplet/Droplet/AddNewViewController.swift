@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddNewViewController: UIViewController {
     
@@ -30,6 +31,83 @@ class AddNewViewController: UIViewController {
     
     var setClass : AcademicClass? = nil
     var setFileType : String? = nil
+    
+    let db = Firestore.firestore()
+    
+    func preLoadAllDroppers() {
+        print("FB dropper retrieval initiated...")
+        GlobalVariables.localDroppers = []
+        
+        //Get droppers from Firebase
+        var remoteid : String = ""
+        var remoteassociatedClassName : String = ""
+        var remotetitle : String = ""
+        var remotemodifiable : Bool = false
+        var remoteinteractions : Int = 0
+
+        db.collection("droppers").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("CRITICAL FIREBASE RETRIEVAL ERROR: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    remotetitle = document.get("title") as! String
+                    remoteid = document.get("id") as! String
+                    remotemodifiable = document.get("modifiable") as! Bool
+                    remoteassociatedClassName = document.get("class") as! String
+                    remoteinteractions = document.get("interactions") as! Int
+                    
+                    print("\(remoteassociatedClassName) is the class name we are looking for...")
+                    
+                    var toAddAcademicClass : AcademicClass? = nil
+                    
+                    for x in GlobalVariables.localAcademicClasses {
+                        if (x.name == remoteassociatedClassName) {
+                            toAddAcademicClass = x
+                            break
+                        }
+                    }
+                    
+                    GlobalVariables.localDroppers.append(Dropper(associatedClass: toAddAcademicClass!, id: remoteid, modifiable: remotemodifiable, title: remotetitle, interactions: remoteinteractions))
+                }
+            }
+        }
+    }
+    
+    func preLoadAllClasses() {
+        print("FB class retrieval initiated...")
+        GlobalVariables.localAcademicClasses = []
+        
+        //Get classes from Firebase
+        var remoteurl : String = ""
+        var remotedroppers : String = ""
+        var remotename : String = ""
+        var remoteteacher : String = ""
+        var remoteassignstr : String = ""
+        
+        db.collection("classes").getDocuments() { (querySnapshot, errr) in
+            if let errr = errr {
+                print("CRITICAL FIREBASE RETRIEVAL ERROR: \(errr)")
+            } else {
+                for document in querySnapshot!.documents {
+                    remotename = document.get("name") as! String
+                    remoteurl = document.get("assignmentURL") as! String
+                    remoteteacher = document.get("teacher") as! String
+                    remotedroppers = document.get("droppers") as! String
+                    remoteassignstr = document.get("assignmentStr") as! String
+                    
+                    var toAddDroppers : [String] = []
+                    
+                    for x in remotedroppers.split(separator: ";") {
+                        toAddDroppers.append(String(x))
+                    }
+                    
+                    print("\(remotename) is the name detected")
+                    
+                    GlobalVariables.localAcademicClasses.append(AcademicClass(url: remoteurl, droppers: toAddDroppers, name: remotename, teacher: remoteteacher, assignmentStr: remoteassignstr))
+                }
+            }
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         setClass = nil
@@ -121,13 +199,107 @@ class AddNewViewController: UIViewController {
     }
 
     @IBAction func addAction(_ sender: Any) {
-        if (GlobalVariables.addMode == "Class") {
+        let myAlert = UIAlertController(title: "Please wait...", message: "Updating data...", preferredStyle: .alert)
+        
+        let load: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 35, y: 15, width: 50, height: 50)) as UIActivityIndicatorView
+        load.hidesWhenStopped = true
+        load.style = UIActivityIndicatorView.Style.medium
+        load.startAnimating()
+
+        myAlert.view.addSubview(load)
+        
+        self.present(myAlert, animated: true, completion: {
+            if (GlobalVariables.addMode == "Class") {
+                self.db.collection("classes").addDocument(data: [
+                    "assignmentStr": "",
+                    "assignmentURL": self.txtURL.text!,
+                    "droppers": "",
+                    "name": self.txtName.text!,
+                    "teacher": (GlobalVariables.loggedInUser?.username)!
+                ])
+            } else if (GlobalVariables.addMode == "Dropper") {
+                var setVal : Bool = true
+                
+                if (self.swtModifiable.isOn) {
+                    setVal = true
+                } else {
+                    setVal = false
+                }
+                
+                self.db.collection("droppers").addDocument(data: [
+                    "class": (self.setClass?.name)!,
+                    "id": self.txtID.text!,
+                    "interactions": 0,
+                    "modifiable": setVal,
+                    "title": self.txtName.text!
+                ])
+                self.setClass?.droppers.append(self.txtID.text!)
+                var newDropStr : String = ""
+                for x in self.setClass!.droppers {
+                    newDropStr.append(x)
+                }
+                self.db.collection("classes")
+                    .whereField("name", isEqualTo: (self.setClass?.name)!)
+                .getDocuments() { (querySnapshot, err) in
+                    if err != nil {
+                        print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                    } else {
+                        let document = querySnapshot!.documents.first
+                        document!.reference.updateData([
+                            "droppers": newDropStr
+                        ])
+                    }
+                }
+            } else if (GlobalVariables.addMode == "Assignment") {
+                
+                let now = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "d MMM"
+                let dateString = dateFormatter.string(from: now)
+                print(dateString)
+                
+                var thisAssignmentStr : String = ""
+                thisAssignmentStr.append("\((self.txtName.text!)),")
+                thisAssignmentStr.append("\((self.txtDesc.text!)),")
+                thisAssignmentStr.append("\((self.setFileType!)),")
+                thisAssignmentStr.append("\((dateString)),")
+                thisAssignmentStr.append("\((self.txtFile.text!));")
+                
+                self.setClass?.assignmentStr.append(thisAssignmentStr)
+                let newStr : String = self.setClass!.assignmentStr
+                
+                self.db.collection("classes")
+                    .whereField("name", isEqualTo: (self.setClass?.name)!)
+                .getDocuments() { (querySnapshot, err) in
+                    if err != nil {
+                        print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                    } else {
+                        let document = querySnapshot!.documents.first
+                        document!.reference.updateData([
+                            "assignmentStr": newStr
+                        ])
+                    }
+                }
+            }
             
-        } else if (GlobalVariables.addMode == "Dropper") {
-            
-        } else if (GlobalVariables.addMode == "Assignment") {
-            
-        }
+            self.preLoadAllClasses()
+            sleep(2) //THIS SLEEP CALL IS NECESSARY. This is because FB retrievals happen asynchronously and since constructing Droppers relies on having all AcademicClasses retrieved, then we need to wait for FB to load on startup of the program and complete that before we can do anything else. Consequently this means the LaunchScreen will almost always be at least ~3 seconds long.
+            self.preLoadAllDroppers()
+            self.dismiss(animated: false, completion: {
+                if self.presentedViewController == nil {
+                    let backView = self.storyboard?.instantiateViewController(withIdentifier: "DropsTeacherViewController") as! DropsTeacherViewController
+                    backView.modalPresentationStyle = .fullScreen
+                    backView.modalTransitionStyle = .flipHorizontal
+                    self.present(backView, animated: true)
+                } else {
+                    self.dismiss(animated: false, completion: nil)
+                    let backView = self.storyboard?.instantiateViewController(withIdentifier: "DropsTeacherViewController") as! DropsTeacherViewController
+                    backView.modalPresentationStyle = .fullScreen
+                    backView.modalTransitionStyle = .flipHorizontal
+                    self.present(backView, animated: true)
+                }
+            })
+        })
     }
     
     @IBAction func actionPickFileType(_ sender: Any) {

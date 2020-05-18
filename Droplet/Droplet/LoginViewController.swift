@@ -74,6 +74,7 @@ class LoginViewController: UIViewController {
     
     func preLoadAllDroppers() {
         print("FB dropper retrieval initiated...")
+        GlobalVariables.localDroppers = []
         
         //Get droppers from Firebase
         var remoteid : String = ""
@@ -112,6 +113,7 @@ class LoginViewController: UIViewController {
     
     func preLoadAllClasses() {
         print("FB class retrieval initiated...")
+        GlobalVariables.localAcademicClasses = []
         
         //Get classes from Firebase
         var remoteurl : String = ""
