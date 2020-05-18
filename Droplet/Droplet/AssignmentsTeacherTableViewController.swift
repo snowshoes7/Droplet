@@ -134,6 +134,26 @@ class AssignmentsTeacherTableViewController: UITableViewController {
                         }
                     }
                     
+                    var b : Int = 0
+                    for x in GlobalVariables.localAcademicClasses {
+                        if (x.name == (GlobalVariables.clickedOnDropper?.associatedClass?.name)!) {
+                            GlobalVariables.localAcademicClasses[b].assignmentStr = concatArray
+                            break
+                        }
+                        b += 1
+                    }
+                    
+                    var g : Int = 0
+                    for m in GlobalVariables.localDroppers {
+                        //var newClass : AcademicClass = AcademicClass(url: "", droppers: [], name: "ERROR", teacher: "", assignmentStr: "")
+                        for n in GlobalVariables.localAcademicClasses {
+                            if (m.associatedClass!.name == n.name) {
+                                GlobalVariables.localDroppers[g].associatedClass = n
+                            }
+                        }
+                        g += 1
+                    }
+                    
                     tableView.reloadData()
                     
                     let backView = self.storyboard?.instantiateViewController(withIdentifier: "DropsTeacherViewController") as! DropsTeacherViewController

@@ -135,6 +135,17 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
         var allOfMyDroppers : [Dropper] = []
         
         if !(GlobalVariables.loggedInUser == nil) {
+            
+            for a in GlobalVariables.localAcademicClasses {
+                var c : Int = 0
+                for b in GlobalVariables.loggedInUser!.myClasses {
+                    if (a.name == b.name) {
+                        GlobalVariables.loggedInUser?.myClasses[c] = a
+                    }
+                    c += 1
+                }
+            }
+            
             for x in GlobalVariables.loggedInUser!.myClasses {
                 for y in x.droppers {
                     for z in GlobalVariables.localDroppers {

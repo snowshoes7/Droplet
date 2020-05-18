@@ -24,9 +24,9 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        print(GlobalVariables.loggedInUser?.myClasses)
-//        print(GlobalVariables.localAcademicClasses)
-//        print(GlobalVariables.localDroppers)
+        print(GlobalVariables.loggedInUser?.myClasses)
+        print(GlobalVariables.localAcademicClasses)
+        print(GlobalVariables.localDroppers)
         
         outletTableView.dataSource = self
         outletTableView.delegate = self
