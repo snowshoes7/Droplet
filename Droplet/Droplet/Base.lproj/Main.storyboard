@@ -152,7 +152,7 @@
         <!--Drops Teacher View Controller-->
         <scene sceneID="kwt-Q9-kRA">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="vaG-Qu-DVW" customClass="DropsTeacherViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="DropsTeacherViewController" storyboardIdentifier="DropsTeacherViewController" modalPresentationStyle="fullScreen" id="vaG-Qu-DVW" customClass="DropsTeacherViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c1s-m2-IW2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,7 +162,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DropCell" rowHeight="80" id="HL8-cd-WNR" customClass="DropsTableViewCell" customModule="Droplet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DropCell" rowHeight="80" id="HL8-cd-WNR" customClass="DropsTeacherTableViewCell" customModule="Droplet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HL8-cd-WNR" id="Jfc-23-chU">
@@ -170,14 +170,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0e-qH-NdC">
-                                                    <rect key="frame" x="20" y="13" width="61" height="20"/>
+                                                    <rect key="frame" x="20" y="13" width="238" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzR-Zg-suC">
-                                                    <rect key="frame" x="277" y="12" width="98" height="18"/>
+                                                    <rect key="frame" x="256" y="12" width="119" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,8 +192,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblFileDetails" destination="kvd-jA-K2D" id="3gw-ga-RHx"/>
+                                            <outlet property="lblTeacher" destination="xzR-Zg-suC" id="cyl-3P-WT0"/>
+                                            <outlet property="lblTitle" destination="W0e-qH-NdC" id="BUq-Sx-907"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="DropCellCheckIn" rowHeight="80" id="7lg-3J-qie">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="DropCellCheckIn" rowHeight="80" id="7lg-3J-qie" customClass="DropsTeacherTableViewCell" customModule="Droplet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="135.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lg-3J-qie" id="c2x-Bc-JEH">
@@ -201,14 +206,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSq-7y-ZUM">
-                                                    <rect key="frame" x="20" y="13" width="61" height="20"/>
+                                                    <rect key="frame" x="20" y="13" width="238" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxy-Q6-9ob">
-                                                    <rect key="frame" x="272" y="12" width="98" height="18"/>
+                                                    <rect key="frame" x="249" y="12" width="121" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -223,6 +228,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblFileDetailsCheckIn" destination="UoL-fN-0SJ" id="xBs-EI-bnz"/>
+                                            <outlet property="lblTeacherCheckIn" destination="Yxy-Q6-9ob" id="gHe-KP-kTQ"/>
+                                            <outlet property="lblTitleCheckIn" destination="DSq-7y-ZUM" id="l8Z-e0-d0Z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -265,6 +275,7 @@
                     <navigationItem key="navigationItem" id="5iI-T3-V7N"/>
                     <connections>
                         <outlet property="btnSettings" destination="3CZ-rM-8k0" id="I3G-ye-84Z"/>
+                        <outlet property="outletTableView" destination="zSW-sS-kjr" id="7nv-Qc-DVh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUE-go-0Wx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -787,9 +798,106 @@ Cg
             </objects>
             <point key="canvasLocation" x="2498.5507246376815" y="103.79464285714285"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nsb-9s-CNn">
+            <objects>
+                <navigationController restorationIdentifier="AssignmentsTeacherTableViewControllerLead" storyboardIdentifier="AssignmentsTeacherTableViewControllerLead" id="QpJ-ll-fAF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JkL-MT-9jP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XAR-J5-xEL" kind="relationship" relationship="rootViewController" id="yva-hG-Luj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAq-Am-d4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="-581"/>
+        </scene>
+        <!--Assignments Teacher View Controller-->
+        <scene sceneID="J08-M5-7zq">
+            <objects>
+                <tableViewController restorationIdentifier="AssignmentsTableViewController" storyboardIdentifier="AssignmentsTeacherTableViewController" title="Assignments Teacher View Controller" id="XAR-J5-xEL" customClass="AssignmentsTeacherTableViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tsa-eb-bQ6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9f1-fF-F7w">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Open Class Webpage"/>
+                            <connections>
+                                <action selector="actionOpenClassPage:" destination="XAR-J5-xEL" eventType="touchUpInside" id="Koo-Y9-M9l"/>
+                            </connections>
+                        </button>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AssignCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AssignCell" rowHeight="80" id="kfy-6H-x5U" customClass="AssignmentTeacherTableViewCell" customModule="Droplet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kfy-6H-x5U" id="0x3-vx-hPu">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dmv-xU-bGe">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYF-Nk-3JI">
+                                            <rect key="frame" x="108" y="13" width="181" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1V-Jb-bgc">
+                                            <rect key="frame" x="108" y="35" width="355" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzT-Ao-4OY">
+                                            <rect key="frame" x="297" y="15" width="86" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imgFile" destination="Dmv-xU-bGe" id="0e1-ip-lDD"/>
+                                    <outlet property="lblFileDetails" destination="S1V-Jb-bgc" id="QoA-8p-cyJ"/>
+                                    <outlet property="lblTime" destination="NzT-Ao-4OY" id="KYh-Ak-1GQ"/>
+                                    <outlet property="lblTitle" destination="NYF-Nk-3JI" id="vI0-Lc-uX2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XAR-J5-xEL" id="xNO-ob-1vk"/>
+                            <outlet property="delegate" destination="XAR-J5-xEL" id="cZI-yK-17z"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Assignments View Controller" id="gxJ-kO-eRu">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="2zw-G3-cHD"/>
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="DsL-0z-s9I">
+                            <connections>
+                                <action selector="actionBack:" destination="XAR-J5-xEL" id="TFz-li-ird"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="titleBar" destination="gxJ-kO-eRu" id="MOK-0b-LKq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bc1-92-nkx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="-581"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PO7-oX-UEP"/>
+        <segue reference="SrX-x8-0d5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="badge.plus.radiowaves.right" catalog="system" width="128" height="101"/>

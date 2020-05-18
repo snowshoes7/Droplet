@@ -8,12 +8,15 @@
 
 import UIKit
 import CoreNFC
+import Firebase
 
 class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     //let reuseIdentifier = "reuseIdentifier"
     var detectedMessages = [NFCNDEFMessage]()
     var session: NFCNDEFReaderSession?
+    
+    let db = Firestore.firestore()
     
     @IBOutlet weak var btnSettings: UIButton!
     @IBOutlet weak var outletTableView: UITableView!
@@ -85,6 +88,25 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
             }
         }
     }
+    
+    func saveLocalDropperToFirebase(id: Int) {
+        db.collection("droppers")
+            .whereField("id", isEqualTo: GlobalVariables.localDroppers[id].id)
+        .getDocuments() { (querySnapshot, err) in
+            if err != nil {
+                print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+            } else {
+                let document = querySnapshot!.documents.first
+                document!.reference.updateData([
+                    "class": GlobalVariables.localDroppers[id].associatedClass?.name,
+                    "id": GlobalVariables.localDroppers[id].id,
+                    "interactions": GlobalVariables.localDroppers[id].interactions,
+                    "modifiable": GlobalVariables.localDroppers[id].modifiable,
+                    "title": GlobalVariables.localDroppers[id].title
+                ])
+            }
+        }
+    }
 }
 
 extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -127,6 +149,19 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Add to interactions count for dropper selected.
+        var dropperToBeChanged : Dropper = tallyDroppers()[indexPath.row]
+        dropperToBeChanged.interactions += 1
+        var i : Int = 0
+        for x in GlobalVariables.localDroppers {
+            if (x.id == dropperToBeChanged.id) {
+                GlobalVariables.localDroppers[i] = dropperToBeChanged
+                break
+            } else {
+                i += 1
+            }
+        }
+        saveLocalDropperToFirebase(id: i)
         //Segue to assignments view for a specific dropper.
         if (tallyDroppers()[indexPath.row].modifiable) {
             GlobalVariables.clickedOnDropper = tallyDroppers()[indexPath.row]

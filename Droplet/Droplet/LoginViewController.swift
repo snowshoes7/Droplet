@@ -262,7 +262,7 @@ class LoginViewController: UIViewController {
                                 self.clearRemembered()
                             }
                             // Segue to Table View
-                            self.performSegue(withIdentifier: "Login", sender: nil)
+                            self.performSegue(withIdentifier: "LoginTeacher", sender: nil)
                             break
                         } else {
                              let alertController = UIAlertController(
@@ -351,7 +351,7 @@ class LoginViewController: UIViewController {
                                 self.clearRemembered()
                             }
                             // Segue to Table View
-                            self.performSegue(withIdentifier: "TeacherLogin", sender: nil)
+                            self.performSegue(withIdentifier: "Login", sender: nil)
                             break
                         } else {
                              let alertController = UIAlertController(
