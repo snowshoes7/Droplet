@@ -99,8 +99,9 @@ class SettingsViewController: UIViewController {
         //TODO clear all user-related Global Variables here, such as:
         GlobalVariables.loggedInUser = nil
         
-        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(loginView, animated: true, completion: nil)
+        //let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        //self.present(loginView, animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     func clearRemembered() {

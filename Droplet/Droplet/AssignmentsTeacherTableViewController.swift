@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Firebase
 
 class AssignmentsTeacherTableViewController: UITableViewController {
 
     @IBOutlet weak var titleBar: UINavigationItem!
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +81,68 @@ class AssignmentsTeacherTableViewController: UITableViewController {
         }
         let toGoURL = URL(string: String(assignArray[indexPath.row].split(separator: ",")[4]))!
         UIApplication.shared.open(toGoURL, options: [:], completionHandler: nil)
+    }
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Delete Assignment"
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        var assignArray : [String] = []
+        
+        for x in (GlobalVariables.clickedOnDropper?.associatedClass?.assignmentStr.split(separator: ";"))! {
+            assignArray.append(String(x))
+        }
+        
+        let alertController = UIAlertController(
+            title: "Are you sure?",
+            message: "Do you really want to delete the assignment \(assignArray[indexPath.row].split(separator: ",")[0])?",
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
+            
+            let myAlert = UIAlertController(title: "Please wait...", message: "Updating data...", preferredStyle: .alert)
+            
+            let load: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 35, y: 15, width: 50, height: 50)) as UIActivityIndicatorView
+            load.hidesWhenStopped = true
+            load.style = UIActivityIndicatorView.Style.medium
+            load.startAnimating()
+
+            myAlert.view.addSubview(load)
+            
+            self.present(myAlert, animated: true, completion: {
+                self.dismiss(animated: false, completion: {
+                    assignArray.remove(at: indexPath.row)
+                    var concatArray : String = ""
+                    for x in assignArray {
+                        concatArray.append("\(x);")
+                    }
+                    
+                    self.db.collection("classes")
+                        .whereField("name", isEqualTo: (GlobalVariables.clickedOnDropper?.associatedClass?.name)!)
+                    .getDocuments() { (querySnapshot, err) in
+                        if err != nil {
+                            print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document!.reference.updateData([
+                                "assignmentStr": concatArray
+                            ])
+                        }
+                    }
+                    
+                    tableView.reloadData()
+                    
+                    let backView = self.storyboard?.instantiateViewController(withIdentifier: "DropsTeacherViewController") as! DropsTeacherViewController
+                    backView.modalPresentationStyle = .fullScreen
+                    backView.modalTransitionStyle = .flipHorizontal
+                    self.present(backView, animated: true)
+                })
+            })
+        }))
+        alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
