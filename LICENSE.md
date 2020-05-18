@@ -1,1 +1,1 @@
-© 2020 Droplet Team (Owen Thompson and Colin Saumure). Reproducing this program, in full or in part, without the express written or spoken permission of one or more of the authors is a violation of copyright laws.
+© 2020 Droplet Team (Owen Thompson and Colin Saumure). Reproducing this program, in full or in part, without the express written or spoken permission of one or more of the authors is a violation of applicable copyright laws.
