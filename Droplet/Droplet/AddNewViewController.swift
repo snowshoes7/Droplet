@@ -25,6 +25,8 @@ class AddNewViewController: UIViewController {
     @IBOutlet weak var lblDesc: UILabel!
     @IBOutlet weak var txtDesc: UITextField!
     @IBOutlet weak var btnFileType: UIButton!
+    @IBOutlet weak var lblLinkToFile: UILabel!
+    @IBOutlet weak var txtFile: UITextField!
     
     var setClass : AcademicClass? = nil
     var setFileType : String? = nil
@@ -44,6 +46,8 @@ class AddNewViewController: UIViewController {
             
             btnPickClass.isHidden = true
             
+            btnFileType.isHidden = true
+            
             lblDropID.isHidden = true
             txtID.isHidden = true
             btnInfoID.isHidden = true
@@ -53,6 +57,9 @@ class AddNewViewController: UIViewController {
             
             lblDesc.isHidden = true
             txtDesc.isHidden = true
+            
+            lblLinkToFile.isHidden = true
+            txtFile.isHidden = true
         } else if (GlobalVariables.addMode == "Dropper") {
             navTitle.title = "Add New Dropper"
             lblClassWarning.isHidden = true
@@ -64,6 +71,8 @@ class AddNewViewController: UIViewController {
             
             btnPickClass.isHidden = false
             
+            btnFileType.isHidden = true
+            
             lblDropID.isHidden = false
             txtID.isHidden = false
             btnInfoID.isHidden = false
@@ -73,16 +82,21 @@ class AddNewViewController: UIViewController {
             
             lblDesc.isHidden = true
             txtDesc.isHidden = true
+            
+            lblLinkToFile.isHidden = true
+            txtFile.isHidden = true
         } else if (GlobalVariables.addMode == "Assignment") {
             navTitle.title = "Add New Assignment"
             lblClassWarning.isHidden = true
             
-            lblName.isHidden = true
-            txtName.isHidden = true
+            lblName.isHidden = false
+            txtName.isHidden = false
             lblURL.isHidden = true
             txtURL.isHidden = true
             
             btnPickClass.isHidden = false
+            
+            btnFileType.isHidden = false
             
             lblDropID.isHidden = true
             txtID.isHidden = true
@@ -93,6 +107,9 @@ class AddNewViewController: UIViewController {
             
             lblDesc.isHidden = false
             txtDesc.isHidden = false
+            
+            lblLinkToFile.isHidden = false
+            txtFile.isHidden = false
         } else {
             print("ERROR - GlobalVariables.addMode is not properly defined.")
         }
@@ -114,28 +131,27 @@ class AddNewViewController: UIViewController {
     }
     
     @IBAction func actionPickFileType(_ sender: Any) {
-        let pickAlert = UIAlertController(title: "Choose A Class", message: nil, preferredStyle: .actionSheet)
-        pickAlert.modalPresentationStyle = .formSheet
-        pickAlert.addAction(UIAlertAction(title: ".docx", style: .default, handler: { (action: UIAlertAction!) in
+        let pickAlert2 = UIAlertController(title: "Choose A File Type", message: nil, preferredStyle: .actionSheet)
+        pickAlert2.addAction(UIAlertAction(title: ".docx", style: .default, handler: { (action: UIAlertAction!) in
             self.setFileType = "docx"
         }))
-        pickAlert.addAction(UIAlertAction(title: ".jpeg", style: .default, handler: { (action: UIAlertAction!) in
+        pickAlert2.addAction(UIAlertAction(title: ".jpeg", style: .default, handler: { (action: UIAlertAction!) in
             self.setFileType = "jpeg"
         }))
-        pickAlert.addAction(UIAlertAction(title: ".jpg", style: .default, handler: { (action: UIAlertAction!) in
+        pickAlert2.addAction(UIAlertAction(title: ".jpg", style: .default, handler: { (action: UIAlertAction!) in
             self.setFileType = "jpg"
         }))
-        pickAlert.addAction(UIAlertAction(title: ".png", style: .default, handler: { (action: UIAlertAction!) in
+        pickAlert2.addAction(UIAlertAction(title: ".png", style: .default, handler: { (action: UIAlertAction!) in
             self.setFileType = "png"
         }))
-        pickAlert.addAction(UIAlertAction(title: ".pdf", style: .default, handler: { (action: UIAlertAction!) in
+        pickAlert2.addAction(UIAlertAction(title: ".pdf", style: .default, handler: { (action: UIAlertAction!) in
             self.setFileType = "pdf"
         }))
-        pickAlert.addAction(UIAlertAction(title: "Other...", style: .default, handler: { (action: UIAlertAction!) in
+        pickAlert2.addAction(UIAlertAction(title: "Other", style: .default, handler: { (action: UIAlertAction!) in
             self.setFileType = "code"
         }))
-        pickAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(pickAlert, animated: true, completion: nil)
+        pickAlert2.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(pickAlert2, animated: true, completion: nil)
     }
     
     @IBAction func actionBack(_ sender: Any) {
@@ -148,11 +164,11 @@ class AddNewViewController: UIViewController {
     @IBAction func actionInfo(_ sender: Any) {
         let infoAlert = UIAlertController(title: "Information", message: "This can be anything you want. It's a unique ID that will be associated with this Dropper. If you leave this blank, then a random one will be used.", preferredStyle: .alert)
         infoAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(infoAlert, animated: true, completion: nil)
     }
     
     @IBAction func actionPickClass(_ sender: Any) {
         let pickAlert = UIAlertController(title: "Choose A Class", message: nil, preferredStyle: .actionSheet)
-        pickAlert.modalPresentationStyle = .formSheet
         for x in (GlobalVariables.loggedInUser?.myClasses)! {
             let p = UIAlertAction(title: x.name, style: .default, handler: { (action: UIAlertAction!) in
                 self.setClass = x
