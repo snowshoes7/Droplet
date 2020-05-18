@@ -209,7 +209,7 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let alertController = UIAlertController(
             title: "Are you sure?",
-            message: "Do you really want to leave the class \((tallyDroppers()[indexPath.row].associatedClass?.name)!)?",
+            message: "Do you really want to leave the class \((tallyDroppers()[indexPath.row].associatedClass?.name)!)? This will remove all of the Droppers associated with that class.",
             preferredStyle: .alert
         )
         alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
