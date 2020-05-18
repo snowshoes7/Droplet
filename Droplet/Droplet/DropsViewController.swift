@@ -149,6 +149,8 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        GlobalVariables.clickedOnDropper = tallyDroppers()[indexPath.row]
+        
         //Add to interactions count for dropper selected.
         var dropperToBeChanged : Dropper = tallyDroppers()[indexPath.row]
         dropperToBeChanged.interactions += 1
@@ -164,13 +166,19 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
         saveLocalDropperToFirebase(id: i)
         //Segue to assignments view for a specific dropper.
         if (tallyDroppers()[indexPath.row].modifiable) {
-            GlobalVariables.clickedOnDropper = tallyDroppers()[indexPath.row]
             let assignView = self.storyboard?.instantiateViewController(withIdentifier: "AssignmentsTableViewControllerLead") as! UINavigationController
             assignView.modalPresentationStyle = .fullScreen
             assignView.modalTransitionStyle = .flipHorizontal
             self.present(assignView, animated: true, completion: nil)
         } else {
-            //Do nothing
+            //Do not show an assignment view. Instead show alert about incrementing check-in count.
+            let alertController = UIAlertController(
+                title: "Checked In Successfully",
+                message: "You checked in to the Dropper \((GlobalVariables.clickedOnDropper?.title)!) for class \((GlobalVariables.clickedOnDropper?.associatedClass?.name)!).",
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
