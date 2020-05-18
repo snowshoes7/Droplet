@@ -309,15 +309,51 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle-bg-2" translatesAutoresizingMaskIntoConstraints="NO" id="3my-1Y-M3f">
                                 <rect key="frame" x="0.0" y="88" width="414" height="764"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class URL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qG9-g5-3M9">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2t-ti-1zd">
+                                <rect key="frame" x="63" y="216" width="288" height="27"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="5NE-zG-drc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                <state key="normal" title="Pick Class..."/>
+                                <connections>
+                                    <action selector="actionPickClass:" destination="JRL-71-yEx" eventType="touchUpInside" id="UhO-qH-mb0"/>
+                                    <action selector="actionTeacherLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P0z-8M-4bb"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class URL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qG9-g5-3M9">
                                 <rect key="frame" x="20" y="192" width="170" height="26"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="NFj-PL-C0W"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TsF-sU-0vf">
-                                <rect key="frame" x="20" y="226" width="374" height="34"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nt-U8-BLn">
+                                <rect key="frame" x="20" y="525" width="374" height="227"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="227" id="OeW-iy-dfD"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Warning:
+This class will have no droppers associated to it at first.
+You will need to create some and add them to this class later.</string>
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="26" name="Courier-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TsF-sU-0vf">
+                                <rect key="frame" x="20" y="226" width="374" height="33"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -329,11 +365,48 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rD-cBQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7v-Ff-nSk">
+                                <rect key="frame" x="20" y="142" width="374" height="34"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dropper ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBT-MK-Qtw">
+                                <rect key="frame" x="20" y="264" width="156.5" height="26"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Only a check-in dropper?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b91-hi-zH1">
+                                <rect key="frame" x="85" y="367" width="309" height="57"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6go-Jm-OQm">
+                                <rect key="frame" x="20" y="298" width="374" height="34"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05R-XZ-FkN">
+                                <rect key="frame" x="185" y="257" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="info.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionInfo:" destination="JRL-71-yEx" eventType="touchUpInside" id="bC4-Zj-k0b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rD-cBQ">
                                 <rect key="frame" x="20" y="760" width="374" height="56"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="cko-xa-odV"/>
+                                    <constraint firstAttribute="height" constant="56" id="XVI-jG-H8S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="28"/>
                                 <state key="normal" title="Add"/>
@@ -341,33 +414,87 @@
                                     <action selector="addAction:" destination="JRL-71-yEx" eventType="touchUpInside" id="wNl-0N-OU5"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7v-Ff-nSk">
-                                <rect key="frame" x="20" y="142" width="374" height="34"/>
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJF-nQ-tDy">
+                                <rect key="frame" x="20" y="380" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7G-JK-9HY">
+                                <rect key="frame" x="20" y="264" width="172" height="26"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-aw-2dH">
+                                <rect key="frame" x="20" y="298" width="374" height="36.5"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yn-jg-e0E">
+                                <rect key="frame" x="63" y="380" width="288" height="27"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="S4i-bF-AqB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                <state key="normal" title="Pick File Type..."/>
+                                <connections>
+                                    <action selector="actionPickClass:" destination="JRL-71-yEx" eventType="touchUpInside" id="Cl1-Gi-Qll"/>
+                                    <action selector="actionPickFileType:" destination="JRL-71-yEx" eventType="touchUpInside" id="dbr-Hg-coL"/>
+                                    <action selector="actionTeacherLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1mv-xh-Dbk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="TsF-sU-0vf" firstAttribute="top" secondItem="qG9-g5-3M9" secondAttribute="bottom" constant="8" id="26I-3g-paL"/>
-                            <constraint firstItem="3my-1Y-M3f" firstAttribute="centerX" secondItem="a7v-Ff-nSk" secondAttribute="centerX" id="IIj-ba-ng7"/>
-                            <constraint firstItem="3my-1Y-M3f" firstAttribute="top" secondItem="Dq1-bh-Bp4" secondAttribute="top" id="IWU-Gp-17z"/>
-                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="trailing" secondItem="sXU-WK-jeU" secondAttribute="trailingMargin" id="IfO-mW-HD1"/>
-                            <constraint firstItem="TsF-sU-0vf" firstAttribute="leading" secondItem="jYh-rD-cBQ" secondAttribute="leading" id="JLg-kO-lqO"/>
-                            <constraint firstItem="ruV-Bi-L2W" firstAttribute="leading" secondItem="sXU-WK-jeU" secondAttribute="leadingMargin" id="ODZ-5j-3fe"/>
-                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="top" secondItem="ruV-Bi-L2W" secondAttribute="bottom" constant="8" id="QFJ-MM-ecg"/>
-                            <constraint firstItem="TsF-sU-0vf" firstAttribute="trailing" secondItem="jYh-rD-cBQ" secondAttribute="trailing" id="T1f-5m-6hM"/>
-                            <constraint firstItem="Dq1-bh-Bp4" firstAttribute="trailing" secondItem="qG9-g5-3M9" secondAttribute="trailing" constant="224" id="bBa-TS-suF"/>
-                            <constraint firstItem="ruV-Bi-L2W" firstAttribute="top" secondItem="Dq1-bh-Bp4" secondAttribute="top" constant="20" id="gbD-3j-Hno"/>
-                            <constraint firstItem="qG9-g5-3M9" firstAttribute="leading" secondItem="TsF-sU-0vf" secondAttribute="leading" id="l3K-ng-fuz"/>
-                            <constraint firstItem="3my-1Y-M3f" firstAttribute="leading" secondItem="Dq1-bh-Bp4" secondAttribute="leading" id="o2p-jU-ptS"/>
-                            <constraint firstItem="qG9-g5-3M9" firstAttribute="top" secondItem="a7v-Ff-nSk" secondAttribute="bottom" constant="16" id="pCl-2B-KJa"/>
-                            <constraint firstItem="Dq1-bh-Bp4" firstAttribute="bottom" secondItem="3my-1Y-M3f" secondAttribute="bottom" constant="10" id="rDI-Ay-Jhb"/>
-                            <constraint firstItem="ruV-Bi-L2W" firstAttribute="leading" secondItem="a7v-Ff-nSk" secondAttribute="leading" id="s5X-53-KXs"/>
-                            <constraint firstItem="Dq1-bh-Bp4" firstAttribute="bottom" secondItem="jYh-rD-cBQ" secondAttribute="bottom" constant="46" id="wVD-eA-2C3"/>
-                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="leading" secondItem="qG9-g5-3M9" secondAttribute="leading" id="wa5-GE-Oql"/>
-                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="trailing" secondItem="TsF-sU-0vf" secondAttribute="trailing" id="yIx-Da-FOC"/>
+                            <constraint firstItem="6go-Jm-OQm" firstAttribute="top" secondItem="DBT-MK-Qtw" secondAttribute="bottom" constant="8" id="4Gz-X4-1P6"/>
+                            <constraint firstItem="6go-Jm-OQm" firstAttribute="leading" secondItem="6nt-U8-BLn" secondAttribute="leading" id="5k1-Oy-bkQ"/>
+                            <constraint firstItem="7yn-jg-e0E" firstAttribute="trailing" secondItem="u2t-ti-1zd" secondAttribute="trailing" id="5qY-i2-KB7"/>
+                            <constraint firstItem="6nt-U8-BLn" firstAttribute="trailing" secondItem="jYh-rD-cBQ" secondAttribute="trailing" id="6JH-6u-qfV"/>
+                            <constraint firstItem="7yn-jg-e0E" firstAttribute="top" secondItem="GQl-aw-2dH" secondAttribute="bottom" constant="45.5" id="7ci-2f-gGl"/>
+                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="leading" secondItem="qG9-g5-3M9" secondAttribute="leading" id="ATg-Lr-z6C"/>
+                            <constraint firstItem="GQl-aw-2dH" firstAttribute="leading" secondItem="aJF-nQ-tDy" secondAttribute="leading" id="BYq-rj-eJ6"/>
+                            <constraint firstItem="Dq1-bh-Bp4" firstAttribute="trailing" secondItem="05R-XZ-FkN" secondAttribute="trailing" constant="189" id="DFx-6e-YaM"/>
+                            <constraint firstItem="u2t-ti-1zd" firstAttribute="top" secondItem="a7v-Ff-nSk" secondAttribute="bottom" constant="40" id="Dpe-my-aXe"/>
+                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="top" secondItem="ruV-Bi-L2W" secondAttribute="bottom" constant="8" id="FgB-9j-xBF"/>
+                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="trailing" secondItem="TsF-sU-0vf" secondAttribute="trailing" id="FsK-8t-xJe"/>
+                            <constraint firstItem="GQl-aw-2dH" firstAttribute="trailing" secondItem="b91-hi-zH1" secondAttribute="trailing" id="GYq-VA-NVe"/>
+                            <constraint firstItem="aJF-nQ-tDy" firstAttribute="top" secondItem="6go-Jm-OQm" secondAttribute="bottom" constant="48" id="GgR-bY-3oN"/>
+                            <constraint firstItem="GQl-aw-2dH" firstAttribute="top" secondItem="W7G-JK-9HY" secondAttribute="bottom" constant="8" id="Ggt-E7-ywf"/>
+                            <constraint firstItem="jYh-rD-cBQ" firstAttribute="top" secondItem="6nt-U8-BLn" secondAttribute="bottom" constant="8" id="KEn-Cm-mXY"/>
+                            <constraint firstItem="qG9-g5-3M9" firstAttribute="leading" secondItem="TsF-sU-0vf" secondAttribute="leading" id="Lvg-77-ecs"/>
+                            <constraint firstItem="ruV-Bi-L2W" firstAttribute="leading" secondItem="sXU-WK-jeU" secondAttribute="leadingMargin" id="N9u-oi-9GI"/>
+                            <constraint firstItem="TsF-sU-0vf" firstAttribute="trailing" secondItem="6go-Jm-OQm" secondAttribute="trailing" id="Neb-9A-iGr"/>
+                            <constraint firstItem="TsF-sU-0vf" firstAttribute="top" secondItem="qG9-g5-3M9" secondAttribute="bottom" constant="8" id="OkW-5j-X1O"/>
+                            <constraint firstItem="DBT-MK-Qtw" firstAttribute="centerY" secondItem="05R-XZ-FkN" secondAttribute="centerY" id="QIF-ER-qQw"/>
+                            <constraint firstItem="aJF-nQ-tDy" firstAttribute="centerY" secondItem="b91-hi-zH1" secondAttribute="centerY" id="TuO-8Y-kO2"/>
+                            <constraint firstItem="u2t-ti-1zd" firstAttribute="centerX" secondItem="TsF-sU-0vf" secondAttribute="centerX" id="USH-47-LbR"/>
+                            <constraint firstItem="GQl-aw-2dH" firstAttribute="trailing" secondItem="6go-Jm-OQm" secondAttribute="trailing" id="V3t-ye-hlV"/>
+                            <constraint firstItem="ruV-Bi-L2W" firstAttribute="leading" secondItem="a7v-Ff-nSk" secondAttribute="leading" id="VhP-8J-Zb2"/>
+                            <constraint firstItem="W7G-JK-9HY" firstAttribute="leading" secondItem="GQl-aw-2dH" secondAttribute="leading" id="WDF-h3-2Aa"/>
+                            <constraint firstItem="Dq1-bh-Bp4" firstAttribute="trailing" secondItem="qG9-g5-3M9" secondAttribute="trailing" constant="224" id="XAB-C1-U5c"/>
+                            <constraint firstItem="W7G-JK-9HY" firstAttribute="baseline" secondItem="DBT-MK-Qtw" secondAttribute="baseline" id="aOR-7Q-FqH"/>
+                            <constraint firstItem="Dq1-bh-Bp4" firstAttribute="bottom" secondItem="jYh-rD-cBQ" secondAttribute="bottom" constant="46" id="b6P-SZ-S1p"/>
+                            <constraint firstItem="3my-1Y-M3f" firstAttribute="top" secondItem="Dq1-bh-Bp4" secondAttribute="top" id="cfo-ec-oxD"/>
+                            <constraint firstItem="3my-1Y-M3f" firstAttribute="leading" secondItem="Dq1-bh-Bp4" secondAttribute="leading" id="e76-Ny-Hgy"/>
+                            <constraint firstItem="DBT-MK-Qtw" firstAttribute="leading" secondItem="6go-Jm-OQm" secondAttribute="leading" id="fpt-eD-4vl"/>
+                            <constraint firstItem="ruV-Bi-L2W" firstAttribute="top" secondItem="Dq1-bh-Bp4" secondAttribute="top" constant="20" id="hzm-iW-pg7"/>
+                            <constraint firstItem="DBT-MK-Qtw" firstAttribute="top" secondItem="TsF-sU-0vf" secondAttribute="bottom" constant="5" id="kDU-FT-mBq"/>
+                            <constraint firstItem="3my-1Y-M3f" firstAttribute="centerX" secondItem="TsF-sU-0vf" secondAttribute="centerX" id="lnk-JF-hKp"/>
+                            <constraint firstItem="05R-XZ-FkN" firstAttribute="top" secondItem="u2t-ti-1zd" secondAttribute="bottom" constant="14" id="nGT-c2-Lge"/>
+                            <constraint firstItem="qG9-g5-3M9" firstAttribute="top" secondItem="a7v-Ff-nSk" secondAttribute="bottom" constant="16" id="np9-uQ-vJB"/>
+                            <constraint firstItem="7yn-jg-e0E" firstAttribute="top" secondItem="aJF-nQ-tDy" secondAttribute="top" id="ntc-wO-61r"/>
+                            <constraint firstItem="TsF-sU-0vf" firstAttribute="leading" secondItem="DBT-MK-Qtw" secondAttribute="leading" id="nv2-t5-TmM"/>
+                            <constraint firstItem="b91-hi-zH1" firstAttribute="leading" secondItem="aJF-nQ-tDy" secondAttribute="trailing" constant="16" id="pnZ-Nl-cWg"/>
+                            <constraint firstItem="6nt-U8-BLn" firstAttribute="leading" secondItem="jYh-rD-cBQ" secondAttribute="leading" id="qCb-CA-jMQ"/>
+                            <constraint firstItem="W7G-JK-9HY" firstAttribute="leading" secondItem="DBT-MK-Qtw" secondAttribute="leading" id="qnd-PN-qq5"/>
+                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="trailing" secondItem="sXU-WK-jeU" secondAttribute="trailingMargin" id="uER-C4-B9u"/>
+                            <constraint firstItem="b91-hi-zH1" firstAttribute="top" secondItem="GQl-aw-2dH" secondAttribute="bottom" constant="35" id="vL5-PH-fT3"/>
+                            <constraint firstItem="6go-Jm-OQm" firstAttribute="top" secondItem="05R-XZ-FkN" secondAttribute="bottom" constant="1" id="vRm-LK-Ue6"/>
+                            <constraint firstItem="Dq1-bh-Bp4" firstAttribute="bottom" secondItem="3my-1Y-M3f" secondAttribute="bottom" constant="10" id="xLq-Q3-l0P"/>
+                            <constraint firstItem="7yn-jg-e0E" firstAttribute="leading" secondItem="u2t-ti-1zd" secondAttribute="leading" id="y5o-pC-2TL"/>
+                            <constraint firstItem="05R-XZ-FkN" firstAttribute="leading" secondItem="DBT-MK-Qtw" secondAttribute="trailing" constant="8.5" id="yjm-8p-bfn"/>
+                            <constraint firstItem="u2t-ti-1zd" firstAttribute="leading" secondItem="Dq1-bh-Bp4" secondAttribute="leading" constant="63" id="zCJ-2z-nbY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dq1-bh-Bp4"/>
                     </view>
@@ -379,7 +506,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnFileType" destination="7yn-jg-e0E" id="zEi-8a-wo0"/>
+                        <outlet property="btnInfoID" destination="05R-XZ-FkN" id="BRj-ZO-Fz4"/>
+                        <outlet property="btnPickClass" destination="u2t-ti-1zd" id="EJS-8o-p44"/>
+                        <outlet property="lblClassWarning" destination="6nt-U8-BLn" id="QVt-21-oiZ"/>
+                        <outlet property="lblDesc" destination="W7G-JK-9HY" id="vtl-ga-Wtn"/>
+                        <outlet property="lblDropID" destination="DBT-MK-Qtw" id="Ult-OW-biN"/>
+                        <outlet property="lblModifiable" destination="b91-hi-zH1" id="cgD-9W-vQH"/>
+                        <outlet property="lblName" destination="ruV-Bi-L2W" id="am8-4C-ydK"/>
+                        <outlet property="lblURL" destination="qG9-g5-3M9" id="pcU-Y3-esX"/>
                         <outlet property="navTitle" destination="yIw-Ta-V50" id="bpa-Ao-Tc0"/>
+                        <outlet property="swtModifiable" destination="aJF-nQ-tDy" id="QnS-lF-Myr"/>
+                        <outlet property="txtDesc" destination="GQl-aw-2dH" id="wp5-qS-kkS"/>
+                        <outlet property="txtID" destination="6go-Jm-OQm" id="xd7-0p-MQd"/>
+                        <outlet property="txtName" destination="a7v-Ff-nSk" id="42i-ji-XEq"/>
+                        <outlet property="txtURL" destination="TsF-sU-0vf" id="cye-rU-SDu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BoC-Ns-0bo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1008,6 +1149,7 @@ Cg
         <image name="circle-bg-2" width="436" height="502.5"/>
         <image name="drop-bg" width="250" height="400"/>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="ripple-bg" width="1211.5" height="346.5"/>
         <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
         <image name="user-icon" width="250" height="250"/>
