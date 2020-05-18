@@ -20,4 +20,6 @@ struct GlobalVariables {
     static var clickedOnDropper : Dropper? = nil
     
     static var retrievedYet : Bool = false
+    
+    static var addMode : String = ""
 }

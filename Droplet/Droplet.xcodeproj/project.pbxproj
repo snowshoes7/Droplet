@@ -33,6 +33,7 @@
 		B0C777912472469E0005D20F /* DropsTeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C777902472469E0005D20F /* DropsTeacherTableViewCell.swift */; };
 		B0C777932472486F0005D20F /* AssignmentsTeacherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C777922472486F0005D20F /* AssignmentsTeacherTableViewController.swift */; };
 		B0C77795247248A40005D20F /* AssignmentTeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C77794247248A40005D20F /* AssignmentTeacherTableViewCell.swift */; };
+		B0C77797247262B60005D20F /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C77796247262B60005D20F /* AddNewViewController.swift */; };
 		B0D944F32432A808000A4BED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D944F22432A807000A4BED /* SettingsViewController.swift */; };
 		B0FE55612441657000D004A1 /* DropsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE55602441657000D004A1 /* DropsTableViewCell.swift */; };
 		F3CFD94CF27FC16EC4533748 /* Pods_Droplet_DropletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A485FAA5760E33708EAEB1C3 /* Pods_Droplet_DropletUITests.framework */; };
@@ -91,6 +92,7 @@
 		B0C777902472469E0005D20F /* DropsTeacherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropsTeacherTableViewCell.swift; sourceTree = "<group>"; };
 		B0C777922472486F0005D20F /* AssignmentsTeacherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsTeacherTableViewController.swift; sourceTree = "<group>"; };
 		B0C77794247248A40005D20F /* AssignmentTeacherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTeacherTableViewCell.swift; sourceTree = "<group>"; };
+		B0C77796247262B60005D20F /* AddNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 		B0D944F22432A807000A4BED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B0FE55602441657000D004A1 /* DropsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropsTableViewCell.swift; sourceTree = "<group>"; };
 		B3AB5D522433B6D400D6A07E /* Droplet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Droplet.entitlements; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				B086A90D242E6D2C006017DC /* LoginViewController.swift */,
 				B086A90F242E7152006017DC /* DropsViewController.swift */,
 				B08861DE2436FCFB00711633 /* DropsTeacherViewController.swift */,
+				B0C77796247262B60005D20F /* AddNewViewController.swift */,
 				B0D944F22432A807000A4BED /* SettingsViewController.swift */,
 				4462FEFD23F4AE9B009A9F66 /* Assets.xcassets */,
 				4462FEFF23F4AE9B009A9F66 /* LaunchScreen.storyboard */,
@@ -472,6 +475,7 @@
 				B0D944F32432A808000A4BED /* SettingsViewController.swift in Sources */,
 				B08861E1243709CC00711633 /* GlobalVariables.swift in Sources */,
 				B0C77795247248A40005D20F /* AssignmentTeacherTableViewCell.swift in Sources */,
+				B0C77797247262B60005D20F /* AddNewViewController.swift in Sources */,
 				B0680E28242E57E200355450 /* Droplet.xcdatamodeld in Sources */,
 				B07BC1FE2433FB7800C47198 /* User.swift in Sources */,
 				B02EF7FF2469B43E0013326F /* AssignmentTableViewCell.swift in Sources */,

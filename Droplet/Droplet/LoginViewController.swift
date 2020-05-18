@@ -23,7 +23,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var labelPw: UILabel!
     @IBOutlet weak var labelRemember: UILabel!
     
-    
     //var didGetClassesOnLoad : Bool = false
     
     let db = Firestore.firestore()

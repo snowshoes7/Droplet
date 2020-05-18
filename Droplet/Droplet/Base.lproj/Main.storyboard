@@ -283,6 +283,110 @@
             <point key="canvasLocation" x="935" y="104"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="xKX-ua-MV1">
+            <objects>
+                <navigationController storyboardIdentifier="AddNewViewControllerLead" id="i60-Fs-krY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lRj-ae-9NS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JRL-71-yEx" kind="relationship" relationship="rootViewController" id="ibW-Q8-JKY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gt7-ql-4ZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="104"/>
+        </scene>
+        <!--AddNewViewController-->
+        <scene sceneID="dfp-ar-eWk">
+            <objects>
+                <viewController restorationIdentifier="AddNewViewController" storyboardIdentifier="AddNewViewController" title="AddNewViewController" id="JRL-71-yEx" customClass="AddNewViewController" customModule="Droplet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sXU-WK-jeU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle-bg-2" translatesAutoresizingMaskIntoConstraints="NO" id="3my-1Y-M3f">
+                                <rect key="frame" x="0.0" y="88" width="414" height="764"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class URL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qG9-g5-3M9">
+                                <rect key="frame" x="20" y="192" width="170" height="26"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TsF-sU-0vf">
+                                <rect key="frame" x="20" y="226" width="374" height="34"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruV-Bi-L2W">
+                                <rect key="frame" x="20" y="108" width="62.5" height="26"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rD-cBQ">
+                                <rect key="frame" x="20" y="760" width="374" height="56"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="cko-xa-odV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="28"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addAction:" destination="JRL-71-yEx" eventType="touchUpInside" id="wNl-0N-OU5"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7v-Ff-nSk">
+                                <rect key="frame" x="20" y="142" width="374" height="34"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TsF-sU-0vf" firstAttribute="top" secondItem="qG9-g5-3M9" secondAttribute="bottom" constant="8" id="26I-3g-paL"/>
+                            <constraint firstItem="3my-1Y-M3f" firstAttribute="centerX" secondItem="a7v-Ff-nSk" secondAttribute="centerX" id="IIj-ba-ng7"/>
+                            <constraint firstItem="3my-1Y-M3f" firstAttribute="top" secondItem="Dq1-bh-Bp4" secondAttribute="top" id="IWU-Gp-17z"/>
+                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="trailing" secondItem="sXU-WK-jeU" secondAttribute="trailingMargin" id="IfO-mW-HD1"/>
+                            <constraint firstItem="TsF-sU-0vf" firstAttribute="leading" secondItem="jYh-rD-cBQ" secondAttribute="leading" id="JLg-kO-lqO"/>
+                            <constraint firstItem="ruV-Bi-L2W" firstAttribute="leading" secondItem="sXU-WK-jeU" secondAttribute="leadingMargin" id="ODZ-5j-3fe"/>
+                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="top" secondItem="ruV-Bi-L2W" secondAttribute="bottom" constant="8" id="QFJ-MM-ecg"/>
+                            <constraint firstItem="TsF-sU-0vf" firstAttribute="trailing" secondItem="jYh-rD-cBQ" secondAttribute="trailing" id="T1f-5m-6hM"/>
+                            <constraint firstItem="Dq1-bh-Bp4" firstAttribute="trailing" secondItem="qG9-g5-3M9" secondAttribute="trailing" constant="224" id="bBa-TS-suF"/>
+                            <constraint firstItem="ruV-Bi-L2W" firstAttribute="top" secondItem="Dq1-bh-Bp4" secondAttribute="top" constant="20" id="gbD-3j-Hno"/>
+                            <constraint firstItem="qG9-g5-3M9" firstAttribute="leading" secondItem="TsF-sU-0vf" secondAttribute="leading" id="l3K-ng-fuz"/>
+                            <constraint firstItem="3my-1Y-M3f" firstAttribute="leading" secondItem="Dq1-bh-Bp4" secondAttribute="leading" id="o2p-jU-ptS"/>
+                            <constraint firstItem="qG9-g5-3M9" firstAttribute="top" secondItem="a7v-Ff-nSk" secondAttribute="bottom" constant="16" id="pCl-2B-KJa"/>
+                            <constraint firstItem="Dq1-bh-Bp4" firstAttribute="bottom" secondItem="3my-1Y-M3f" secondAttribute="bottom" constant="10" id="rDI-Ay-Jhb"/>
+                            <constraint firstItem="ruV-Bi-L2W" firstAttribute="leading" secondItem="a7v-Ff-nSk" secondAttribute="leading" id="s5X-53-KXs"/>
+                            <constraint firstItem="Dq1-bh-Bp4" firstAttribute="bottom" secondItem="jYh-rD-cBQ" secondAttribute="bottom" constant="46" id="wVD-eA-2C3"/>
+                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="leading" secondItem="qG9-g5-3M9" secondAttribute="leading" id="wa5-GE-Oql"/>
+                            <constraint firstItem="a7v-Ff-nSk" firstAttribute="trailing" secondItem="TsF-sU-0vf" secondAttribute="trailing" id="yIx-Da-FOC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dq1-bh-Bp4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New" id="yIw-Ta-V50">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="l2K-n0-1PW">
+                            <connections>
+                                <action selector="actionBack:" destination="JRL-71-yEx" id="NV4-in-A8c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="navTitle" destination="yIw-Ta-V50" id="bpa-Ao-Tc0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BoC-Ns-0bo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2521.739130434783" y="103.79464285714285"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="WHV-EA-ioT">
             <objects>
                 <navigationController id="QN9-aC-FhJ" sceneMemberID="viewController">
@@ -796,7 +900,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vTh-Xz-eOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2498.5507246376815" y="103.79464285714285"/>
+            <point key="canvasLocation" x="2522" y="-581"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nsb-9s-CNn">
@@ -901,6 +1005,7 @@ Cg
     </inferredMetricsTieBreakers>
     <resources>
         <image name="badge.plus.radiowaves.right" catalog="system" width="128" height="101"/>
+        <image name="circle-bg-2" width="436" height="502.5"/>
         <image name="drop-bg" width="250" height="400"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="ripple-bg" width="1211.5" height="346.5"/>

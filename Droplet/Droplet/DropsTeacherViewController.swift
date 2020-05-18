@@ -90,14 +90,28 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
         let menuAlert = UIAlertController(title: "Add New", message: nil, preferredStyle: .actionSheet)
         menuAlert.modalPresentationStyle = .automatic
         menuAlert.addAction(UIAlertAction(title: "New Class", style: .default, handler: { (action: UIAlertAction!) in
-            
+            GlobalVariables.addMode = "Class"
+            let newView = self.storyboard?.instantiateViewController(withIdentifier: "AddNewViewControllerLead") as! UINavigationController
+            newView.modalPresentationStyle = .fullScreen
+            newView.modalTransitionStyle = .flipHorizontal
+            self.present(newView, animated: true, completion: nil)
         }))
         menuAlert.addAction(UIAlertAction(title: "New Dropper", style: .default, handler: { (action: UIAlertAction!) in
-            
+            GlobalVariables.addMode = "Dropper"
+            let newView = self.storyboard?.instantiateViewController(withIdentifier: "AddNewViewControllerLead") as! UINavigationController
+            newView.modalPresentationStyle = .fullScreen
+            newView.modalTransitionStyle = .flipHorizontal
+            self.present(newView, animated: true, completion: nil)
         }))
         menuAlert.addAction(UIAlertAction(title: "New Assignment", style: .default, handler: { (action: UIAlertAction!) in
-            
+            GlobalVariables.addMode = "Assignment"
+            let newView = self.storyboard?.instantiateViewController(withIdentifier: "AddNewViewControllerLead") as! UINavigationController
+            newView.modalPresentationStyle = .fullScreen
+            newView.modalTransitionStyle = .flipHorizontal
+            self.present(newView, animated: true, completion: nil)
         }))
+        menuAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(menuAlert, animated: true, completion: nil)
     }
 }
 
