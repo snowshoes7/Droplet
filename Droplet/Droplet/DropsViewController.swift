@@ -20,6 +20,11 @@ class DropsViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     @IBOutlet weak var btnSettings: UIButton!
     @IBOutlet weak var outletTableView: UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        outletTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -129,14 +134,18 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
     func tallyDroppers() -> [Dropper] {
         var allOfMyDroppers : [Dropper] = []
         
-        for x in GlobalVariables.loggedInUser!.myClasses {
-            for y in x.droppers {
-                for z in GlobalVariables.localDroppers {
-                    if (y == z.id) {
-                        allOfMyDroppers.append(z)
+        if !(GlobalVariables.loggedInUser == nil) {
+            for x in GlobalVariables.loggedInUser!.myClasses {
+                for y in x.droppers {
+                    for z in GlobalVariables.localDroppers {
+                        if (y == z.id) {
+                            allOfMyDroppers.append(z)
+                        }
                     }
                 }
             }
+        } else {
+            allOfMyDroppers = []
         }
         
         return allOfMyDroppers

@@ -20,7 +20,9 @@ class AssignmentsTeacherTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        titleBar.title = "\((GlobalVariables.clickedOnDropper?.associatedClass!.name)!) Assignments"
+        if !(GlobalVariables.clickedOnDropper == nil) {
+            titleBar.title = "\((GlobalVariables.clickedOnDropper?.associatedClass!.name)!) Assignments"
+        }
     }
     
     @IBAction func actionBack(_ sender: Any) {

@@ -8,12 +8,15 @@
 
 import UIKit
 import CoreNFC
+import Firebase
 
 class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate {
 
     //let reuseIdentifier = "reuseIdentifier"
     var detectedMessages = [NFCNDEFMessage]()
     var session: NFCNDEFReaderSession?
+    
+    let db = Firestore.firestore()
     
     @IBOutlet weak var btnSettings: UIButton!
     @IBOutlet weak var outletTableView: UITableView!
@@ -24,6 +27,10 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
         
         outletTableView.dataSource = self
         outletTableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        outletTableView.reloadData()
     }
     
     @IBAction func actionSettings(_ sender: Any) {
@@ -120,14 +127,50 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
         func tallyDroppers() -> [Dropper] {
             var allOfMyDroppers : [Dropper] = []
             
-            for x in GlobalVariables.loggedInUser!.myClasses {
-                for y in x.droppers {
-                    for z in GlobalVariables.localDroppers {
-                        if (y == z.id) {
-                            allOfMyDroppers.append(z)
+//            db.collection("users").getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("CRITICAL FIREBASE RETRIEVAL ERROR: \(err)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        let myClasses = document.get("classes") as! String
+//                            //Login successful, break and segue
+//                            var newClasses : [AcademicClass] = []
+//                            let myClassesSplit : [Substring] = myClasses.split(separator: ";")
+//                            for x in myClassesSplit {
+//                                for y in GlobalVariables.localAcademicClasses {
+//                                    if (x == y.name) {
+//                                        newClasses.append(y)
+//                                    }
+//                                }
+//                            }
+//                        GlobalVariables.loggedInUser?.myClasses = newClasses
+//                    }
+//                }
+//            }
+            
+            if !(GlobalVariables.loggedInUser == nil) {
+                
+                for a in GlobalVariables.localAcademicClasses {
+                    var c : Int = 0
+                    for b in GlobalVariables.loggedInUser!.myClasses {
+                        if (a.name == b.name) {
+                            GlobalVariables.loggedInUser?.myClasses[c] = a
+                        }
+                        c += 1
+                    }
+                }
+                
+                for x in GlobalVariables.loggedInUser!.myClasses {
+                    for y in x.droppers {
+                        for z in GlobalVariables.localDroppers {
+                            if (y == z.id) {
+                                allOfMyDroppers.append(z)
+                            }
                         }
                     }
                 }
+            } else {
+                allOfMyDroppers = []
             }
             
             return allOfMyDroppers
@@ -155,9 +198,9 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
         }
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            GlobalVariables.clickedOnDropper = tallyDroppers()[indexPath.row]
             //Segue to assignments view for a specific dropper.
             if (tallyDroppers()[indexPath.row].modifiable) {
-                GlobalVariables.clickedOnDropper = tallyDroppers()[indexPath.row]
                 let assignView = self.storyboard?.instantiateViewController(withIdentifier: "AssignmentsTeacherTableViewControllerLead") as! UINavigationController
                 assignView.modalPresentationStyle = .fullScreen
                 assignView.modalTransitionStyle = .flipHorizontal

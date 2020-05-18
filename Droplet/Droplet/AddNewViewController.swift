@@ -197,10 +197,9 @@ class AddNewViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-    @IBAction func addAction(_ sender: Any) {
+    
+    func doAddition() {
         let myAlert = UIAlertController(title: "Please wait...", message: "Updating data...", preferredStyle: .alert)
-        
         let load: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 35, y: 15, width: 50, height: 50)) as UIActivityIndicatorView
         load.hidesWhenStopped = true
         load.style = UIActivityIndicatorView.Style.medium
@@ -217,6 +216,7 @@ class AddNewViewController: UIViewController {
                     "name": self.txtName.text!,
                     "teacher": (GlobalVariables.loggedInUser?.username)!
                 ])
+                GlobalVariables.localAcademicClasses.append(AcademicClass(url: self.txtURL.text!, droppers: [], name: self.txtName.text!, teacher: (GlobalVariables.loggedInUser?.username)!, assignmentStr: ""))
             } else if (GlobalVariables.addMode == "Dropper") {
                 var setVal : Bool = true
                 
@@ -233,11 +233,24 @@ class AddNewViewController: UIViewController {
                     "modifiable": setVal,
                     "title": self.txtName.text!
                 ])
+                
+                var toBeUsedAcademicClass : AcademicClass = AcademicClass(url: "", droppers: [], name: "ERROR", teacher: "", assignmentStr: "")
+                
+                for x in GlobalVariables.localAcademicClasses {
+                    if (x.name == self.setClass!.name) {
+                        toBeUsedAcademicClass = x
+                        break
+                    }
+                }
+                
+                GlobalVariables.localDroppers.append(Dropper(associatedClass: toBeUsedAcademicClass, id: self.txtID.text!, modifiable: setVal, title: self.txtName.text!, interactions: 0))
+                
                 self.setClass?.droppers.append(self.txtID.text!)
                 var newDropStr : String = ""
                 for x in self.setClass!.droppers {
-                    newDropStr.append(x)
+                    newDropStr.append("\(x);")
                 }
+                
                 self.db.collection("classes")
                     .whereField("name", isEqualTo: (self.setClass?.name)!)
                 .getDocuments() { (querySnapshot, err) in
@@ -250,8 +263,16 @@ class AddNewViewController: UIViewController {
                         ])
                     }
                 }
-            } else if (GlobalVariables.addMode == "Assignment") {
                 
+                var b : Int = 0
+                for x in GlobalVariables.localAcademicClasses {
+                    if (x.name == self.setClass!.name) {
+                        GlobalVariables.localAcademicClasses[b].droppers = self.setClass?.droppers as! [String]
+                        break
+                    }
+                    b += 1
+                }
+            } else if (GlobalVariables.addMode == "Assignment") {
                 let now = Date()
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "d MMM"
@@ -280,11 +301,24 @@ class AddNewViewController: UIViewController {
                         ])
                     }
                 }
+                
+                var b : Int = 0
+                for x in GlobalVariables.localAcademicClasses {
+                    if (x.name == self.setClass!.name) {
+                        GlobalVariables.localAcademicClasses[b].assignmentStr = self.setClass?.assignmentStr as! String
+                        break
+                    }
+                    b += 1
+                }
+                
+                
             }
             
             self.preLoadAllClasses()
             sleep(2) //THIS SLEEP CALL IS NECESSARY. This is because FB retrievals happen asynchronously and since constructing Droppers relies on having all AcademicClasses retrieved, then we need to wait for FB to load on startup of the program and complete that before we can do anything else. Consequently this means the LaunchScreen will almost always be at least ~3 seconds long.
             self.preLoadAllDroppers()
+            GlobalVariables.clickedOnDropper = nil
+            
             self.dismiss(animated: false, completion: {
                 if self.presentedViewController == nil {
                     let backView = self.storyboard?.instantiateViewController(withIdentifier: "DropsTeacherViewController") as! DropsTeacherViewController
@@ -300,6 +334,31 @@ class AddNewViewController: UIViewController {
                 }
             })
         })
+    }
+
+    @IBAction func addAction(_ sender: Any) {
+        let badPopup : UIAlertController = UIAlertController(title: "Error", message: "You did not fill out all the fields correctly. Please try again.", preferredStyle: .alert)
+        badPopup.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        if (GlobalVariables.addMode == "Class") {
+            if ((txtName.text == "") || (txtURL.text == "")) {
+                self.present(badPopup, animated: true, completion: nil)
+            } else {
+                doAddition()
+            }
+        } else if (GlobalVariables.addMode == "Dropper") {
+            if ((txtName.text == "") || (setClass == nil) || (txtID.text == "")) {
+                self.present(badPopup, animated: true, completion: nil)
+            } else {
+                doAddition()
+            }
+        } else if (GlobalVariables.addMode == "Assignment") {
+            if ((txtName.text == "") || (txtFile.text == "" || (txtDesc.text == "" || (setClass == nil) || (setFileType == nil)))) {
+                self.present(badPopup, animated: true, completion: nil)
+            } else {
+                doAddition()
+            }
+        }
     }
     
     @IBAction func actionPickFileType(_ sender: Any) {
@@ -334,7 +393,7 @@ class AddNewViewController: UIViewController {
     }
     
     @IBAction func actionInfo(_ sender: Any) {
-        let infoAlert = UIAlertController(title: "Information", message: "This can be anything you want. It's a unique ID that will be associated with this Dropper. If you leave this blank, then a random one will be used.", preferredStyle: .alert)
+        let infoAlert = UIAlertController(title: "Information", message: "This can be anything you want. It's a unique ID that will be associated with this Dropper.", preferredStyle: .alert)
         infoAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(infoAlert, animated: true, completion: nil)
     }
