@@ -18,6 +18,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnTeacherLogin: UIButton!
     
+    // Labels for Animation Purposes
+    @IBOutlet weak var labelID: UILabel!
+    @IBOutlet weak var labelPw: UILabel!
+    @IBOutlet weak var labelRemember: UILabel!
+    
+    
     //var didGetClassesOnLoad : Bool = false
     
     let db = Firestore.firestore()
@@ -38,6 +44,33 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("Hid things")
+        self.txtID.frame = CGRect(x: 20, y: 1208, width: 374, height: 34)
+        self.txtPassword.frame = CGRect(x: 20, y: 1310, width: 374, height: 34)
+        self.swtRemember.frame = CGRect(x: 20, y: 1373, width: 51, height: 31)
+        self.btnLogin.frame = CGRect(x: 63, y: 1440, width: 288, height: 40)
+        self.btnTeacherLogin.frame = CGRect(x: 63, y: 1526, width: 288, height: 27)
+        self.labelID.isHidden = true
+        self.labelPw.isHidden = true
+        self.labelRemember.isHidden = true
+        anim()
+    }
+    
+    func anim() {
+        // Might butcher this, let's see
+        print("anim was called")
+        UIView.animate(withDuration: 0.3, delay: 1, options: .curveLinear, animations: {
+            self.txtID.frame = CGRect(x: 20, y: 408, width: 374, height: 34)
+            self.txtPassword.frame = CGRect(x: 20, y: 510, width: 374, height: 34)
+            self.swtRemember.frame = CGRect(x: 20, y: 573, width: 51, height: 31)
+            self.btnLogin.frame = CGRect(x: 63, y: 640, width: 288, height: 40)
+            self.btnTeacherLogin.frame = CGRect(x: 63, y: 726, width: 288, height: 27)
+        }, completion: { _ in
+            print("anim finished")
+            self.labelID.isHidden = false
+            self.labelPw.isHidden = false
+            self.labelRemember.isHidden = false
+        })
     }
     
     func preLoadAllDroppers() {

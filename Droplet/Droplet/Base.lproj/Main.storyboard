@@ -118,6 +118,7 @@
                             <constraint firstItem="fdg-0r-9Az" firstAttribute="leading" secondItem="yL5-rT-mKC" secondAttribute="leading" id="ecA-6f-nRl"/>
                             <constraint firstItem="9Ft-mV-65j" firstAttribute="top" secondItem="yL5-rT-mKC" secondAttribute="bottom" constant="34" id="fZt-pD-4IM"/>
                             <constraint firstItem="yL5-rT-mKC" firstAttribute="top" secondItem="fdg-0r-9Az" secondAttribute="bottom" constant="8" symbolic="YES" id="hGr-nj-yho"/>
+                            <constraint firstItem="WNb-EY-7x2" firstAttribute="top" secondItem="dzh-tz-ecU" secondAttribute="top" constant="162" id="kla-pO-oTC"/>
                             <constraint firstItem="REE-zQ-PC0" firstAttribute="top" secondItem="9Ft-mV-65j" secondAttribute="bottom" constant="8" symbolic="YES" id="mf5-Vh-DGL"/>
                             <constraint firstItem="WNb-EY-7x2" firstAttribute="centerX" secondItem="4HX-IJ-BOj" secondAttribute="centerX" id="mnQ-UU-g5m"/>
                             <constraint firstItem="9Ft-mV-65j" firstAttribute="leading" secondItem="REE-zQ-PC0" secondAttribute="leading" id="qIU-EU-6L5"/>
@@ -134,6 +135,9 @@
                     <connections>
                         <outlet property="btnLogin" destination="abb-Ek-0uD" id="jsU-1I-SSq"/>
                         <outlet property="btnTeacherLogin" destination="9N8-Ic-kJI" id="Fyq-04-p6d"/>
+                        <outlet property="labelID" destination="fdg-0r-9Az" id="tN1-21-FTH"/>
+                        <outlet property="labelPw" destination="9Ft-mV-65j" id="4e3-cU-YkE"/>
+                        <outlet property="labelRemember" destination="VSE-I2-WNl" id="zZB-aw-o4I"/>
                         <outlet property="swtRemember" destination="jRo-zE-83K" id="UGe-8a-RxH"/>
                         <outlet property="txtID" destination="yL5-rT-mKC" id="y4I-ED-pwP"/>
                         <outlet property="txtPassword" destination="REE-zQ-PC0" id="qQP-bz-dBt"/>

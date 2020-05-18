@@ -22,10 +22,21 @@
                                     <constraint firstAttribute="width" constant="414" id="hUx-Zh-Xi7"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Droplet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjc-PX-WPr">
+                                <rect key="frame" x="106" y="206" width="202" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="OTi-31-r32"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="hjc-PX-WPr" firstAttribute="top" secondItem="Ga4-MQ-3am" secondAttribute="top" constant="162" id="0l4-FG-cQi"/>
                             <constraint firstItem="8dW-pM-lLU" firstAttribute="leading" secondItem="JfL-6N-Ozk" secondAttribute="leading" id="GJC-R9-Bs8"/>
+                            <constraint firstItem="hjc-PX-WPr" firstAttribute="centerX" secondItem="JfL-6N-Ozk" secondAttribute="centerX" id="b8b-e3-BOv"/>
                             <constraint firstItem="8dW-pM-lLU" firstAttribute="top" secondItem="JfL-6N-Ozk" secondAttribute="top" id="ht6-ex-vpG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ga4-MQ-3am"/>
@@ -37,6 +48,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="drop-bg" width="789.5" height="783"/>
+        <image name="drop-bg" width="250" height="400"/>
     </resources>
 </document>
