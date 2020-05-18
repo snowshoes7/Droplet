@@ -311,12 +311,21 @@ class AddNewViewController: UIViewController {
                     b += 1
                 }
                 
-                
+                var g : Int = 0
+                for m in GlobalVariables.localDroppers {
+                    var newClass : AcademicClass = AcademicClass(url: "", droppers: [], name: "ERROR", teacher: "", assignmentStr: "")
+                    for n in GlobalVariables.localAcademicClasses {
+                        if (m.associatedClass!.name == n.name) {
+                            GlobalVariables.localDroppers[g].associatedClass = n
+                        }
+                    }
+                    g += 1
+                }
             }
             
-            self.preLoadAllClasses()
+            //self.preLoadAllClasses()
             sleep(2) //THIS SLEEP CALL IS NECESSARY. This is because FB retrievals happen asynchronously and since constructing Droppers relies on having all AcademicClasses retrieved, then we need to wait for FB to load on startup of the program and complete that before we can do anything else. Consequently this means the LaunchScreen will almost always be at least ~3 seconds long.
-            self.preLoadAllDroppers()
+            //self.preLoadAllDroppers()
             GlobalVariables.clickedOnDropper = nil
             
             self.dismiss(animated: false, completion: {
