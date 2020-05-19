@@ -17,13 +17,73 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-bg" translatesAutoresizingMaskIntoConstraints="NO" id="8dW-pM-lLU">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="896" id="34b-3e-MXT"/>
-                                    <constraint firstAttribute="width" constant="414" id="hUx-Zh-Xi7"/>
-                                </constraints>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fp-aN-iec">
+                                <rect key="frame" x="75" y="581" width="132.5" height="20"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="DropID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQx-mG-3Ly">
+                                <rect key="frame" x="20" y="374" width="94" height="26"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="x9u-lN-QTg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t49-nO-Ff6">
+                                <rect key="frame" x="20" y="476" width="125" height="26"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="Kac-47-ksj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lCN-sh-6FY" userLabel="TextField">
+                                <rect key="frame" x="20" y="408" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="sWh-z0-OAv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B1I-A0-BAZ" userLabel="TextPw">
+                                <rect key="frame" x="20" y="510" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="3Tm-UO-X7z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xk2-xJ-nfZ">
+                                <rect key="frame" x="20" y="573" width="51" height="31"/>
+                            </switch>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3w-GI-sUC">
+                                <rect key="frame" x="63" y="640" width="288" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Gfr-Bu-DJi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="32"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUc-jg-4ry">
+                                <rect key="frame" x="63" y="726" width="288" height="27"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="Cdt-Ur-6Yv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                <state key="normal" title="Teacher Login"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Droplet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjc-PX-WPr">
-                                <rect key="frame" x="106" y="206" width="202" height="48"/>
+                                <rect key="frame" x="63" y="174" width="288" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="OTi-31-r32"/>
                                 </constraints>
@@ -34,10 +94,34 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hjc-PX-WPr" firstAttribute="top" secondItem="Ga4-MQ-3am" secondAttribute="top" constant="162" id="0l4-FG-cQi"/>
+                            <constraint firstItem="B1I-A0-BAZ" firstAttribute="leading" secondItem="ZQx-mG-3Ly" secondAttribute="leading" id="41q-7Y-CCO"/>
+                            <constraint firstItem="2fp-aN-iec" firstAttribute="centerY" secondItem="Xk2-xJ-nfZ" secondAttribute="centerY" id="6QF-pZ-SQi"/>
+                            <constraint firstItem="Xk2-xJ-nfZ" firstAttribute="leading" secondItem="B1I-A0-BAZ" secondAttribute="leading" id="8yy-G1-EDj"/>
+                            <constraint firstItem="Ga4-MQ-3am" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DUc-jg-4ry" secondAttribute="bottom" constant="90" id="Aql-SM-wqT"/>
+                            <constraint firstItem="lCN-sh-6FY" firstAttribute="leading" secondItem="ZQx-mG-3Ly" secondAttribute="leading" id="Bqa-PV-bSD"/>
+                            <constraint firstItem="lCN-sh-6FY" firstAttribute="centerX" secondItem="JfL-6N-Ozk" secondAttribute="centerX" id="ClH-YB-6QX"/>
+                            <constraint firstItem="8dW-pM-lLU" firstAttribute="centerY" secondItem="JfL-6N-Ozk" secondAttribute="centerY" id="F97-6z-5Vj"/>
                             <constraint firstItem="8dW-pM-lLU" firstAttribute="leading" secondItem="JfL-6N-Ozk" secondAttribute="leading" id="GJC-R9-Bs8"/>
+                            <constraint firstItem="Ga4-MQ-3am" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="DUc-jg-4ry" secondAttribute="bottom" constant="109" id="IgF-4r-Oz1"/>
+                            <constraint firstItem="DUc-jg-4ry" firstAttribute="top" relation="lessThanOrEqual" secondItem="O3w-GI-sUC" secondAttribute="bottom" constant="46" id="Kr4-eU-V1x"/>
+                            <constraint firstItem="DUc-jg-4ry" firstAttribute="leading" secondItem="O3w-GI-sUC" secondAttribute="leading" id="Q4v-2Z-acP"/>
+                            <constraint firstItem="DUc-jg-4ry" firstAttribute="centerX" secondItem="O3w-GI-sUC" secondAttribute="centerX" id="QBn-vd-dpH"/>
+                            <constraint firstItem="2fp-aN-iec" firstAttribute="leading" secondItem="Xk2-xJ-nfZ" secondAttribute="trailing" constant="6" id="S2e-oJ-R9U"/>
+                            <constraint firstItem="O3w-GI-sUC" firstAttribute="leading" secondItem="hjc-PX-WPr" secondAttribute="leading" id="X37-3P-dgr"/>
                             <constraint firstItem="hjc-PX-WPr" firstAttribute="centerX" secondItem="JfL-6N-Ozk" secondAttribute="centerX" id="b8b-e3-BOv"/>
+                            <constraint firstItem="lCN-sh-6FY" firstAttribute="top" secondItem="ZQx-mG-3Ly" secondAttribute="bottom" constant="8" symbolic="YES" id="cWg-df-dKn"/>
+                            <constraint firstItem="hjc-PX-WPr" firstAttribute="top" secondItem="Ga4-MQ-3am" secondAttribute="top" priority="750" constant="130" id="cb2-tF-wyu"/>
+                            <constraint firstItem="8dW-pM-lLU" firstAttribute="centerX" secondItem="JfL-6N-Ozk" secondAttribute="centerX" id="eSY-XJ-dXy"/>
+                            <constraint firstItem="lCN-sh-6FY" firstAttribute="leading" secondItem="ZQx-mG-3Ly" secondAttribute="leading" id="fHo-nd-5YE"/>
                             <constraint firstItem="8dW-pM-lLU" firstAttribute="top" secondItem="JfL-6N-Ozk" secondAttribute="top" id="ht6-ex-vpG"/>
+                            <constraint firstItem="DUc-jg-4ry" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O3w-GI-sUC" secondAttribute="bottom" constant="20" id="ia2-cY-fDN"/>
+                            <constraint firstItem="O3w-GI-sUC" firstAttribute="centerX" secondItem="B1I-A0-BAZ" secondAttribute="centerX" id="k8H-4x-VDh"/>
+                            <constraint firstItem="B1I-A0-BAZ" firstAttribute="leading" secondItem="JfL-6N-Ozk" secondAttribute="leadingMargin" id="m2W-JN-eKi"/>
+                            <constraint firstItem="B1I-A0-BAZ" firstAttribute="centerX" secondItem="JfL-6N-Ozk" secondAttribute="centerX" id="oKV-v7-mFB"/>
+                            <constraint firstItem="hjc-PX-WPr" firstAttribute="leading" secondItem="Ga4-MQ-3am" secondAttribute="leading" constant="63" id="vIi-t3-ILG"/>
+                            <constraint firstItem="lCN-sh-6FY" firstAttribute="leading" secondItem="JfL-6N-Ozk" secondAttribute="leadingMargin" id="vaq-ST-u9v"/>
+                            <constraint firstItem="t49-nO-Ff6" firstAttribute="leading" secondItem="ZQx-mG-3Ly" secondAttribute="leading" id="wQI-Fc-zpH"/>
+                            <constraint firstItem="O3w-GI-sUC" firstAttribute="top" secondItem="Xk2-xJ-nfZ" secondAttribute="bottom" constant="36" id="wya-j2-UOe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ga4-MQ-3am"/>
                     </view>

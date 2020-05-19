@@ -44,11 +44,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("Hid things")
-        self.txtID.frame = CGRect(x: 20, y: 1208, width: 374, height: 34)
-        self.txtPassword.frame = CGRect(x: 20, y: 1310, width: 374, height: 34)
-        self.swtRemember.frame = CGRect(x: 20, y: 1373, width: 51, height: 31)
-        self.btnLogin.frame = CGRect(x: 63, y: 1440, width: 288, height: 40)
-        self.btnTeacherLogin.frame = CGRect(x: 63, y: 1526, width: 288, height: 27)
+        self.txtID.frame = CGRect(x: 20, y: 1208, width: self.txtID.frame.width, height: self.txtID.frame.height)
+        self.txtPassword.frame = CGRect(x: 20, y: 1310, width: self.txtPassword.frame.width, height: self.txtPassword.frame.height)
+        self.swtRemember.frame = CGRect(x: 20, y: 1373, width: self.swtRemember.frame.width, height: self.swtRemember.frame.height)
+        self.btnLogin.frame = CGRect(x: 63, y: 1440, width: self.btnLogin.frame.width, height: self.btnLogin.frame.height)
+        self.btnTeacherLogin.frame = CGRect(x: 63, y: 1526, width: self.btnTeacherLogin.frame.width, height: self.btnTeacherLogin.frame.height)
         self.labelID.isHidden = true
         self.labelPw.isHidden = true
         self.labelRemember.isHidden = true
@@ -59,10 +59,10 @@ class LoginViewController: UIViewController {
         // Might butcher this, let's see
         print("anim was called")
         UIView.animate(withDuration: 0.3, delay: 1, options: .curveLinear, animations: {
-            self.txtID.frame = CGRect(x: 20, y: 408, width: 374, height: 34)
-            self.txtPassword.frame = CGRect(x: 20, y: 510, width: 374, height: 34)
-            self.swtRemember.frame = CGRect(x: 20, y: 573, width: 51, height: 31)
-            self.btnLogin.frame = CGRect(x: 63, y: 640, width: 288, height: 40)
+            self.txtID.frame = CGRect(x: 20, y: 408, width: self.txtID.frame.width, height: self.txtID.frame.height)
+            self.txtPassword.frame = CGRect(x: 20, y: 510, width: self.txtPassword.frame.width, height: self.txtPassword.frame.height)
+            self.swtRemember.frame = CGRect(x: 20, y: 573, width: self.swtRemember.frame.width, height: self.swtRemember.frame.height)
+            self.btnLogin.frame = CGRect(x: 63, y: 640, width: self.btnLogin.frame.width, height: self.btnLogin.frame.height)
             self.btnTeacherLogin.frame = CGRect(x: 63, y: 726, width: 288, height: 27)
         }, completion: { _ in
             print("anim finished")
