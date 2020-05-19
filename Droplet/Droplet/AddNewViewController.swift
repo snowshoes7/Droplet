@@ -110,6 +110,7 @@ class AddNewViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //This method just dictates what shows up depending on what you are adding or not.
         setClass = nil
         setFileType = nil
         
@@ -199,6 +200,7 @@ class AddNewViewController: UIViewController {
     }
     
     func doAddition() {
+        //Add the requested data to FB and local.
         let myAlert = UIAlertController(title: "Please wait...", message: "Updating data...", preferredStyle: .alert)
         let load: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 35, y: 15, width: 50, height: 50)) as UIActivityIndicatorView
         load.hidesWhenStopped = true
@@ -206,6 +208,7 @@ class AddNewViewController: UIViewController {
         load.startAnimating()
 
         myAlert.view.addSubview(load)
+        //Create an alert with a loading icon and only do the work in the completion block so the loading icon is actually present.
         
         self.present(myAlert, animated: true, completion: {
             if (GlobalVariables.addMode == "Class") {
@@ -239,6 +242,7 @@ class AddNewViewController: UIViewController {
                 
                 GlobalVariables.localAcademicClasses.append(newClass)
                 GlobalVariables.loggedInUser?.myClasses.append(newClass)
+                //Just like before we create a class and add our user to that class, both on FB and GlobalVariables.
             } else if (GlobalVariables.addMode == "Dropper") {
                 var setVal : Bool = true
                 
@@ -294,7 +298,9 @@ class AddNewViewController: UIViewController {
                     }
                     b += 1
                 }
+                //We iterate through a lot of stuff here with droppers to ensure that ALL dropper references are updated properly both in FB and locally. Actions might be redone here a few times for redundancy since FB uploads asynchronously.
             } else if (GlobalVariables.addMode == "Assignment") {
+                //Get the date and necessary info about the assignment and pack it into a string with commas.
                 let now = Date()
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "d MMM"
@@ -323,6 +329,7 @@ class AddNewViewController: UIViewController {
                         ])
                     }
                 }
+                //Put that in the old assignment string and upload to FB.
                 
                 var b : Int = 0
                 for x in GlobalVariables.localAcademicClasses {
@@ -363,6 +370,7 @@ class AddNewViewController: UIViewController {
                     backView.modalTransitionStyle = .flipHorizontal
                     self.present(backView, animated: true)
                 }
+                //Redundancy just to be safe and go back to the old view.
             })
         })
     }
@@ -390,6 +398,7 @@ class AddNewViewController: UIViewController {
                 doAddition()
             }
         }
+        //error messages if user makes mistakes.
     }
     
     @IBAction func actionPickFileType(_ sender: Any) {
@@ -414,6 +423,7 @@ class AddNewViewController: UIViewController {
         }))
         pickAlert2.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(pickAlert2, animated: true, completion: nil)
+        //Picking file icon from a possible list.
     }
     
     @IBAction func actionBack(_ sender: Any) {
@@ -440,5 +450,6 @@ class AddNewViewController: UIViewController {
         
         pickAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(pickAlert, animated: true, completion: nil)
+        //Picking classes out of teacher's list.
     }
 }

@@ -35,4 +35,5 @@ class DropsTeacherTableViewCell: UITableViewCell {
             lblFileDetailsCheckIn.text = "This \(dropper.associatedClass!.name) dropper has had \(dropper.interactions) Check-Ins."
         }
     }
+    //set linked outlets to the values we need
 }

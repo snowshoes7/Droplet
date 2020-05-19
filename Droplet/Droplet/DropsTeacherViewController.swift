@@ -117,6 +117,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
         }))
         menuAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(menuAlert, animated: true, completion: nil)
+        //Segues to add controller where needed
     }
 }
 
@@ -173,6 +174,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
             
             return allOfMyDroppers
         }
+        //Save tally function as in student version of this VC.
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return tallyDroppers().count
@@ -191,7 +193,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
             let cell : DropsTeacherTableViewCell = tableView.dequeueReusableCell(withIdentifier: ident) as! DropsTeacherTableViewCell
             
             cell.setDropper(dropper: allOfMyDroppers[indexPath.row], isModifiable: allOfMyDroppers[indexPath.row].modifiable)
-            
+            //Configure cell using the method we made in its structure.
             return cell
         }
         
@@ -220,7 +222,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
                         }
                     }
                     GlobalVariables.localDroppers[y].interactions = 0
-                    
+                    //Set interactions to 0
                     self.db.collection("droppers")
                         .whereField("id", isEqualTo: (GlobalVariables.localDroppers[y].id))
                     .getDocuments() { (querySnapshot, err) in
@@ -233,7 +235,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
                             ])
                         }
                     }
-                    
+                    //Upload that info
                     tableView.reloadData()
                 }))
                 alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
@@ -260,6 +262,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
             if ((tallyDroppers()[indexPath.row].associatedClass?.droppers.count)! <= 1) {
                 alertController.message?.append(" WARNING: If you delete the last dropper of the class \((tallyDroppers()[indexPath.row].associatedClass?.name)!), the class will also be deleted.")
                 deleteClassAlso = true
+                //Delete class if deleting last dropper too.
             }
             alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
                 var y : Int = 0
@@ -314,7 +317,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
                         ])
                     }
                 }
-                
+                //The above deletes the dropper and propagates it throughout classes locally and in FB multiple times for safety.
                 if (deleteClassAlso) {
                     var toLookFor : AcademicClass = GlobalVariables.localDroppers[y].associatedClass!
                     var z : Int = 0
@@ -375,7 +378,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
                 }
                 
                 GlobalVariables.localDroppers.remove(at: y)
-                
+                //The above removes droppers from FB and locally several times as a safety net.
                 tableView.reloadData()
             }))
             alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
@@ -384,5 +387,6 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 80.0
+            //height of rows is always 80 to allow designs to fit.
         }
 }

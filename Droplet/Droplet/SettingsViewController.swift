@@ -57,6 +57,7 @@ class SettingsViewController: UIViewController {
                 execute = false
             }
         }
+        //Make sure passwords, if being changed, match
         
         if (execute) {
             if (txtUsername.text == "" || txtEmail.text == "" || ((txtUsername.text?.contains(" ")) != nil) || ((txtEmail.text?.contains(" ")) != nil) || ((txtpass1.text?.contains(" ")) != nil) || ((txtpass2.text?.contains(" ")) != nil)) {
@@ -68,10 +69,11 @@ class SettingsViewController: UIViewController {
                 alertController2.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alertController2, animated: true, completion: nil)
                 execute = false
+                //Prevent space and unicode abuse
             }
         }
         
-        if (execute) {
+        if (execute) { //ONLY upload if we are sure data is okay.
             db.collection("users")
                 .whereField("username", isEqualTo: (GlobalVariables.loggedInUser?.username)!)
             .getDocuments() { (querySnapshot, err) in
@@ -93,15 +95,17 @@ class SettingsViewController: UIViewController {
     
     @IBAction func actionLogOut(_ sender: Any) {
         logOut()
+        //Spin off function
     }
     
     func logOut() {
-        //TODO clear all user-related Global Variables here, such as:
+        //clear all user-related Global Variables here, such as:
         GlobalVariables.loggedInUser = nil
         
         //let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         //self.present(loginView, animated: true, completion: nil)
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        //Delete all above VCs
     }
     
     func clearRemembered() {
@@ -119,4 +123,5 @@ class SettingsViewController: UIViewController {
             print ("There was an error clearing remembered user")
         }
     }
+    //Delete saved user
 }

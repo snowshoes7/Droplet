@@ -46,6 +46,8 @@ class AssignmentsTeacherTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (GlobalVariables.clickedOnDropper?.associatedClass?.assignmentStr.split(separator: ";").count) ?? 0
     }
+    //above is boilerplate tableview stuff
+    //below is where the fun begins
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AssignCell", for: indexPath) as! AssignmentTeacherTableViewCell
         
@@ -70,6 +72,7 @@ class AssignmentsTeacherTableViewController: UITableViewController {
         } else {
             imageToUse = UIImage(named: "code-doc")!
         }
+        //Set up the image we are going to use based on what the dropper says.
         
         // Configure the cell...
         cell.setAssignment(fileImg: imageToUse, titleName: String(assignArray[indexPath.row].split(separator: ",")[0]), time: String(assignArray[indexPath.row].split(separator: ",")[3]), details: String(assignArray[indexPath.row].split(separator: ",")[1]), url: String(assignArray[indexPath.row].split(separator: ",")[4]))
@@ -83,6 +86,7 @@ class AssignmentsTeacherTableViewController: UITableViewController {
         }
         let toGoURL = URL(string: String(assignArray[indexPath.row].split(separator: ",")[4]))!
         UIApplication.shared.open(toGoURL, options: [:], completionHandler: nil)
+        //Open link in safari.
     }
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -112,6 +116,7 @@ class AssignmentsTeacherTableViewController: UITableViewController {
             load.startAnimating()
 
             myAlert.view.addSubview(load)
+            //Load animation from other VCs
             
             self.present(myAlert, animated: true, completion: {
                 self.dismiss(animated: false, completion: {
@@ -160,6 +165,7 @@ class AssignmentsTeacherTableViewController: UITableViewController {
                     backView.modalPresentationStyle = .fullScreen
                     backView.modalTransitionStyle = .flipHorizontal
                     self.present(backView, animated: true)
+                    //Concatenate the assignment string, upload and propagate locally, and then back out.
                 })
             })
         }))

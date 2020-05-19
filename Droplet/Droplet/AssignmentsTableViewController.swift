@@ -49,6 +49,7 @@ class AssignmentsTableViewController: UITableViewController {
         for x in (GlobalVariables.clickedOnDropper?.associatedClass?.assignmentStr.split(separator: ";"))! {
             assignArray.append(String(x))
         }
+        //Get assignment from assignSTR which is how we store assignments in FB
         
         var imageToUse : UIImage = UIImage(named: "code-doc")!
         
@@ -66,8 +67,12 @@ class AssignmentsTableViewController: UITableViewController {
             imageToUse = UIImage(named: "code-doc")!
         }
         
+        //Assign image types
+        
         // Configure the cell...
         cell.setAssignment(fileImg: imageToUse, titleName: String(assignArray[indexPath.row].split(separator: ",")[0]), time: String(assignArray[indexPath.row].split(separator: ",")[3]), details: String(assignArray[indexPath.row].split(separator: ",")[1]), url: String(assignArray[indexPath.row].split(separator: ",")[4]))
+        
+        //all corresponds to how we store the data in FB
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

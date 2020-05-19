@@ -40,6 +40,7 @@ class DropsViewController: UIViewController {
     
     @IBAction func actionScan(_ sender: Any) {
         var triggerBadAlert : Bool = false
+        //Will show alert if class does not exist
         
         let addAlert : UIAlertController = UIAlertController(title: "Add What Class?", message: nil, preferredStyle: .alert)
         addAlert.addTextField(configurationHandler: { (textField) in
@@ -72,6 +73,7 @@ class DropsViewController: UIViewController {
                                 ])
                             }
                         }
+                        //Add class to the big long string of classes in FB and also in local data
                         self.outletTableView.reloadData()
                         triggerBadAlert = false
                         break
@@ -123,6 +125,7 @@ class DropsViewController: UIViewController {
             }
         }
     }
+    //Above are just some save functions for droppers and users for convenience. They just upload given data to FB
 }
 
 extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -156,6 +159,7 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         return allOfMyDroppers
+        //This updates all my classes and droppers locally so functions don't get out of sync whenever FB updates or changes--since this function is called a lot it made sense to put these instructions in here.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -174,6 +178,7 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell : DropsTableViewCell = tableView.dequeueReusableCell(withIdentifier: ident) as! DropsTableViewCell
         
+        //Configure the cell with its method
         cell.setDropper(dropper: allOfMyDroppers[indexPath.row], isModifiable: allOfMyDroppers[indexPath.row].modifiable)
         
         return cell
@@ -248,6 +253,7 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
                     z += 1
                 }
             }
+            //Above 2 blocks tell us what to leave
             
             print("DELETING \(GlobalVariables.localAcademicClasses[z].name)")
             
@@ -264,6 +270,7 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
                 }
             }
             print(GlobalVariables.loggedInUser?.myClasses)
+            //Removes from local
 
             var newStringOfClasses : String = ""
             var j : Int = 0
@@ -286,6 +293,7 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
                     ])
                 }
             }
+            //Reuploads the new, removed string to FB so it is saved.
             
             //self.saveUser(newClassStr: newStringOfClasses)
             tableView.reloadData()

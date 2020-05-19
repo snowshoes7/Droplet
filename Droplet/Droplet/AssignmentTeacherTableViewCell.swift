@@ -33,4 +33,5 @@ class AssignmentTeacherTableViewCell: UITableViewCell {
         self.lblTime.text = time
         self.assignmentURL = url
     }
+    //set linked outlets to the values we need
 }

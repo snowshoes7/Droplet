@@ -29,10 +29,12 @@ class DropsTableViewCell: UITableViewCell {
             lblTitle.text = dropper.title
             lblTeacher.text = dropper.associatedClass?.teacher.capitalized
             lblFileDetails.text = "This \(dropper.associatedClass!.name) dropper was last updated on \((dropper.associatedClass?.assignmentStr.split(separator: ";").last?.split(separator: ",")[3]) ?? "never")."
+            //show last updated date based on the last assignment we got
         } else {
             lblTitleCheckIn.text = dropper.title
             lblTeacherCheckIn.text = dropper.associatedClass?.teacher.capitalized
             lblFileDetailsCheckIn.text = "This \(dropper.associatedClass!.name) dropper has had \(dropper.interactions) Check-Ins."
         }
     }
+    //set linked outlets to the values we need
 }

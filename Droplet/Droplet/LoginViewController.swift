@@ -53,6 +53,7 @@ class LoginViewController: UIViewController {
         self.labelPw.isHidden = true
         self.labelRemember.isHidden = true
         anim()
+        //Hide everything on start so then we can animate in
     }
     
     func anim() {
@@ -70,6 +71,7 @@ class LoginViewController: UIViewController {
             self.labelPw.isHidden = false
             self.labelRemember.isHidden = false
         })
+        //Create animation movements
     }
     
     func preLoadAllDroppers() {
@@ -185,7 +187,7 @@ class LoginViewController: UIViewController {
         
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredUser")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-        
+        //Apple contexts for deleting core data
         do {
             try context.execute(deleteRequest)
             try context.save()
@@ -203,6 +205,7 @@ class LoginViewController: UIViewController {
         //Same as above but segue to teacher views instead -- ensure they are actually a teacher before segue
         teacherLogin()
     }
+    //The two above just spin off login functions
     
     func teacherLogin() {
         // Validate credentials with firebase
@@ -236,6 +239,7 @@ class LoginViewController: UIViewController {
                                     }
                                 }
                             }
+                            //Reconstruct classes out of FB data since we don't store all classes in FB
                             GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password, email: email)
                             print(GlobalVariables.loggedInUser!)
                             // Set Remember Me
@@ -274,6 +278,7 @@ class LoginViewController: UIViewController {
                                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                                        self.present(alertController, animated: true, completion: nil)
                             break
+                            //wrong button pressed
                         }
                     } else {
                         badCount += 1
@@ -286,6 +291,7 @@ class LoginViewController: UIViewController {
                             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                             self.present(alertController, animated: true, completion: nil)
                         }
+                        //Data incorrect
                         continue
                     }
                 }
@@ -325,6 +331,7 @@ class LoginViewController: UIViewController {
                                     }
                                 }
                             }
+                            //Same as above--we can't store everything in FB so reconstruction is key
                             GlobalVariables.loggedInUser = User(myClasses: newClasses, isTeacher: isTeacher, username: name, password: password, email: email)
                             print(GlobalVariables.loggedInUser!)
                             // Set Remember Me
@@ -375,6 +382,7 @@ class LoginViewController: UIViewController {
                             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                             self.present(alertController, animated: true, completion: nil)
                         }
+                        //Wrong login
                         continue
                     }
                 }
