@@ -39,13 +39,55 @@ class DropsViewController: UIViewController {
     }
     
     @IBAction func actionScan(_ sender: Any) {
+        var triggerBadAlert : Bool = false
+        
         let addAlert : UIAlertController = UIAlertController(title: "Add What Class?", message: nil, preferredStyle: .alert)
         addAlert.addTextField(configurationHandler: { (textField) in
             textField.placeholder = "New Class To Add"
         })
         addAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
-            
+            let lookingFor : String = addAlert.textFields![0].text!
+            print(lookingFor)
+            if (lookingFor == "") {
+                triggerBadAlert = true
+            } else {
+                for academicclass in GlobalVariables.localAcademicClasses {
+                    if (academicclass.name == lookingFor) {
+                        GlobalVariables.loggedInUser?.addClass(classToAdd: academicclass)
+                        var newStr : String = ""
+                        for i in (GlobalVariables.loggedInUser?.myClasses)! {
+                            newStr.append("\(i.name);")
+                        }
+                        
+                        self.db.collection("users")
+                            .whereField("username", isEqualTo: (GlobalVariables.loggedInUser?.username)!)
+                        .getDocuments() { (querySnapshot, err) in
+                            if err != nil {
+                                print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                            } else {
+                                let document = querySnapshot!.documents.first
+                                document!.reference.updateData([
+                                    "classes": newStr
+                                ])
+                            }
+                        }
+                        self.outletTableView.reloadData()
+                        triggerBadAlert = false
+                        break
+                    } else {
+                        triggerBadAlert = true
+                    }
+                }
+            }
         }))
+        self.present(addAlert, animated: true, completion: {
+            if (triggerBadAlert) {
+                print("bad alert")
+                let badAlert : UIAlertController = UIAlertController(title: "Error", message: "Something went wrong. Maybe that class doesn't exist?", preferredStyle: .alert)
+                badAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(badAlert, animated: true, completion: nil)
+            }
+        })
     }
     
     func saveLocalDropperToFirebase(id: Int) {
@@ -187,24 +229,65 @@ extension DropsViewController: UITableViewDataSource, UITableViewDelegate {
             preferredStyle: .alert
         )
         alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
-            var x : Int = 0
-            while x < (GlobalVariables.loggedInUser?.myClasses.count)! {
-                if (GlobalVariables.localAcademicClasses[x].name == GlobalVariables.loggedInUser?.myClasses[x].name) {
-                    GlobalVariables.loggedInUser?.myClasses.remove(at: x)
+            var y : Int = 0
+            for x in GlobalVariables.localDroppers {
+                if (x.id == self.tallyDroppers()[indexPath.row].id) {
+                    
                     break
                 } else {
-                    x += 1
+                    y += 1
                 }
             }
-
-            var newStringOfClasses : String = ""
-            var y : Int = 0
-            while y < (GlobalVariables.loggedInUser?.myClasses.count)! {
-                newStringOfClasses.append("\((GlobalVariables.loggedInUser?.myClasses[y].name)!);")
-                y += 1
+            
+            var toLookFor : AcademicClass = GlobalVariables.localDroppers[y].associatedClass!
+            var z : Int = 0
+            for a in GlobalVariables.localAcademicClasses {
+                if (a.name == toLookFor.name) {
+                    break
+                } else {
+                    z += 1
+                }
             }
             
-            self.saveUser(newClassStr: newStringOfClasses)
+            print("DELETING \(GlobalVariables.localAcademicClasses[z].name)")
+            
+            var x : Int = 0
+            for g in GlobalVariables.localAcademicClasses {
+                x = 0
+                for h in (GlobalVariables.loggedInUser?.myClasses)! {
+                    if (GlobalVariables.localAcademicClasses[z].name == h.name) {
+                        GlobalVariables.loggedInUser?.myClasses.remove(at: x)
+                        break
+                    } else {
+                        x += 1
+                    }
+                }
+            }
+            print(GlobalVariables.loggedInUser?.myClasses)
+
+            var newStringOfClasses : String = ""
+            var j : Int = 0
+            while j < (GlobalVariables.loggedInUser?.myClasses.count)! {
+                newStringOfClasses.append("\((GlobalVariables.loggedInUser?.myClasses[y].name)!);")
+                j += 1
+            }
+            
+            print(newStringOfClasses)
+            
+            self.db.collection("users")
+                .whereField("username", isEqualTo: (GlobalVariables.loggedInUser?.username)!)
+            .getDocuments() { (querySnapshot, err) in
+                if err != nil {
+                    print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                } else {
+                    let document = querySnapshot!.documents.first
+                    document!.reference.updateData([
+                        "classes": newStringOfClasses
+                    ])
+                }
+            }
+            
+            //self.saveUser(newClassStr: newStringOfClasses)
             tableView.reloadData()
         }))
         alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
