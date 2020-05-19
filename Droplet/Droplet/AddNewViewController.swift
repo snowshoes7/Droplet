@@ -216,7 +216,29 @@ class AddNewViewController: UIViewController {
                     "name": self.txtName.text!,
                     "teacher": (GlobalVariables.loggedInUser?.username)!
                 ])
-                GlobalVariables.localAcademicClasses.append(AcademicClass(url: self.txtURL.text!, droppers: [], name: self.txtName.text!, teacher: (GlobalVariables.loggedInUser?.username)!, assignmentStr: ""))
+                var newStr : String = ""
+                for i in (GlobalVariables.loggedInUser?.myClasses)! {
+                    newStr.append("\(i.name);")
+                }
+                newStr.append("\(self.txtName.text!);")
+                
+                self.db.collection("users")
+                    .whereField("username", isEqualTo: (GlobalVariables.loggedInUser?.username)!)
+                .getDocuments() { (querySnapshot, err) in
+                    if err != nil {
+                        print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                    } else {
+                        let document = querySnapshot!.documents.first
+                        document!.reference.updateData([
+                            "classes": newStr
+                        ])
+                    }
+                }
+                
+                let newClass : AcademicClass = AcademicClass(url: self.txtURL.text!, droppers: [], name: self.txtName.text!, teacher: (GlobalVariables.loggedInUser?.username)!, assignmentStr: "")
+                
+                GlobalVariables.localAcademicClasses.append(newClass)
+                GlobalVariables.loggedInUser?.myClasses.append(newClass)
             } else if (GlobalVariables.addMode == "Dropper") {
                 var setVal : Bool = true
                 

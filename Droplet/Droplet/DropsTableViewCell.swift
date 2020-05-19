@@ -28,7 +28,7 @@ class DropsTableViewCell: UITableViewCell {
         if (isModifiable) {
             lblTitle.text = dropper.title
             lblTeacher.text = dropper.associatedClass?.teacher.capitalized
-            lblFileDetails.text = "This \(dropper.associatedClass!.name) dropper has had \(dropper.interactions) Check-Ins."
+            lblFileDetails.text = "This \(dropper.associatedClass!.name) dropper was last updated on \((dropper.associatedClass?.assignmentStr.split(separator: ";").last?.split(separator: ",")[3]) ?? "never")."
         } else {
             lblTitleCheckIn.text = dropper.title
             lblTeacherCheckIn.text = dropper.associatedClass?.teacher.capitalized

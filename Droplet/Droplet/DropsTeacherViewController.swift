@@ -11,8 +11,7 @@ import CoreNFC
 import Firebase
 
 class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate {
-
-    //let reuseIdentifier = "reuseIdentifier"
+    
     var detectedMessages = [NFCNDEFMessage]()
     var session: NFCNDEFReaderSession?
     
@@ -22,11 +21,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
     @IBOutlet weak var outletTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        print(GlobalVariables.loggedInUser?.myClasses)
-        print(GlobalVariables.localAcademicClasses)
-        print(GlobalVariables.localDroppers)
         
         outletTableView.dataSource = self
         outletTableView.delegate = self
@@ -209,8 +204,117 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
                 assignView.modalTransitionStyle = .flipHorizontal
                 self.present(assignView, animated: true, completion: nil)
             } else {
-                //Do nothing
+                //Ask to reset view counts.
+                let alertController = UIAlertController(
+                    title: "Are you sure?",
+                    message: "Do you really want to reset the count of the Dropper \((tallyDroppers()[indexPath.row].title))? This will be visible to everyone.",
+                    preferredStyle: .alert
+                )
+                alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
+                    var y : Int = 0
+                    for x in GlobalVariables.localDroppers {
+                        if (x.id == self.tallyDroppers()[indexPath.row].id) {
+                            break
+                        } else {
+                            y += 1
+                        }
+                    }
+                    GlobalVariables.localDroppers[y].interactions = 0
+                    
+                    self.db.collection("droppers")
+                        .whereField("id", isEqualTo: (GlobalVariables.localDroppers[y].id))
+                    .getDocuments() { (querySnapshot, err) in
+                        if err != nil {
+                            print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document!.reference.updateData([
+                                "interactions": 0
+                            ])
+                        }
+                    }
+                    
+                    tableView.reloadData()
+                }))
+                alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
             }
+        }
+        
+        func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+            return true
+        }
+        
+        func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+            return "Delete Dropper"
+        }
+        
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            let alertController = UIAlertController(
+                title: "Are you sure?",
+                message: "Do you really want to delete the Dropper \((tallyDroppers()[indexPath.row].title))? This will delete it for all students.",
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
+                var y : Int = 0
+                for x in GlobalVariables.localDroppers {
+                    if (x.id == self.tallyDroppers()[indexPath.row].id) {
+                        
+                        break
+                    } else {
+                        y += 1
+                    }
+                }
+                
+                self.db.collection("droppers")
+                    .whereField("id", isEqualTo: GlobalVariables.localDroppers[y].id)
+                .getDocuments() { (querySnapshot, err) in
+                    if err != nil {
+                        print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                    } else {
+                        let document = querySnapshot!.documents.first
+                        document!.reference.delete()
+                    }
+                }
+                
+                var newStrDroppers : String = ""
+                
+                for x in GlobalVariables.localAcademicClasses {
+                    if (x.name == GlobalVariables.localDroppers[y].associatedClass?.name) {
+                        var tempArray : [String] = x.droppers
+                        var h : Int = 0
+                        for v in tempArray {
+                            if v == GlobalVariables.localDroppers[y].id {
+                                tempArray.remove(at: h)
+                            } else {
+                                h += 1
+                            }
+                        }
+                        for w in tempArray {
+                            newStrDroppers.append("\(w);")
+                        }
+                    }
+                }
+                
+                self.db.collection("classes")
+                    .whereField("name", isEqualTo: (GlobalVariables.localDroppers[y].associatedClass?.name)!)
+                .getDocuments() { (querySnapshot, err) in
+                    if err != nil {
+                        print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                    } else {
+                        let document = querySnapshot!.documents.first
+                        document!.reference.updateData([
+                            "droppers": newStrDroppers
+                        ])
+                    }
+                }
+                
+                GlobalVariables.localDroppers.remove(at: y)
+                
+                tableView.reloadData()
+            }))
+            alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
