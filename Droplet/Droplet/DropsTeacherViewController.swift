@@ -219,7 +219,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
         func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             let alertController = UIAlertController(
                 title: "Are you sure?",
-                message: "Do you really want to delete the Dropper \((tallyDroppers()[indexPath.row].title))?",
+                message: "Do you really want to delete the Dropper \((tallyDroppers()[indexPath.row].title))? This will delete it for all students.",
                 preferredStyle: .alert
             )
             alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
