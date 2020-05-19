@@ -153,31 +153,15 @@
 		4462FEF323F4AE9A009A9F66 /* Droplet */ = {
 			isa = PBXGroup;
 			children = (
-				B3AB5D522433B6D400D6A07E /* Droplet.entitlements */,
-				4462FEF423F4AE9A009A9F66 /* AppDelegate.swift */,
-				4462FEF623F4AE9A009A9F66 /* SceneDelegate.swift */,
-				4462FEF823F4AE9A009A9F66 /* ViewController.swift */,
-				B08861E0243709CC00711633 /* GlobalVariables.swift */,
-				4462FEFA23F4AE9A009A9F66 /* Main.storyboard */,
-				B0C77796247262B60005D20F /* AddNewViewController.swift */,
-				B0C777922472486F0005D20F /* AssignmentsTeacherTableViewController.swift */,
-				B02EF8022469ECA30013326F /* AssignmentsTableViewController.swift */,
-				B02EF7FE2469B43E0013326F /* AssignmentTableViewCell.swift */,
-				B0C77794247248A40005D20F /* AssignmentTeacherTableViewCell.swift */,
-				B0FE55602441657000D004A1 /* DropsTableViewCell.swift */,
-				B0C777902472469E0005D20F /* DropsTeacherTableViewCell.swift */,
-				B07BC1FD2433FB7800C47198 /* User.swift */,
-				B07BC1FF2433FB8B00C47198 /* Dropper.swift */,
-				B07BC2012433FBA500C47198 /* AcademicClass.swift */,
 				B086A90D242E6D2C006017DC /* LoginViewController.swift */,
-				B086A90F242E7152006017DC /* DropsViewController.swift */,
-				B08861DE2436FCFB00711633 /* DropsTeacherViewController.swift */,
 				B0D944F22432A807000A4BED /* SettingsViewController.swift */,
-				4462FEFD23F4AE9B009A9F66 /* Assets.xcassets */,
+				B067A21624736A7E00771FD3 /* Technical */,
+				B067A21524736A6700771FD3 /* Student */,
+				B067A21424736A4700771FD3 /* Teacher */,
+				B067A212247369F400771FD3 /* Structures */,
+				4462FEFA23F4AE9A009A9F66 /* Main.storyboard */,
 				4462FEFF23F4AE9B009A9F66 /* LaunchScreen.storyboard */,
-				4462FF0223F4AE9B009A9F66 /* Info.plist */,
-				B0680E26242E57E200355450 /* Droplet.xcdatamodeld */,
-				B0680E29242E5A4F00355450 /* GoogleService-Info.plist */,
+				4462FEFD23F4AE9B009A9F66 /* Assets.xcassets */,
 			);
 			path = Droplet;
 			sourceTree = "<group>";
@@ -211,6 +195,54 @@
 				18CE7BB45925F162E98E312D /* Pods-DropletTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B067A212247369F400771FD3 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				B08861E0243709CC00711633 /* GlobalVariables.swift */,
+				B07BC1FD2433FB7800C47198 /* User.swift */,
+				B07BC1FF2433FB8B00C47198 /* Dropper.swift */,
+				B07BC2012433FBA500C47198 /* AcademicClass.swift */,
+			);
+			name = Structures;
+			sourceTree = "<group>";
+		};
+		B067A21424736A4700771FD3 /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				B0C77796247262B60005D20F /* AddNewViewController.swift */,
+				B0C777922472486F0005D20F /* AssignmentsTeacherTableViewController.swift */,
+				B0C77794247248A40005D20F /* AssignmentTeacherTableViewCell.swift */,
+				B0C777902472469E0005D20F /* DropsTeacherTableViewCell.swift */,
+				B08861DE2436FCFB00711633 /* DropsTeacherViewController.swift */,
+			);
+			name = Teacher;
+			sourceTree = "<group>";
+		};
+		B067A21524736A6700771FD3 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				B02EF8022469ECA30013326F /* AssignmentsTableViewController.swift */,
+				B02EF7FE2469B43E0013326F /* AssignmentTableViewCell.swift */,
+				B0FE55602441657000D004A1 /* DropsTableViewCell.swift */,
+				B086A90F242E7152006017DC /* DropsViewController.swift */,
+			);
+			name = Student;
+			sourceTree = "<group>";
+		};
+		B067A21624736A7E00771FD3 /* Technical */ = {
+			isa = PBXGroup;
+			children = (
+				B3AB5D522433B6D400D6A07E /* Droplet.entitlements */,
+				4462FEF423F4AE9A009A9F66 /* AppDelegate.swift */,
+				4462FEF623F4AE9A009A9F66 /* SceneDelegate.swift */,
+				4462FEF823F4AE9A009A9F66 /* ViewController.swift */,
+				4462FF0223F4AE9B009A9F66 /* Info.plist */,
+				B0680E26242E57E200355450 /* Droplet.xcdatamodeld */,
+				B0680E29242E5A4F00355450 /* GoogleService-Info.plist */,
+			);
+			name = Technical;
 			sourceTree = "<group>";
 		};
 		E1F31B1FC194E38BCCCC1376 /* Frameworks */ = {

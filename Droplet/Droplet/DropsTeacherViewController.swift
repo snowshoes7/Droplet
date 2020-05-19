@@ -204,7 +204,40 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
                 assignView.modalTransitionStyle = .flipHorizontal
                 self.present(assignView, animated: true, completion: nil)
             } else {
-                //Do nothing
+                //Ask to reset view counts.
+                let alertController = UIAlertController(
+                    title: "Are you sure?",
+                    message: "Do you really want to reset the count of the Dropper \((tallyDroppers()[indexPath.row].title))? This will be visible to everyone.",
+                    preferredStyle: .alert
+                )
+                alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
+                    var y : Int = 0
+                    for x in GlobalVariables.localDroppers {
+                        if (x.id == self.tallyDroppers()[indexPath.row].id) {
+                            break
+                        } else {
+                            y += 1
+                        }
+                    }
+                    GlobalVariables.localDroppers[y].interactions = 0
+                    
+                    self.db.collection("droppers")
+                        .whereField("id", isEqualTo: (GlobalVariables.localDroppers[y].id))
+                    .getDocuments() { (querySnapshot, err) in
+                        if err != nil {
+                            print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document!.reference.updateData([
+                                "interactions": 0
+                            ])
+                        }
+                    }
+                    
+                    tableView.reloadData()
+                }))
+                alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
             }
         }
         
@@ -264,7 +297,7 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
                 }
                 
                 self.db.collection("classes")
-                    .whereField("name", isEqualTo: GlobalVariables.localDroppers[y].associatedClass?.name)
+                    .whereField("name", isEqualTo: (GlobalVariables.localDroppers[y].associatedClass?.name)!)
                 .getDocuments() { (querySnapshot, err) in
                     if err != nil {
                         print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
