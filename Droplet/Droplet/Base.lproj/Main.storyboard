@@ -666,37 +666,59 @@ You will need to create some and add them to this class later.</string>
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFp-XY-DR0">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BC-zU-KUa">
-                                            <rect key="frame" x="108" y="13" width="181" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA8-Fe-Lpb">
-                                            <rect key="frame" x="108" y="35" width="355" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
-                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh1-Xn-T9J">
-                                            <rect key="frame" x="297" y="15" width="86" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
-                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red-gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="mmg-aF-xbv">
                                             <rect key="frame" x="98" y="0.0" width="285" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFp-XY-DR0">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="Hn4-hi-vbj"/>
+                                                <constraint firstAttribute="height" constant="80" id="QFN-fQ-cuA"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BC-zU-KUa">
+                                            <rect key="frame" x="108" y="13" width="176" height="20"/>
+                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA8-Fe-Lpb">
+                                            <rect key="frame" x="108" y="35" width="262" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="34" id="wTq-45-jQO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh1-Xn-T9J">
+                                            <rect key="frame" x="294" y="15" width="76" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="FCN-l0-iOp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="iA8-Fe-Lpb" secondAttribute="trailing" constant="13" id="2Jl-5l-xG6"/>
+                                        <constraint firstAttribute="trailing" secondItem="uh1-Xn-T9J" secondAttribute="trailing" constant="13" id="7N4-gJ-b9d"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uh1-Xn-T9J" secondAttribute="trailing" constant="13" id="Izf-j3-mDI"/>
+                                        <constraint firstItem="iA8-Fe-Lpb" firstAttribute="leading" secondItem="OFp-XY-DR0" secondAttribute="trailing" constant="8" id="N8u-nc-j7S"/>
+                                        <constraint firstItem="8BC-zU-KUa" firstAttribute="top" secondItem="m19-uN-mhQ" secondAttribute="topMargin" constant="2" id="QKq-7Z-Gaz"/>
+                                        <constraint firstItem="iA8-Fe-Lpb" firstAttribute="top" secondItem="8BC-zU-KUa" secondAttribute="bottom" constant="2" id="Zde-af-hLQ"/>
+                                        <constraint firstItem="iA8-Fe-Lpb" firstAttribute="bottom" secondItem="m19-uN-mhQ" secondAttribute="bottomMargin" id="dfG-Rd-8li"/>
+                                        <constraint firstItem="iA8-Fe-Lpb" firstAttribute="leading" secondItem="8BC-zU-KUa" secondAttribute="leading" id="e8Y-t5-Kvv"/>
+                                        <constraint firstAttribute="bottom" secondItem="OFp-XY-DR0" secondAttribute="bottom" id="fC5-td-zFI"/>
+                                        <constraint firstItem="uh1-Xn-T9J" firstAttribute="leading" secondItem="8BC-zU-KUa" secondAttribute="trailing" constant="5" id="fGT-mm-HIm"/>
+                                        <constraint firstItem="iA8-Fe-Lpb" firstAttribute="top" secondItem="uh1-Xn-T9J" secondAttribute="bottom" constant="2" id="jtk-Y2-XEk"/>
+                                        <constraint firstItem="OFp-XY-DR0" firstAttribute="leading" secondItem="m19-uN-mhQ" secondAttribute="leading" id="uTv-Xn-ivP"/>
+                                        <constraint firstItem="OFp-XY-DR0" firstAttribute="top" secondItem="m19-uN-mhQ" secondAttribute="top" id="udO-zF-LqY"/>
+                                        <constraint firstItem="uh1-Xn-T9J" firstAttribute="top" secondItem="m19-uN-mhQ" secondAttribute="topMargin" constant="4" id="wYd-aC-gfO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92117017509999999" green="0.38473373649999998" blue="0.38724684720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -1219,37 +1241,59 @@ You will need to create some and add them to this class later.</string>
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red-gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="4yv-My-rRO">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red-gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="4yv-My-rRO">
                                             <rect key="frame" x="98" y="0.0" width="285" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dmv-xU-bGe">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dmv-xU-bGe">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="FPt-vj-qnD"/>
+                                                <constraint firstAttribute="height" constant="80" id="PHF-q9-XOT"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYF-Nk-3JI">
-                                            <rect key="frame" x="108" y="13" width="181" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYF-Nk-3JI">
+                                            <rect key="frame" x="108" y="13" width="176" height="20"/>
+                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1V-Jb-bgc">
-                                            <rect key="frame" x="108" y="35" width="355" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1V-Jb-bgc">
+                                            <rect key="frame" x="108" y="35" width="254" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="34" id="hjl-s9-y5n"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzT-Ao-4OY">
-                                            <rect key="frame" x="297" y="15" width="86" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzT-Ao-4OY">
+                                            <rect key="frame" x="294" y="15" width="76" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="JXh-Jc-kiu"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
-                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Dmv-xU-bGe" firstAttribute="leading" secondItem="0x3-vx-hPu" secondAttribute="leading" id="2zP-TV-c7U"/>
+                                        <constraint firstItem="S1V-Jb-bgc" firstAttribute="top" secondItem="NzT-Ao-4OY" secondAttribute="bottom" constant="2" id="3go-jk-S2y"/>
+                                        <constraint firstItem="NzT-Ao-4OY" firstAttribute="top" secondItem="0x3-vx-hPu" secondAttribute="topMargin" constant="4" id="7Eq-OW-bFa"/>
+                                        <constraint firstItem="NzT-Ao-4OY" firstAttribute="leading" secondItem="NYF-Nk-3JI" secondAttribute="trailing" constant="5" id="8JT-CW-F4w"/>
+                                        <constraint firstAttribute="trailing" secondItem="4yv-My-rRO" secondAttribute="trailing" id="B26-OC-EWM"/>
+                                        <constraint firstItem="4yv-My-rRO" firstAttribute="top" secondItem="0x3-vx-hPu" secondAttribute="top" id="CHx-jt-foq"/>
+                                        <constraint firstItem="NYF-Nk-3JI" firstAttribute="top" secondItem="0x3-vx-hPu" secondAttribute="topMargin" constant="2" id="Ebr-Jp-4AO"/>
+                                        <constraint firstAttribute="bottom" secondItem="4yv-My-rRO" secondAttribute="bottom" id="GaE-5X-hGq"/>
+                                        <constraint firstAttribute="trailing" secondItem="NzT-Ao-4OY" secondAttribute="trailing" constant="13" id="beS-c0-sJI"/>
+                                        <constraint firstItem="S1V-Jb-bgc" firstAttribute="leading" secondItem="Dmv-xU-bGe" secondAttribute="trailing" constant="8" id="da2-ra-zKi"/>
+                                        <constraint firstItem="S1V-Jb-bgc" firstAttribute="bottom" secondItem="0x3-vx-hPu" secondAttribute="bottomMargin" id="dtY-uT-v5W"/>
+                                        <constraint firstItem="4yv-My-rRO" firstAttribute="leading" secondItem="0x3-vx-hPu" secondAttribute="leading" constant="98" id="gTS-0H-SzC"/>
+                                        <constraint firstItem="S1V-Jb-bgc" firstAttribute="top" secondItem="NYF-Nk-3JI" secondAttribute="bottom" constant="2" id="giM-gB-Got"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="S1V-Jb-bgc" secondAttribute="trailing" constant="13" id="gwS-1Y-qtd"/>
+                                        <constraint firstItem="S1V-Jb-bgc" firstAttribute="leading" secondItem="NYF-Nk-3JI" secondAttribute="leading" id="rSH-xE-nsq"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92117017509999999" green="0.38473373649999998" blue="0.38724684720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
