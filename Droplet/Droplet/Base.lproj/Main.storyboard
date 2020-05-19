@@ -174,34 +174,54 @@
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="jc6-wd-WAF">
-                                                    <rect key="frame" x="0.0" y="-0.5" width="416" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="jc6-wd-WAF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="80"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0e-qH-NdC">
-                                                    <rect key="frame" x="20" y="13" width="238" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0e-qH-NdC">
+                                                    <rect key="frame" x="20" y="13" width="60.5" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="ZTE-jU-IIM"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzR-Zg-suC">
-                                                    <rect key="frame" x="256" y="12" width="119" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvd-jA-K2D">
-                                                    <rect key="frame" x="20" y="35" width="355" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvd-jA-K2D">
+                                                    <rect key="frame" x="20" y="35" width="342" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="RSD-f9-1ac"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzR-Zg-suC">
+                                                    <rect key="frame" x="264.5" y="14" width="97.5" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="tXL-WY-Pja"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="W0e-qH-NdC" firstAttribute="leading" secondItem="Jfc-23-chU" secondAttribute="leadingMargin" id="2zt-B6-NNj"/>
+                                                <constraint firstItem="kvd-jA-K2D" firstAttribute="leading" secondItem="W0e-qH-NdC" secondAttribute="leading" id="6YY-PT-bc3"/>
+                                                <constraint firstAttribute="trailing" secondItem="jc6-wd-WAF" secondAttribute="trailing" constant="-30" id="6mk-N8-l0M"/>
+                                                <constraint firstItem="xzR-Zg-suC" firstAttribute="trailing" secondItem="kvd-jA-K2D" secondAttribute="trailing" id="B91-7z-NWA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xzR-Zg-suC" secondAttribute="trailing" constant="13" id="DOB-x6-Z6c"/>
+                                                <constraint firstItem="kvd-jA-K2D" firstAttribute="top" secondItem="xzR-Zg-suC" secondAttribute="bottom" constant="3" id="Odq-Nz-IL2"/>
+                                                <constraint firstItem="xzR-Zg-suC" firstAttribute="top" secondItem="Jfc-23-chU" secondAttribute="topMargin" constant="3" id="WVL-so-ebC"/>
+                                                <constraint firstItem="kvd-jA-K2D" firstAttribute="top" secondItem="W0e-qH-NdC" secondAttribute="bottom" constant="2" id="X1y-fY-vec"/>
+                                                <constraint firstItem="kvd-jA-K2D" firstAttribute="bottom" secondItem="Jfc-23-chU" secondAttribute="bottomMargin" id="Zp1-xj-275"/>
+                                                <constraint firstItem="jc6-wd-WAF" firstAttribute="leading" secondItem="Jfc-23-chU" secondAttribute="leading" id="cHk-0t-gr0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kvd-jA-K2D" secondAttribute="trailing" constant="13" id="cbw-9a-nRT"/>
+                                                <constraint firstItem="kvd-jA-K2D" firstAttribute="bottom" secondItem="Jfc-23-chU" secondAttribute="bottomMargin" id="eQ4-Sa-T6L"/>
+                                                <constraint firstItem="W0e-qH-NdC" firstAttribute="top" secondItem="Jfc-23-chU" secondAttribute="topMargin" constant="2" id="k1z-f2-fke"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.20837447049999999" green="0.48377096650000001" blue="0.59895360470000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.20784313725490194" green="0.4823529411764706" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="lblFileDetails" destination="kvd-jA-K2D" id="3gw-ga-RHx"/>
                                             <outlet property="lblTeacher" destination="xzR-Zg-suC" id="cyl-3P-WT0"/>
@@ -215,32 +235,48 @@
                                             <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient-bg-backwards" translatesAutoresizingMaskIntoConstraints="NO" id="hPy-OL-zei">
-                                                    <rect key="frame" x="0.0" y="-0.5" width="375" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gradient-bg-backwards" translatesAutoresizingMaskIntoConstraints="NO" id="hPy-OL-zei">
+                                                    <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSq-7y-ZUM">
-                                                    <rect key="frame" x="20" y="13" width="238" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSq-7y-ZUM">
+                                                    <rect key="frame" x="20" y="13" width="60.5" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="ttU-cH-zdV"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxy-Q6-9ob">
-                                                    <rect key="frame" x="249" y="12" width="121" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CheckIn Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoL-fN-0SJ">
-                                                    <rect key="frame" x="20" y="35" width="355" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CheckIn Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoL-fN-0SJ">
+                                                    <rect key="frame" x="20" y="35" width="342" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="xs5-O9-rHL"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxy-Q6-9ob">
+                                                    <rect key="frame" x="264.5" y="14" width="97.5" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UoL-fN-0SJ" firstAttribute="top" secondItem="Yxy-Q6-9ob" secondAttribute="bottom" constant="3" id="20K-x7-6CE"/>
+                                                <constraint firstItem="UoL-fN-0SJ" firstAttribute="leading" secondItem="c2x-Bc-JEH" secondAttribute="leadingMargin" id="31G-VY-drM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UoL-fN-0SJ" secondAttribute="bottom" id="H3h-OF-UEZ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UoL-fN-0SJ" secondAttribute="trailing" id="NDg-uO-FCy"/>
+                                                <constraint firstItem="hPy-OL-zei" firstAttribute="leading" secondItem="c2x-Bc-JEH" secondAttribute="leading" id="Uu2-dS-HDD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Yxy-Q6-9ob" secondAttribute="trailing" id="WqI-U5-sRk"/>
+                                                <constraint firstItem="DSq-7y-ZUM" firstAttribute="top" secondItem="c2x-Bc-JEH" secondAttribute="topMargin" constant="2" id="cVB-3Y-KNH"/>
+                                                <constraint firstItem="Yxy-Q6-9ob" firstAttribute="top" secondItem="c2x-Bc-JEH" secondAttribute="topMargin" constant="3" id="gbK-a6-bYc"/>
+                                                <constraint firstAttribute="trailing" secondItem="hPy-OL-zei" secondAttribute="trailing" id="h99-sC-78n"/>
+                                                <constraint firstItem="Yxy-Q6-9ob" firstAttribute="trailing" secondItem="UoL-fN-0SJ" secondAttribute="trailing" id="nrc-q0-Hgn"/>
+                                                <constraint firstItem="UoL-fN-0SJ" firstAttribute="leading" secondItem="DSq-7y-ZUM" secondAttribute="leading" id="oXq-GS-3Ou"/>
+                                                <constraint firstItem="UoL-fN-0SJ" firstAttribute="top" secondItem="DSq-7y-ZUM" secondAttribute="bottom" constant="2" id="yNn-EY-zLb"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblFileDetailsCheckIn" destination="UoL-fN-0SJ" id="xBs-EI-bnz"/>
@@ -977,33 +1013,44 @@ You will need to create some and add them to this class later.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-GA-CBX">
-                                                    <rect key="frame" x="-17" y="-0.5" width="416" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-GA-CBX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="80"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUB-Rq-9ll">
-                                                    <rect key="frame" x="20" y="13" width="238" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUB-Rq-9ll">
+                                                    <rect key="frame" x="20" y="13" width="60.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZL-gl-vCW">
-                                                    <rect key="frame" x="256" y="12" width="119" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33k-c8-7Xx">
-                                                    <rect key="frame" x="20" y="35" width="355" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33k-c8-7Xx">
+                                                    <rect key="frame" x="20" y="35" width="342" height="34"/>
                                                     <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZL-gl-vCW">
+                                                    <rect key="frame" x="286" y="14" width="76" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GOR-GA-CBX" firstAttribute="leading" secondItem="mBa-ec-Xtq" secondAttribute="leading" id="4Dp-wy-ajt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="33k-c8-7Xx" secondAttribute="bottom" id="4RE-xy-dAM"/>
+                                                <constraint firstItem="fZL-gl-vCW" firstAttribute="trailing" secondItem="33k-c8-7Xx" secondAttribute="trailing" id="5rU-jr-kp1"/>
+                                                <constraint firstItem="33k-c8-7Xx" firstAttribute="leading" secondItem="mBa-ec-Xtq" secondAttribute="leading" constant="20" id="Eop-HN-aW7"/>
+                                                <constraint firstAttribute="trailing" secondItem="GOR-GA-CBX" secondAttribute="trailing" constant="-30" id="GXe-u6-2z4"/>
+                                                <constraint firstItem="fZL-gl-vCW" firstAttribute="top" secondItem="mBa-ec-Xtq" secondAttribute="topMargin" constant="3" id="LcY-oh-DSS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fZL-gl-vCW" secondAttribute="trailing" constant="13" id="MrC-wj-gnm"/>
+                                                <constraint firstItem="wUB-Rq-9ll" firstAttribute="top" secondItem="mBa-ec-Xtq" secondAttribute="topMargin" constant="2" id="OHt-ul-oVF"/>
+                                                <constraint firstItem="33k-c8-7Xx" firstAttribute="top" secondItem="wUB-Rq-9ll" secondAttribute="bottom" constant="2" id="QPA-Lj-jeo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="33k-c8-7Xx" secondAttribute="trailing" constant="13" id="i4O-73-U4P"/>
+                                                <constraint firstItem="33k-c8-7Xx" firstAttribute="leading" secondItem="wUB-Rq-9ll" secondAttribute="leading" id="ifi-yU-aN4"/>
+                                                <constraint firstItem="33k-c8-7Xx" firstAttribute="top" secondItem="fZL-gl-vCW" secondAttribute="bottom" constant="3" id="ong-WZ-auW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.20784313725490194" green="0.4823529411764706" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="lblFileDetails" destination="33k-c8-7Xx" id="ZcP-N8-r66"/>
                                             <outlet property="lblTeacher" destination="fZL-gl-vCW" id="uME-ta-qvT"/>
@@ -1017,32 +1064,44 @@ You will need to create some and add them to this class later.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient-bg-backwards" translatesAutoresizingMaskIntoConstraints="NO" id="Wv4-Yf-H45">
-                                                    <rect key="frame" x="-3" y="-0.5" width="375" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gradient-bg-backwards" translatesAutoresizingMaskIntoConstraints="NO" id="Wv4-Yf-H45">
+                                                    <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzx-Y3-VDR">
-                                                    <rect key="frame" x="20" y="13" width="231" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzx-Y3-VDR">
+                                                    <rect key="frame" x="20" y="13" width="60.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bx-sc-6iA">
-                                                    <rect key="frame" x="249" y="12" width="121" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CheckIn Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abA-OS-oCE">
-                                                    <rect key="frame" x="20" y="35" width="355" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CheckIn Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abA-OS-oCE">
+                                                    <rect key="frame" x="20" y="35" width="342" height="34"/>
                                                     <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bx-sc-6iA">
+                                                    <rect key="frame" x="286" y="14" width="76" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lzx-Y3-VDR" firstAttribute="top" secondItem="dJu-4U-0mm" secondAttribute="topMargin" constant="2" id="0ib-we-uBu"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wv4-Yf-H45" secondAttribute="trailing" id="4lV-Pe-Q7n"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wv4-Yf-H45" secondAttribute="trailing" id="5rC-dq-4yX"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7bx-sc-6iA" secondAttribute="trailing" id="6e7-wC-a8G"/>
+                                                <constraint firstItem="7bx-sc-6iA" firstAttribute="top" secondItem="dJu-4U-0mm" secondAttribute="topMargin" constant="3" id="7CJ-mV-YEK"/>
+                                                <constraint firstItem="abA-OS-oCE" firstAttribute="top" secondItem="7bx-sc-6iA" secondAttribute="bottom" constant="3" id="Acc-Bl-9AO"/>
+                                                <constraint firstItem="abA-OS-oCE" firstAttribute="top" secondItem="lzx-Y3-VDR" secondAttribute="bottom" constant="2" id="Eav-Nq-hAp"/>
+                                                <constraint firstItem="lzx-Y3-VDR" firstAttribute="leading" secondItem="dJu-4U-0mm" secondAttribute="leading" constant="20" id="LUq-WL-Xmx"/>
+                                                <constraint firstItem="abA-OS-oCE" firstAttribute="leading" secondItem="dJu-4U-0mm" secondAttribute="leading" constant="20" id="NPw-Wk-Xgw"/>
+                                                <constraint firstItem="7bx-sc-6iA" firstAttribute="trailing" secondItem="abA-OS-oCE" secondAttribute="trailing" id="Oqv-ko-m8P"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="abA-OS-oCE" secondAttribute="trailing" id="TJM-Tm-bU2"/>
+                                                <constraint firstItem="Wv4-Yf-H45" firstAttribute="leading" secondItem="dJu-4U-0mm" secondAttribute="leading" id="TSp-KD-DPg"/>
+                                                <constraint firstItem="abA-OS-oCE" firstAttribute="bottom" secondItem="dJu-4U-0mm" secondAttribute="bottomMargin" id="ede-uC-cDe"/>
+                                                <constraint firstItem="abA-OS-oCE" firstAttribute="leading" secondItem="lzx-Y3-VDR" secondAttribute="leading" id="pQ2-nJ-Cap"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblFileDetailsCheckIn" destination="abA-OS-oCE" id="KVr-6T-xrh"/>
