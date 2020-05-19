@@ -250,11 +250,17 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
         }
         
         func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            var deleteClassAlso : Bool = false
             let alertController = UIAlertController(
                 title: "Are you sure?",
                 message: "Do you really want to delete the Dropper \((tallyDroppers()[indexPath.row].title))? This will delete it for all students.",
                 preferredStyle: .alert
             )
+            //print(tallyDroppers()[indexPath.row].associatedClass?.droppers.count)
+            if ((tallyDroppers()[indexPath.row].associatedClass?.droppers.count)! <= 1) {
+                alertController.message?.append(" WARNING: If you delete the last dropper of the class \((tallyDroppers()[indexPath.row].associatedClass?.name)!), the class will also be deleted.")
+                deleteClassAlso = true
+            }
             alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
                 var y : Int = 0
                 for x in GlobalVariables.localDroppers {
@@ -307,6 +313,65 @@ class DropsTeacherViewController: UIViewController, NFCNDEFReaderSessionDelegate
                             "droppers": newStrDroppers
                         ])
                     }
+                }
+                
+                if (deleteClassAlso) {
+                    var toLookFor : AcademicClass = GlobalVariables.localDroppers[y].associatedClass!
+                    var z : Int = 0
+                    for a in GlobalVariables.localAcademicClasses {
+                        if (a.name == toLookFor.name) {
+                            break
+                        } else {
+                            z += 1
+                        }
+                    }
+                    print("DELETING \(GlobalVariables.localAcademicClasses[z].name)")
+                    
+                    self.db.collection("classes")
+                        .whereField("name", isEqualTo: GlobalVariables.localAcademicClasses[z].name)
+                    .getDocuments() { (querySnapshot, err) in
+                        if err != nil {
+                            print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document!.reference.delete()
+                        }
+                    }
+                    
+                    var x : Int = 0
+                    for g in GlobalVariables.localAcademicClasses {
+                        x = 0
+                        for h in (GlobalVariables.loggedInUser?.myClasses)! {
+                            if (GlobalVariables.localAcademicClasses[z].name == h.name) {
+                                GlobalVariables.loggedInUser?.myClasses.remove(at: x)
+                                break
+                            } else {
+                                x += 1
+                            }
+                        }
+                    }
+
+                    var newStringOfClasses : String = ""
+                    var y : Int = 0
+                    while y < (GlobalVariables.loggedInUser?.myClasses.count)! {
+                        newStringOfClasses.append("\((GlobalVariables.loggedInUser?.myClasses[y].name)!);")
+                        y += 1
+                    }
+                    
+                    self.db.collection("users")
+                        .whereField("username", isEqualTo: (GlobalVariables.loggedInUser?.username)!)
+                    .getDocuments() { (querySnapshot, err) in
+                        if err != nil {
+                            print("CRITICAL FIREBASE RETRIEVAL ERROR: \(String(describing: err))")
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document!.reference.updateData([
+                                "classes": newStringOfClasses
+                            ])
+                        }
+                    }
+                    
+                    GlobalVariables.localAcademicClasses.remove(at: z)
                 }
                 
                 GlobalVariables.localDroppers.remove(at: y)
