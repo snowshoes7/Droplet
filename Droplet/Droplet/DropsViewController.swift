@@ -39,7 +39,13 @@ class DropsViewController: UIViewController {
     }
     
     @IBAction func actionScan(_ sender: Any) {
-        
+        let addAlert : UIAlertController = UIAlertController(title: "Add What Class?", message: nil, preferredStyle: .alert)
+        addAlert.addTextField(configurationHandler: { (textField) in
+            textField.placeholder = "New Class To Add"
+        })
+        addAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            
+        }))
     }
     
     func saveLocalDropperToFirebase(id: Int) {
