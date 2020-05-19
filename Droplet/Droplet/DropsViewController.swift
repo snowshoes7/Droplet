@@ -49,6 +49,7 @@ class DropsViewController: UIViewController {
             let lookingFor : String = addAlert.textFields![0].text!
             print(lookingFor)
             if (lookingFor == "") {
+                //print("NOTHING")
                 triggerBadAlert = true
             } else {
                 for academicclass in GlobalVariables.localAcademicClasses {
@@ -79,15 +80,14 @@ class DropsViewController: UIViewController {
                     }
                 }
             }
-        }))
-        self.present(addAlert, animated: true, completion: {
             if (triggerBadAlert) {
                 print("bad alert")
                 let badAlert : UIAlertController = UIAlertController(title: "Error", message: "Something went wrong. Maybe that class doesn't exist?", preferredStyle: .alert)
                 badAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(badAlert, animated: true, completion: nil)
             }
-        })
+        }))
+        self.present(addAlert, animated: true, completion: nil)
     }
     
     func saveLocalDropperToFirebase(id: Int) {
