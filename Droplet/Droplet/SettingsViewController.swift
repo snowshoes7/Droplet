@@ -60,7 +60,7 @@ class SettingsViewController: UIViewController {
         //Make sure passwords, if being changed, match
         
         if (execute) {
-            if (txtUsername.text == "" || txtEmail.text == "" || ((txtUsername.text?.contains(" ")) != nil) || ((txtEmail.text?.contains(" ")) != nil) || ((txtpass1.text?.contains(" ")) != nil) || ((txtpass2.text?.contains(" ")) != nil)) {
+            if (txtUsername.text == "" || txtEmail.text == ""/* || ((txtUsername.text?.contains(" ")) != nil) || ((txtEmail.text?.contains(" ")) != nil)*/) {
                 let alertController2 = UIAlertController(
                     title: "Entry Error",
                     message: "Make sure you didn't erase your DropID or email. You can't use any spaces in your DropID, email, or password.",

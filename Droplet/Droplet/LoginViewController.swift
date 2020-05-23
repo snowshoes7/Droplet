@@ -107,7 +107,7 @@ class LoginViewController: UIViewController {
                         }
                     }
                     
-                    GlobalVariables.localDroppers.append(Dropper(associatedClass: toAddAcademicClass!, id: remoteid, modifiable: remotemodifiable, title: remotetitle, interactions: remoteinteractions))
+                    GlobalVariables.localDroppers.append(Dropper(associatedClass: toAddAcademicClass ?? AcademicClass(url: "", droppers: [], name: "", teacher: "", assignmentStr: ""), id: remoteid, modifiable: remotemodifiable, title: remotetitle, interactions: remoteinteractions))
                 }
             }
         }
