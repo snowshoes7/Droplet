@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,8 +21,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSE-I2-WNl">
-                                <rect key="frame" x="75" y="594.5" width="132.5" height="20"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="74.999999999999986" y="594.5" width="132.66666666666663" height="20"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +38,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="DropID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdg-0r-9Az">
                                 <rect key="frame" x="20" y="390" width="94" height="26"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="NZS-0R-dY7"/>
                                 </constraints>
@@ -46,7 +48,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ft-mV-65j">
                                 <rect key="frame" x="20" y="492" width="125" height="26"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="PGS-5W-Hca"/>
                                 </constraints>
@@ -73,9 +75,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jRo-zE-83K">
                                 <rect key="frame" x="20" y="589" width="51" height="31"/>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abb-Ek-0uD">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abb-Ek-0uD">
                                 <rect key="frame" x="63" y="656" width="288" height="40"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QJf-ce-yVS"/>
                                 </constraints>
@@ -85,9 +87,9 @@
                                     <action selector="actionLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x98-0k-94G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N8-Ic-kJI">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N8-Ic-kJI">
                                 <rect key="frame" x="63" y="726" width="288" height="27"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="9J1-D8-n1m"/>
                                 </constraints>
@@ -98,7 +100,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dzh-tz-ecU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9N8-Ic-kJI" firstAttribute="top" relation="lessThanOrEqual" secondItem="abb-Ek-0uD" secondAttribute="bottom" priority="750" constant="30" id="1Aj-Ys-Ee4"/>
                             <constraint firstItem="WNb-EY-7x2" firstAttribute="leading" secondItem="abb-Ek-0uD" secondAttribute="leading" id="7EI-4U-8wx"/>
@@ -135,7 +138,6 @@
                             <constraint firstItem="WNb-EY-7x2" firstAttribute="leading" secondItem="dzh-tz-ecU" secondAttribute="leading" constant="63" id="x7a-9Q-I41"/>
                             <constraint firstAttribute="trailing" secondItem="Xtd-Ee-ldW" secondAttribute="trailing" id="yF9-qB-dtf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dzh-tz-ecU"/>
                     </view>
                     <connections>
                         <outlet property="btnLogin" destination="abb-Ek-0uD" id="jsU-1I-SSq"/>
@@ -168,17 +170,17 @@
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DropCell" rowHeight="80" id="HL8-cd-WNR" customClass="DropsTeacherTableViewCell" customModule="Droplet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HL8-cd-WNR" id="Jfc-23-chU">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="jc6-wd-WAF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="412.66666666666669" height="80"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0e-qH-NdC">
-                                                    <rect key="frame" x="20" y="13" width="60.5" height="20"/>
+                                                    <rect key="frame" x="19.999999999999996" y="13" width="60.666666666666657" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="ZTE-jU-IIM"/>
                                                     </constraints>
@@ -187,16 +189,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvd-jA-K2D">
-                                                    <rect key="frame" x="20" y="35" width="342" height="34"/>
+                                                    <rect key="frame" x="20" y="35" width="341.66666666666669" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="RSD-f9-1ac"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzR-Zg-suC">
-                                                    <rect key="frame" x="264.5" y="14" width="97.5" height="18"/>
+                                                    <rect key="frame" x="264.33333333333331" y="14" width="97.333333333333314" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="tXL-WY-Pja"/>
                                                     </constraints>
@@ -229,7 +231,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="DropCellCheckIn" rowHeight="80" id="7lg-3J-qie" customClass="DropsTeacherTableViewCell" customModule="Droplet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="135.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="135.33333206176758" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lg-3J-qie" id="c2x-Bc-JEH">
                                             <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
@@ -239,7 +241,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSq-7y-ZUM">
-                                                    <rect key="frame" x="20" y="13" width="60.5" height="20"/>
+                                                    <rect key="frame" x="19.999999999999996" y="13" width="60.666666666666657" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="ttU-cH-zdV"/>
                                                     </constraints>
@@ -253,11 +255,11 @@
                                                         <constraint firstAttribute="height" constant="34" id="xs5-O9-rHL"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxy-Q6-9ob">
-                                                    <rect key="frame" x="264.5" y="14" width="97.5" height="18"/>
+                                                    <rect key="frame" x="264.66666666666669" y="14" width="97.333333333333314" height="18"/>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -318,7 +320,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qcz-cG-xdx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bHC-og-DDy" firstAttribute="leading" secondItem="qcz-cG-xdx" secondAttribute="leading" constant="10" id="5aC-WP-iUQ"/>
                             <constraint firstItem="3CZ-rM-8k0" firstAttribute="centerY" secondItem="9Zi-Wg-SRI" secondAttribute="centerY" id="FLm-XR-P2U"/>
@@ -332,7 +335,6 @@
                             <constraint firstItem="qcz-cG-xdx" firstAttribute="trailing" secondItem="3CZ-rM-8k0" secondAttribute="trailing" constant="10" id="lhd-Bk-XvV"/>
                             <constraint firstItem="9Zi-Wg-SRI" firstAttribute="centerY" secondItem="bHC-og-DDy" secondAttribute="centerY" id="vG9-a2-mIs"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qcz-cG-xdx"/>
                     </view>
                     <navigationItem key="navigationItem" id="5iI-T3-V7N"/>
                     <connections>
@@ -371,9 +373,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle-bg-2" translatesAutoresizingMaskIntoConstraints="NO" id="3my-1Y-M3f">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2t-ti-1zd">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2t-ti-1zd">
                                 <rect key="frame" x="63" y="216" width="288" height="27"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="vFO-V9-bxv"/>
                                 </constraints>
@@ -384,9 +386,9 @@
                                     <action selector="actionTeacherLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P0z-8M-4bb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yn-jg-e0E">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yn-jg-e0E">
                                 <rect key="frame" x="63" y="380" width="288" height="27"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                 <state key="normal" title="Pick File Type..."/>
                                 <connections>
@@ -396,7 +398,7 @@
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class URL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qG9-g5-3M9">
                                 <rect key="frame" x="20" y="192" width="170" height="26"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="etr-1y-dRg"/>
                                 </constraints>
@@ -406,7 +408,7 @@
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nt-U8-BLn">
                                 <rect key="frame" x="20" y="525" width="374" height="227"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Warning:
@@ -428,8 +430,8 @@ You will need to create some and add them to this class later.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruV-Bi-L2W">
-                                <rect key="frame" x="20" y="108" width="62.5" height="26"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="19.999999999999996" y="108" width="62.666666666666657" height="26"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="Sc4-Io-IES"/>
                                 </constraints>
@@ -447,15 +449,15 @@ You will need to create some and add them to this class later.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dropper ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBT-MK-Qtw">
-                                <rect key="frame" x="20" y="264" width="156.5" height="26"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="20" y="264" width="156.66666666666666" height="26"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access assignments from this Dropper?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b91-hi-zH1">
                                 <rect key="frame" x="85" y="367" width="309" height="57"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -470,7 +472,7 @@ You will need to create some and add them to this class later.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05R-XZ-FkN">
-                                <rect key="frame" x="185" y="257" width="40" height="40"/>
+                                <rect key="frame" x="185.33333333333334" y="257" width="39.666666666666657" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="info.circle" catalog="system">
@@ -480,9 +482,9 @@ You will need to create some and add them to this class later.</string>
                                     <action selector="actionInfo:" destination="JRL-71-yEx" eventType="touchUpInside" id="bC4-Zj-k0b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rD-cBQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-rD-cBQ">
                                 <rect key="frame" x="20" y="760" width="374" height="56"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Yzs-4c-Kg6"/>
                                 </constraints>
@@ -497,20 +499,20 @@ You will need to create some and add them to this class later.</string>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="W7G-JK-9HY">
                                 <rect key="frame" x="20" y="264" width="172" height="26"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-aw-2dH">
-                                <rect key="frame" x="20" y="298" width="374" height="36.5"/>
+                                <rect key="frame" x="20" y="298" width="374" height="36.666666666666686"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link to File" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="pYV-km-hHn">
-                                <rect key="frame" x="20" y="429.5" width="205" height="26"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="20" y="429.66666666666669" width="205" height="26"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="vvJ-Cn-GfP"/>
                                 </constraints>
@@ -519,7 +521,7 @@ You will need to create some and add them to this class later.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DLa-Tg-Asy">
-                                <rect key="frame" x="20" y="463.5" width="374" height="36.5"/>
+                                <rect key="frame" x="20" y="463.66666666666669" width="374" height="36.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36.5" id="T0N-7e-x7l"/>
                                 </constraints>
@@ -528,7 +530,8 @@ You will need to create some and add them to this class later.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Dq1-bh-Bp4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="a7v-Ff-nSk" firstAttribute="top" secondItem="ruV-Bi-L2W" secondAttribute="bottom" constant="8" id="07H-Pb-FKW"/>
                             <constraint firstItem="aJF-nQ-tDy" firstAttribute="leading" secondItem="pYV-km-hHn" secondAttribute="leading" id="3BC-Js-Xzc"/>
@@ -588,7 +591,6 @@ You will need to create some and add them to this class later.</string>
                             <constraint firstItem="TsF-sU-0vf" firstAttribute="trailing" secondItem="6go-Jm-OQm" secondAttribute="trailing" id="xL8-Dy-mUo"/>
                             <constraint firstItem="qG9-g5-3M9" firstAttribute="top" secondItem="a7v-Ff-nSk" secondAttribute="bottom" constant="16" id="yLq-t9-jVi"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Dq1-bh-Bp4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New" id="yIw-Ta-V50">
                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="l2K-n0-1PW">
@@ -648,9 +650,9 @@ You will need to create some and add them to this class later.</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2cY-MY-isD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GkP-gn-bxb">
+                        <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GkP-gn-bxb">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Open Class Webpage"/>
@@ -663,7 +665,7 @@ You will need to create some and add them to this class later.</string>
                                 <rect key="frame" x="0.0" y="72" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Qf-6k-IyB" id="m19-uN-mhQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red-gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="mmg-aF-xbv">
@@ -685,7 +687,7 @@ You will need to create some and add them to this class later.</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA8-Fe-Lpb">
-                                            <rect key="frame" x="108" y="35" width="262" height="34"/>
+                                            <rect key="frame" x="108" y="35" width="261.66666666666669" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="34" id="wTq-45-jQO"/>
                                             </constraints>
@@ -788,31 +790,31 @@ You will need to create some and add them to this class later.</string>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxD-fG-U2B">
                                 <rect key="frame" x="75" y="510" width="319" height="37"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Sbn-qq-1wH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ask before locking Droppers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inm-4F-epd">
                                 <rect key="frame" x="75" y="605" width="308" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTs-PZ-mgz">
-                                <rect key="frame" x="209.5" y="720" width="184.5" height="40"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTs-PZ-mgz">
+                                <rect key="frame" x="209.66666666666663" y="720" width="184.33333333333337" height="40"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="NJN-Ka-o5X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
                                 <state key="normal" title="Log Out">
-                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
                                 <connections>
                                     <action selector="actionLogOut:" destination="S4t-2h-Kzh" eventType="touchUpInside" id="NQl-8m-3P2"/>
@@ -820,12 +822,12 @@ You will need to create some and add them to this class later.</string>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kce-1d-xOZ">
                                 <rect key="frame" x="20" y="421" width="203" height="37"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="UGp-sq-Z2l"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Change your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2SQ-R9-sog">
@@ -838,12 +840,12 @@ You will need to create some and add them to this class later.</string>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3e-bg-y1a">
                                 <rect key="frame" x="20" y="247" width="203" height="37"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="PSu-oj-09n"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tgH-1m-0Lw">
@@ -856,12 +858,12 @@ You will need to create some and add them to this class later.</string>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggT-CQ-vAi">
                                 <rect key="frame" x="20" y="334" width="203" height="37"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="94T-Tf-NEj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm a new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QIG-Zi-jzY">
@@ -874,12 +876,12 @@ You will need to create some and add them to this class later.</string>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change DropID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6y-Ms-a9Y">
                                 <rect key="frame" x="20" y="160" width="203" height="37"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Da3-tc-EWW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Change your DropID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OfR-e7-JwQ">
@@ -894,9 +896,9 @@ You will need to create some and add them to this class later.</string>
                                 <rect key="frame" x="20" y="513" width="51" height="31"/>
                                 <color key="thumbTintColor" red="0.76615520810000004" green="0.76487968029999998" blue="0.78715997410000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAV-mg-Hwl">
-                                <rect key="frame" x="20" y="720" width="184.5" height="40"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAV-mg-Hwl">
+                                <rect key="frame" x="20" y="720" width="184.66666666666666" height="40"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="phy-FZ-9Bg"/>
                                 </constraints>
@@ -906,14 +908,14 @@ You will need to create some and add them to this class later.</string>
                                     <action selector="actionSaveProfile:" destination="S4t-2h-Kzh" eventType="touchUpInside" id="Exm-gf-Dnk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ⓒ 2020 Droplet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9o-eE-zeX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ⓒ 2020-2021 Droplet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9o-eE-zeX">
                                 <rect key="frame" x="20" y="771" width="374" height="37"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="w9i-iW-ra7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="j0M-kh-pbd">
@@ -925,16 +927,17 @@ You will need to create some and add them to this class later.</string>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDt-rf-xDO">
                                 <rect key="frame" x="20" y="69" width="203" height="37"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="VbP-MB-7Wq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="DwR-8a-lq6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Kce-1d-xOZ" firstAttribute="height" secondItem="t6y-Ms-a9Y" secondAttribute="height" id="1Nf-io-Ycv"/>
                             <constraint firstItem="Kce-1d-xOZ" firstAttribute="top" secondItem="QIG-Zi-jzY" secondAttribute="bottom" constant="8" id="28P-8m-gfO"/>
@@ -998,7 +1001,6 @@ You will need to create some and add them to this class later.</string>
                             <constraint firstItem="wc3-2b-6f0" firstAttribute="leading" secondItem="t6y-Ms-a9Y" secondAttribute="leading" id="wfR-Ka-Jvb"/>
                             <constraint firstItem="2SQ-R9-sog" firstAttribute="width" secondItem="OfR-e7-JwQ" secondAttribute="width" id="xUM-vt-aEg"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="DwR-8a-lq6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="j9T-YG-NVO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="fKc-Fy-k7c"/>
@@ -1030,29 +1032,29 @@ You will need to create some and add them to this class later.</string>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DropCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DropCell" rowHeight="80" id="WkH-yf-yDx" customClass="DropsTableViewCell" customModule="Droplet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WkH-yf-yDx" id="mBa-ec-Xtq">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-GA-CBX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="412.66666666666669" height="80"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUB-Rq-9ll">
-                                                    <rect key="frame" x="20" y="13" width="60.5" height="20"/>
+                                                    <rect key="frame" x="19.999999999999996" y="13" width="60.666666666666657" height="20"/>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33k-c8-7Xx">
-                                                    <rect key="frame" x="20" y="35" width="342" height="34"/>
+                                                    <rect key="frame" x="20" y="35" width="341.66666666666669" height="34"/>
                                                     <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZL-gl-vCW">
-                                                    <rect key="frame" x="286" y="14" width="76" height="18"/>
+                                                    <rect key="frame" x="285.66666666666669" y="14" width="76" height="18"/>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1081,7 +1083,7 @@ You will need to create some and add them to this class later.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DropCellCheckIn" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="DropCellCheckIn" rowHeight="80" id="F45-F8-hKx" customClass="DropsTableViewCell" customModule="Droplet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="135.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="135.33333206176758" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F45-F8-hKx" id="dJu-4U-0mm">
                                             <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
@@ -1091,7 +1093,7 @@ You will need to create some and add them to this class later.</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzx-Y3-VDR">
-                                                    <rect key="frame" x="20" y="13" width="60.5" height="20"/>
+                                                    <rect key="frame" x="19.999999999999996" y="13" width="60.666666666666657" height="20"/>
                                                     <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1099,7 +1101,7 @@ You will need to create some and add them to this class later.</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CheckIn Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abA-OS-oCE">
                                                     <rect key="frame" x="20" y="35" width="342" height="34"/>
                                                     <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bx-sc-6iA">
@@ -1174,7 +1176,8 @@ You will need to create some and add them to this class later.</string>
                                 <state key="normal" title="Button" image="square.and.arrow.up.on.square" catalog="system"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Rcu-iw-R8o"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Rcu-iw-R8o" firstAttribute="trailing" secondItem="gfG-Ia-lQu" secondAttribute="trailing" constant="10" id="8Aq-uO-97b"/>
                             <constraint firstItem="SFR-dC-I3b" firstAttribute="centerX" secondItem="Bds-CZ-bzQ" secondAttribute="centerX" id="EY9-iI-myl"/>
@@ -1189,7 +1192,6 @@ You will need to create some and add them to this class later.</string>
                             <constraint firstItem="4VE-9n-Z1d" firstAttribute="top" secondItem="Rcu-iw-R8o" secondAttribute="top" constant="41" id="hGL-SP-AdQ"/>
                             <constraint firstItem="OzX-bc-pSr" firstAttribute="centerY" secondItem="DrR-QD-Chd" secondAttribute="centerY" id="sJa-Ke-deU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Rcu-iw-R8o"/>
                     </view>
                     <navigationItem key="navigationItem" id="zcG-mk-LXc"/>
                     <connections>
@@ -1224,9 +1226,9 @@ You will need to create some and add them to this class later.</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tsa-eb-bQ6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9f1-fF-F7w">
+                        <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9f1-fF-F7w">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Open Class Webpage"/>
@@ -1239,11 +1241,11 @@ You will need to create some and add them to this class later.</string>
                                 <rect key="frame" x="0.0" y="72" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kfy-6H-x5U" id="0x3-vx-hPu">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red-gradient-bg" translatesAutoresizingMaskIntoConstraints="NO" id="4yv-My-rRO">
-                                            <rect key="frame" x="98" y="0.0" width="285" height="80"/>
+                                            <rect key="frame" x="98" y="0.0" width="284.66666666666669" height="80"/>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dmv-xU-bGe">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
@@ -1260,7 +1262,7 @@ You will need to create some and add them to this class later.</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last File Details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1V-Jb-bgc">
-                                            <rect key="frame" x="108" y="35" width="254" height="34"/>
+                                            <rect key="frame" x="107.99999999999999" y="35" width="253.66666666666663" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="34" id="hjl-s9-y5n"/>
                                             </constraints>
@@ -1332,16 +1334,31 @@ You will need to create some and add them to this class later.</string>
         <segue reference="PO7-oX-UEP"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="badge.plus.radiowaves.right" catalog="system" width="128" height="101"/>
-        <image name="circle-bg-2" width="436" height="502.5"/>
-        <image name="drop-bg" width="250" height="400"/>
+        <image name="badge.plus.radiowaves.right" catalog="system" width="128" height="102"/>
+        <image name="circle-bg-2" width="290.66665649414062" height="335"/>
+        <image name="drop-bg" width="166.66667175292969" height="266.66665649414062"/>
         <image name="gear" catalog="system" width="128" height="119"/>
-        <image name="gradient-bg" width="640.5" height="400"/>
-        <image name="gradient-bg-backwards" width="640.5" height="400"/>
+        <image name="gradient-bg" width="427" height="266.66665649414062"/>
+        <image name="gradient-bg-backwards" width="427" height="266.66665649414062"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="red-gradient-bg" width="640.5" height="400"/>
-        <image name="ripple-bg" width="1211.5" height="346.5"/>
+        <image name="red-gradient-bg" width="427" height="266.66665649414062"/>
+        <image name="ripple-bg" width="807.66668701171875" height="231"/>
         <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
-        <image name="user-icon" width="250" height="250"/>
+        <image name="user-icon" width="166.66667175292969" height="166.66667175292969"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
